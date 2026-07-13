@@ -1,0 +1,37 @@
+# MGC (Micro COMEX gold) backtest engine costs — Phase 13.
+# MGC: $10/pt, $1/tick (10 troy oz). Do NOT reuse MNQ micro or GC full-size fees.
+engine:
+  qty: 1                         # 1 MGC micro contract
+  flat_time: "16:55"             # ET force-flat before Globex maintenance break
+  no_entry_after: "16:00"
+  commission_per_side: 0.75      # VERIFY — micro gold retail commission placeholder
+  exchange_fees_per_side: 0.75   # VERIFY — CME/COMEX micro + NFA placeholder
+                                 # (~$1.50/side all-in; prompt band $1–2/side)
+  slippage_ticks: 1              # 1 tick = 0.10 pt = $1 on MGC
+
+# Baseline (non-grid) parameter documentation. Phase 13 grids live in
+# config/mgc_phase13.yaml — these are illustrative defaults only.
+strategies:
+  gc_session_orb:
+    max_trades_per_day: 1
+    params:
+      anchor_minute: 500           # 8:20 ET COMEX default
+      range_minutes: 30
+      target_r: 1.0
+      expire_minutes: 120
+      tick: 0.10
+      min_width_ratio: 0.0
+      max_width_ratio: 1.0e+9
+      vol_ref_days: 14
+      max_risk_points: 25.0        # $250 = 25% of 25K MLL at $10/pt
+
+  gc_macro_breakout:
+    max_trades_per_day: 1
+    params:
+      macro_kind: nfp_cpi
+      release_minute: 510
+      pre_range_minutes: 30
+      target_r: 1.0
+      expire_minutes: 90
+      tick: 0.10
+      max_risk_points: 25.0

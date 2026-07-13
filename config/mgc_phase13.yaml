@@ -1,0 +1,217 @@
+# Phase 13: MGC micro gold — thorough eval-strategy search, both Lucid tiers.
+# Deep-but-tractable stage-1 grids (~5.4k combos). Stage-2 refinements are
+# added as extra families after stage-1 results (still pre-holdout).
+
+splits:
+  grid_start: 2021-06-11
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-07-10
+
+walk_forward:
+  first_train_start: 2021-06-11
+  last_test_end: 2025-12-31
+  train_months: 18
+  test_months: 6
+  min_trades_train: 20
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  # MC is evaluated on BOTH tiers; primary ranking tier below.
+  accounts: [lucid_25k, lucid_50k]
+  primary_account: lucid_25k
+
+stress:
+  slippage_ticks: [0, 1, 2, 3]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+# Per-trade risk band: 15–25% of MLL.
+#   25K: MLL $1,000 -> $150–250 -> 15–25 pts @ $10/pt
+#   50K: MLL $2,000 -> $300–500 -> 30–50 pts @ $10/pt
+sizing:
+  risk_pct_low: 0.15
+  risk_pct_high: 0.25
+  tiers:
+    lucid_25k: {mll: 1000}
+    lucid_50k: {mll: 2000}
+
+families:
+  comex_orb:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [500]          # COMEX 8:20 ET
+      range_minutes: [10, 15, 30, 45, 60]
+      target_r: [0.75, 1.0, 1.5, 2.0]
+      expire_minutes: [60, 120]
+      min_width_ratio: [0.0, 0.25]
+      max_width_ratio: [0.7, 1.0e+9]
+      max_risk_points: [15.0, 25.0, 40.0]
+      long_only: [false, true]
+
+  ny_orb:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [570]          # NY equity 9:30 ET
+      range_minutes: [10, 15, 30, 45, 60]
+      target_r: [0.75, 1.0, 1.5, 2.0]
+      expire_minutes: [60, 120]
+      min_width_ratio: [0.0, 0.25]
+      max_width_ratio: [0.7, 1.0e+9]
+      max_risk_points: [15.0, 25.0, 40.0]
+      long_only: [false, true]
+
+  london_orb:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [330]          # London AM ~5:30 ET
+      range_minutes: [10, 15, 30, 45, 60]
+      target_r: [0.75, 1.0, 1.5, 2.0]
+      expire_minutes: [60, 120]
+      min_width_ratio: [0.0, 0.25]
+      max_width_ratio: [0.7, 1.0e+9]
+      max_risk_points: [15.0, 25.0, 40.0]
+      long_only: [false, true]
+
+  macro_nfp:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 8
+    param_grid:
+      macro_kind: [nfp]
+      release_minute: [510]
+      pre_range_minutes: [15, 30, 45]
+      post_delay_minutes: [0, 5, 15]
+      target_r: [0.75, 1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [15.0, 25.0, 40.0]
+      long_only: [false, true]
+
+  macro_cpi:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 8
+    param_grid:
+      macro_kind: [cpi]
+      release_minute: [510]
+      pre_range_minutes: [15, 30, 45]
+      post_delay_minutes: [0, 5, 15]
+      target_r: [0.75, 1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [15.0, 25.0, 40.0]
+      long_only: [false, true]
+
+  macro_nfp_cpi:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 12
+    param_grid:
+      macro_kind: [nfp_cpi]
+      release_minute: [510]
+      pre_range_minutes: [15, 30, 45]
+      post_delay_minutes: [0, 5, 15]
+      target_r: [0.75, 1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [15.0, 25.0, 40.0]
+      min_range_points: [0.0, 3.0]
+      long_only: [false, true]
+
+  macro_fomc:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 6
+    param_grid:
+      macro_kind: [fomc]
+      release_minute: [840]         # 14:00 ET
+      pre_range_minutes: [15, 30, 45]
+      post_delay_minutes: [0, 5, 15]
+      target_r: [0.75, 1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [15.0, 25.0, 40.0]
+      long_only: [false, true]
+
+  nr_orb:
+    strategy: gc_nr_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [500, 570]
+      range_minutes: [15, 30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60, 120]
+      nr_n: [5, 7, 10]
+      mode: [nr, either]
+      max_risk_points: [15.0, 25.0]
+      long_only: [false, true]
+
+  vwap_trend:
+    strategy: gc_vwap_trend
+    max_trades_per_day: 2
+    param_grid:
+      stop_atr: [1.0, 1.5, 2.0]
+      target_r: [1.0, 1.5, 2.0]
+      expire_minutes: [60, 120]
+      entry_start_minute: [540, 570]
+      max_risk_points: [15.0, 25.0]
+
+  vwap_reversion:
+    strategy: gc_vwap_reversion
+    max_trades_per_day: 2
+    param_grid:
+      extension_atr: [1.5, 2.0, 2.5]
+      stop_atr: [0.75, 1.0]
+      target_r: [1.0, 1.5]
+      expire_minutes: [45, 60]
+      entry_start_minute: [540]
+      max_risk_points: [15.0, 25.0]
+
+  # ---- Stage 2 (pre-holdout refinements around stage-1 stable regions) ----
+
+  # COMEX ORB: long_only + expire 60 were chosen in every stage-1 fold;
+  # deepen width band / cap / range and add Monday-skip + macro-day-skip axes.
+  comex_orb_deep:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [500]
+      range_minutes: [10, 15, 45, 60]
+      target_r: [1.0, 1.5, 2.0]
+      expire_minutes: [60]
+      min_width_ratio: [0.2, 0.25, 0.3]
+      max_width_ratio: [1.0e+9]
+      max_risk_points: [10.0, 15.0, 20.0]
+      long_only: [true]
+      skip_weekdays: [[], [1]]
+      skip_macro_days: [false, true]
+
+  london_orb_deep:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [330]
+      range_minutes: [10, 15, 30]
+      target_r: [0.75, 1.0, 1.25]
+      expire_minutes: [90, 120]
+      min_width_ratio: [0.2, 0.25, 0.3]
+      max_width_ratio: [0.5, 0.7, 1.0]
+      max_risk_points: [10.0, 15.0]
+      long_only: [false, true]
+
+  # London–NY overlap (10:00 ET) and afternoon (13:00 ET) anchors.
+  overlap_orb:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [600, 780]
+      range_minutes: [15, 30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60, 120]
+      min_width_ratio: [0.0, 0.25]
+      max_width_ratio: [0.7, 1.0e+9]
+      max_risk_points: [15.0, 25.0]
+      long_only: [false, true]

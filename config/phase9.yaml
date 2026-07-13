@@ -1,0 +1,80 @@
+# Phase 9: profitable-future research — long-only, macro skip, portfolio path.
+# Same splits/folds/MC as Phase 7. NO 2026 holdout (consumed Phases 5+7).
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-06-28
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 30
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  account: lucid_25k
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+families:
+  # Hypothesis: equity-index drift → long breakouts outperform shorts.
+  orb_longonly:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+
+  # Hypothesis: scheduled macro releases distort ORB → skip those sessions.
+  orb_macro_skip:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      skip_macro_days: [true]
+      macro_events: [all, nfp]
+
+  # Combined filter (only if singles show signal).
+  orb_longonly_macro:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_macro_days: [true]
+      macro_events: [all]
+
+# Baselines stitched from Phase 7 (no re-run).
+baselines:
+  - name: "PHASE7 orb_width +skipMon"
+    ledger: trades_phase7_orb_width_wf_oos.parquet
+    post_skip_monday: true
+  - name: "PHASE7 nr7_orb +skipMon"
+    ledger: trades_phase7_nr7_orb_wf_oos.parquet
+    post_skip_monday: true
+
+# Post-hoc overlays applied to every family ledger (like Phase 6b skipMon).
+post_overlays:
+  skip_monday: true

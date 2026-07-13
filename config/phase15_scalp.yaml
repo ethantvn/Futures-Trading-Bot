@@ -1,0 +1,219 @@
+# Phase 15 — Scalping research (FVG / VWAP / Volume) on MNQ + GC
+# Signal/exec: 1m (optional 3m signal families). Holdout 2026 one-shot.
+
+instruments:
+  mnq:
+    data_config: config/data.yaml
+    strat_config: config/strategies.yaml
+    processed_dir: data/processed
+    reports_dir: data/reports
+    tick: 0.25
+    point_value: 2.0
+    splits:
+      grid_start: 2019-06-01
+      grid_end: 2025-12-31
+      holdout_start: 2026-01-01
+      holdout_end: 2026-06-28
+    walk_forward:
+      first_train_start: 2019-06-01
+      last_test_end: 2025-12-31
+      train_months: 24
+      test_months: 6
+      min_trades_train: 40
+    monte_carlo:
+      n_attempts: 10000
+      max_days: 60
+      seed: 42
+      contracts: [1]
+      accounts: [lucid_25k]
+      primary_account: lucid_25k
+    engine_overrides:
+      flat_time: "15:55"
+      no_entry_after: "15:30"
+      daily_loss_stop: 400.0   # ~40% of 25K MLL
+    families:
+      mnq_fvg_1m:
+        strategy: fvg_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 6
+        param_grid:
+          min_gap_points: [25.0, 35.0, 50.0]
+          min_stop_points: [15.0, 20.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [20, 40]
+          entry_mode: [mid]
+          vwap_filter: [false, true]
+          tick: [0.25]
+          entry_start_minute: [575]
+          entry_end_minute: [900]
+      mnq_fvg_3m:
+        strategy: fvg_scalp
+        timeframe_minutes: 3
+        max_trades_per_day: 4
+        param_grid:
+          min_gap_points: [30.0, 45.0]
+          min_stop_points: [15.0, 25.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [30, 60]
+          entry_mode: [mid]
+          vwap_filter: [false, true]
+          tick: [0.25]
+          entry_start_minute: [575]
+          entry_end_minute: [900]
+      mnq_vwap_rev:
+        strategy: vwap_band_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 6
+        param_grid:
+          mode: [reversion]
+          band_k: [1.25, 1.75, 2.25]
+          stop_atr: [0.75, 1.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [15, 30]
+          min_stop_points: [15.0]
+          atr_n: [14]
+          entry_start_minute: [585]
+          entry_end_minute: [900]
+      mnq_vwap_pb:
+        strategy: vwap_band_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 6
+        param_grid:
+          mode: [pullback]
+          band_k: [1.0]          # unused in pullback but required key
+          stop_atr: [0.75, 1.0, 1.25]
+          target_r: [1.0, 1.5]
+          expire_minutes: [15, 30]
+          min_stop_points: [15.0]
+          atr_n: [14]
+          entry_start_minute: [585]
+          entry_end_minute: [900]
+      mnq_vol_spike:
+        strategy: volume_spike_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 8
+        param_grid:
+          z_threshold: [2.0, 2.5, 3.0]
+          vol_lookback: [20, 40]
+          range_mult: [1.0, 1.5]
+          target_r: [1.0, 1.5]
+          expire_minutes: [10, 20]
+          min_stop_points: [15.0]
+          tick: [0.25]
+          entry_start_minute: [575]
+          entry_end_minute: [900]
+      mnq_fvg_vol:
+        strategy: fvg_volume_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 4
+        param_grid:
+          min_gap_points: [30.0, 45.0]
+          min_stop_points: [15.0, 20.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [20, 40]
+          z_threshold: [1.5, 2.0]
+          vol_lookback: [20]
+          vwap_filter: [true]
+          tick: [0.25]
+          entry_start_minute: [575]
+          entry_end_minute: [900]
+
+  gc:
+    data_config: config/data_gc.yaml
+    strat_config: config/strategies_gc.yaml
+    processed_dir: data/processed/gc
+    reports_dir: data/reports/gc
+    tick: 0.10
+    point_value: 100.0
+    splits:
+      grid_start: 2021-06-11
+      grid_end: 2025-12-31
+      holdout_start: 2026-01-01
+      holdout_end: 2026-07-10
+    walk_forward:
+      first_train_start: 2021-06-11
+      last_test_end: 2025-12-31
+      train_months: 18
+      test_months: 6
+      min_trades_train: 20
+    monte_carlo:
+      n_attempts: 10000
+      max_days: 60
+      seed: 42
+      contracts: [1]
+      accounts: [lucid_50k, lucid_100k]
+      primary_account: lucid_50k
+    engine_overrides:
+      flat_time: "16:55"
+      no_entry_after: "16:00"
+      daily_loss_stop: 600.0   # within 50K/100K MLL budgets
+    families:
+      gc_fvg_1m:
+        strategy: fvg_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 4
+        param_grid:
+          min_gap_points: [2.5, 3.5, 5.0]
+          min_stop_points: [2.8, 3.5]
+          max_risk_points: [3.0, 5.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [20, 40]
+          entry_mode: [mid]
+          vwap_filter: [false, true]
+          tick: [0.10]
+          entry_start_minute: [575]
+          entry_end_minute: [960]
+      gc_vwap_rev:
+        strategy: vwap_band_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 4
+        param_grid:
+          mode: [reversion]
+          band_k: [1.25, 1.75, 2.25]
+          stop_atr: [0.75, 1.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [20, 40]
+          min_stop_points: [2.8]
+          max_risk_points: [3.0, 5.0]
+          atr_n: [14]
+          entry_start_minute: [585]
+          entry_end_minute: [960]
+      gc_vol_spike:
+        strategy: volume_spike_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 6
+        param_grid:
+          z_threshold: [2.0, 2.5, 3.0]
+          vol_lookback: [20, 40]
+          range_mult: [1.0, 1.5]
+          target_r: [1.0, 1.5]
+          expire_minutes: [15, 30]
+          min_stop_points: [2.8]
+          max_risk_points: [3.0, 5.0]
+          tick: [0.10]
+          entry_start_minute: [575]
+          entry_end_minute: [960]
+      gc_fvg_vol:
+        strategy: fvg_volume_scalp
+        timeframe_minutes: 1
+        max_trades_per_day: 3
+        param_grid:
+          min_gap_points: [3.0, 4.5]
+          min_stop_points: [2.8, 3.5]
+          max_risk_points: [3.0, 5.0]
+          target_r: [1.0, 1.5]
+          expire_minutes: [20, 40]
+          z_threshold: [1.5, 2.0]
+          vol_lookback: [20]
+          vwap_filter: [true]
+          tick: [0.10]
+          entry_start_minute: [575]
+          entry_end_minute: [960]
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+# Ambiguity reject threshold (share of trades flagged ambiguous)
+max_ambiguity_pct: 0.10

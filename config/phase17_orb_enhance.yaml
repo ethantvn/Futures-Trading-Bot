@@ -1,0 +1,170 @@
+# Phase 17 — ORB-W causal enhancers (VIX / overnight context / regime) + portfolio
+# MNQ Lucid Flex 25K. No lookahead overnight. Holdout 2026 once.
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-06-28
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 25
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  accounts: [lucid_25k]
+  primary_account: lucid_25k
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+baseline:
+  name: "ORB-W long-only + skipMon (incumbent)"
+  trades_parquet: data/processed/trades_phase9_orb_longonly_wf_oos.parquet
+  skip_monday: true
+
+families:
+  # Pure baseline re-grid (control)
+  orb_w_control:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      vix_min: [0.0]
+      vix_max: [1.0e9]
+      on_range_min_ratio: [0.0]
+      on_range_max_ratio: [1.0e9]
+      allow_regimes: [""]
+      skip_inside_day: [false]
+      only_inside_day: [false]
+
+  orb_vix_band:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      vix_min: [0.0, 12.0, 14.0]
+      vix_max: [20.0, 25.0, 30.0]
+      on_range_min_ratio: [0.0]
+      on_range_max_ratio: [1.0e9]
+      allow_regimes: [""]
+
+  orb_on_context:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      vix_min: [0.0]
+      vix_max: [1.0e9]
+      on_range_min_ratio: [0.0, 0.15, 0.25]
+      on_range_max_ratio: [0.8, 1.2, 2.0]
+      allow_regimes: [""]
+
+  orb_prior_regime:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      pivot_n: [3, 5]
+      allow_regimes: ["up,range", "up", "range"]
+      vix_min: [0.0]
+      vix_max: [1.0e9]
+      on_range_min_ratio: [0.0]
+      on_range_max_ratio: [1.0e9]
+
+  orb_inside_day:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      skip_inside_day: [true]
+      only_inside_day: [false]
+      vix_min: [0.0]
+      vix_max: [1.0e9]
+      on_range_min_ratio: [0.0]
+      on_range_max_ratio: [1.0e9]
+      allow_regimes: [""]
+
+  orb_only_inside:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      skip_inside_day: [false]
+      only_inside_day: [true]
+      vix_min: [0.0]
+      vix_max: [1.0e9]
+      on_range_min_ratio: [0.0]
+      on_range_max_ratio: [1.0e9]
+      allow_regimes: [""]
+
+  # Stacked: best-of-breed axes (still modest grid)
+  orb_vix_on_stack:
+    strategy: orb_enhanced
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      vix_min: [0.0, 12.0]
+      vix_max: [25.0, 30.0]
+      on_range_min_ratio: [0.0, 0.2]
+      on_range_max_ratio: [1.2, 2.0]
+      allow_regimes: ["", "up,range"]
+      pivot_n: [3]

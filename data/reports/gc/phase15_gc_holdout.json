@@ -1,0 +1,89 @@
+{
+ "holdout": [
+  {
+   "family": "gc_fvg_vol",
+   "net": -4147.5000000023465,
+   "trades": 105,
+   "ambiguity_pct": 0.1619047619047619,
+   "mc": {
+    "lucid_50k": {
+     "1": {
+      "pass_rate": 0.1518,
+      "fail_rate": 0.8463,
+      "timeout_rate": 0.0019,
+      "median_days": 16.0,
+      "expected_resets": 5.587615283267458,
+      "expected_cost": 670.8234519104085,
+      "expected_profit_per_attempt": -746.2983000004425
+     }
+    },
+    "lucid_100k": {
+     "1": {
+      "pass_rate": 0.0369,
+      "fail_rate": 0.8793,
+      "timeout_rate": 0.0838,
+      "median_days": 36.0,
+      "expected_resets": 26.100271002710024,
+      "expected_cost": 3879.037940379403,
+      "expected_profit_per_attempt": -1455.3674500007517
+     }
+    }
+   },
+   "params": {
+    "entry_end_minute": 960,
+    "entry_start_minute": 575,
+    "expire_minutes": 40,
+    "max_risk_points": 5.0,
+    "min_gap_points": 3.0,
+    "min_stop_points": 3.5,
+    "target_r": 1.5,
+    "tick": 0.1,
+    "vol_lookback": 20,
+    "vwap_filter": true,
+    "z_threshold": 2.0
+   }
+  },
+  {
+   "family": "gc_fvg_1m",
+   "net": -24958.00000000813,
+   "trades": 331,
+   "ambiguity_pct": 0.18126888217522658,
+   "mc": {
+    "lucid_50k": {
+     "1": {
+      "pass_rate": 0.0672,
+      "fail_rate": 0.9328,
+      "timeout_rate": 0.0,
+      "median_days": 8.0,
+      "expected_resets": 13.880952380952381,
+      "expected_cost": 1458.6904761904761,
+      "expected_profit_per_attempt": -1341.3079500004758
+     }
+    },
+    "lucid_100k": {
+     "1": {
+      "pass_rate": 0.0129,
+      "fail_rate": 0.9853,
+      "timeout_rate": 0.0018,
+      "median_days": 21.0,
+      "expected_resets": 76.51937984496124,
+      "expected_cost": 10937.713178294573,
+      "expected_profit_per_attempt": -2304.1550000006664
+     }
+    }
+   },
+   "params": {
+    "entry_end_minute": 960,
+    "entry_mode": "mid",
+    "entry_start_minute": 575,
+    "expire_minutes": 40,
+    "max_risk_points": 5.0,
+    "min_gap_points": 2.5,
+    "min_stop_points": 3.5,
+    "target_r": 1.5,
+    "tick": 0.1,
+    "vwap_filter": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+2026-07-12 16:36:48 INFO    rebacktest | Cost model: $0.50/side comm + $0.00/side exch + 1 tick slip
+2026-07-12 16:36:50 INFO    src.backtest.engine | orb_filtered: 824 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 16:36:50 INFO    src.validation.walk_forward | grid 1/1 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True} -> 824 trades, net $12034
+2026-07-12 16:36:50 INFO    rebacktest | WF OOS: 473 trades net=$12501
+2026-07-12 16:36:50 INFO    src.backtest.engine | orb_filtered: 67 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 16:38:15 INFO    rebacktest | Report → data/reports/rebacktest_commission050.md
+| **New WF OOS** | **none** | **69.8%** | 30.2% | 0.0% | **51.6%** | 26 |
+| New 2026 holdout | none | 67.8% | 32.1% | 0.0% | 47.7% | 12 |
+
+## Holdout 2026
+
+- Trades: 52, net $2,836
+
+## Recommendation (updated)
+
+**ORB-W long-only + skip Monday @ 1 micro** — unchanged.
+Use **69.8%** pass / **51.6%** pass+payout (no eval time limit, verified Lucid rules).
+

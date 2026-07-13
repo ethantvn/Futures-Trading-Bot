@@ -1,0 +1,105 @@
+{
+ "params": {
+  "range_minutes": 30,
+  "target_r": 1.0,
+  "expire_minutes": 120,
+  "min_width_ratio": 0.25,
+  "max_width_ratio": 0.7,
+  "long_only": true
+ },
+ "new_ledger": "data/processed/trades_rebacktest_orb_w_wf_oos.parquet",
+ "metrics": {
+  "n_trades": 473,
+  "net_pnl": 12501.0,
+  "gross_pnl": 12974.0,
+  "total_costs": 473.0,
+  "win_rate": 0.5835095137420718,
+  "avg_win": 169.78442028985506,
+  "avg_loss": -174.41370558375635,
+  "expectancy": 26.429175475687103,
+  "profit_factor": 1.3638295085784136,
+  "max_consecutive_losses": 7,
+  "max_drawdown": -2593.5,
+  "n_active_days": 473,
+  "best_day": 713.5,
+  "worst_day": -470.5,
+  "sharpe_daily": 2.1669460372600757,
+  "sortino_daily": 4.672745972506653,
+  "trades_per_day": 1.0,
+  "avg_hold_minutes": 180.35729386892177,
+  "time_in_market_pct": 13.069369120936361,
+  "pct_ambiguous_trades": 0.42283298097251587,
+  "exit_reasons": {
+   "stop": 149,
+   "target": 191,
+   "session_end": 1,
+   "eod": 132
+  }
+ },
+ "mc_60d": {
+  "pass": 0.6581,
+  "fail": 0.2843,
+  "timeout": 0.0576,
+  "pap": 0.4825,
+  "med_days": 25.0
+ },
+ "mc_free": {
+  "pass": 0.6978,
+  "fail": 0.3022,
+  "timeout": 0.0,
+  "pap": 0.5162,
+  "med_days": 26.0
+ },
+ "holdout": {
+  "trades": 52,
+  "metrics": {
+   "n_trades": 52,
+   "net_pnl": 2835.5,
+   "gross_pnl": 2887.5,
+   "total_costs": 52.0,
+   "win_rate": 0.6730769230769231,
+   "avg_win": 230.85714285714286,
+   "avg_loss": -308.5,
+   "expectancy": 54.52884615384615,
+   "profit_factor": 1.540661645533416,
+   "max_consecutive_losses": 3,
+   "max_drawdown": -1354.0,
+   "n_active_days": 52,
+   "best_day": 458.0,
+   "worst_day": -638.0,
+   "sharpe_daily": 2.9976982319388754,
+   "sortino_daily": 5.680555336917015,
+   "trades_per_day": 1.0,
+   "avg_hold_minutes": 201.03846153846155,
+   "time_in_market_pct": 14.568004459308806,
+   "pct_ambiguous_trades": 0.0,
+   "exit_reasons": {
+    "eod": 20,
+    "target": 19,
+    "stop": 13
+   }
+  },
+  "mc": {
+   "pass": 0.6785,
+   "fail": 0.3215,
+   "timeout": 0.0,
+   "pap": 0.4773,
+   "med_days": 12.0
+  }
+ },
+ "old": {
+  "trades": 473,
+  "net": 13730.959999999994,
+  "costs": 936.5400000000005,
+  "mc_pass": 0.6432,
+  "mc_fail": 0.313,
+  "mc_timeout": 0.0438,
+  "mc_pap": 0.4571,
+  "mc_med_days": 23.0,
+  "free_pass": 0.6771,
+  "free_fail": 0.3229,
+  "free_timeout": 0.0,
+  "free_pap": 0.4791,
+  "free_med_days": 24.0
+ }
+}

@@ -1,0 +1,32 @@
+# MGC (Micro COMEX Gold) futures data pipeline. Mirrors config/data_gc.yaml.
+# Phase 13: micro gold — 1/10th GC dollar risk.
+raw:
+  dir: data/raw/GLBX-20260711-SJH7NNPY6M
+  bars_file: glbx-mdp3-20210611-20260710.ohlcv-1m.csv.zst
+  condition_file: condition.json
+  metadata_file: metadata.json
+
+processed_dir: data/processed/mgc
+reports_dir: data/reports/mgc
+
+timezone: America/New_York
+tick_size: 0.10
+# MGC contract: 10 troy oz, $0.10/oz tick = $1/tick -> $10 per 1.00 price point.
+point_value: 10.0
+
+sessions:
+  open: "18:00"
+  close: "17:00"
+  rth_start: "09:30"
+  rth_end: "16:00"
+
+rollover:
+  method: volume
+  confirm_sessions: 2
+  # Standard COMEX gold months only (exclude F/H/K/U/X flicker).
+  liquid_month_codes: [G, J, M, Q, V, Z]
+
+resample_minutes: [3, 5, 15, 30]
+
+quality:
+  min_minutes_full_day: 1200

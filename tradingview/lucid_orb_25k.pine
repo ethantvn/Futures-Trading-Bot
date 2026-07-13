@@ -1,0 +1,235 @@
+//@version=5
+// Lucid Flex 25K — Validated Opening Range Breakout (+ optional Skip Monday)
+// ─────────────────────────────────────────────────────────────────────────────
+// CHART: MNQ1! · 5-minute · timezone America/New_York · 1 micro
+// PARAMS: range 30m | target 1.5R | expire 120m | flat 15:55 ET
+// SKIP MONDAY (default ON): research on WF OOS showed ~52% vs ~44% Lucid pass
+// rate; held on 2026 holdout. Wed skip NOT included (failed holdout).
+// ─────────────────────────────────────────────────────────────────────────────
+strategy(
+     title                  = "Lucid ORB 25K (Validated)",
+     shorttitle             = "ORB 25K",
+     overlay                = true,
+     pyramiding             = 0,
+     initial_capital        = 25000,
+     default_qty_type       = strategy.fixed,
+     default_qty_value      = 1,
+     commission_type        = strategy.commission.cash_per_contract,
+     commission_value       = 0.99,
+     slippage               = 1,
+     calc_on_every_tick     = false,
+     process_orders_on_close = false,
+     max_labels_count       = 500,
+     max_lines_count        = 500)
+
+// ── Inputs ──────────────────────────────────────────────────────────────────
+grpCore   = "Strategy"
+rangeMin  = input.int(30,   "Opening range (minutes)", minval=5, maxval=120, group=grpCore)
+targetR   = input.float(1.5, "Target (R multiple)", minval=0.5, maxval=5, step=0.1, group=grpCore)
+expireMin = input.int(120,  "Pending expiry (minutes)", minval=15, maxval=300, group=grpCore)
+tickSz    = input.float(0.25, "Tick size", group=grpCore)
+qty       = input.int(1,    "Contracts", minval=1, maxval=20, group=grpCore)
+skipMon   = input.bool(true, "Skip Monday (research: +pass rate)", group=grpCore)
+
+grpSess   = "Session (ET)"
+rthOpenH  = input.int(9,  "RTH open hour", group=grpSess)
+rthOpenM  = input.int(30, "RTH open minute", group=grpSess)
+flatH     = input.int(15, "Force flat hour", group=grpSess)
+flatM     = input.int(55, "Force flat minute", group=grpSess)
+noEntryH  = input.int(15, "No entries after hour", group=grpSess)
+noEntryM  = input.int(30, "No entries after minute", group=grpSess)
+
+grpVis    = "Visuals"
+showOR    = input.bool(true,  "Show opening range box", group=grpVis)
+showTable = input.bool(true,  "Show status table", group=grpVis)
+
+TZ = "America/New_York"
+
+// ── Time ─────────────────────────────────────────────────────────────────────
+nyHour   = hour(time, TZ)
+nyMinute = minute(time, TZ)
+nyMod    = nyHour * 60 + nyMinute
+// bar-CLOSE minute: conditions keyed on it submit orders that fill at the
+// NEXT bar open — required so the 15:55 flat fills at 15:55 (Phase 8 fix)
+nyModClose = hour(time_close, TZ) * 60 + minute(time_close, TZ)
+nyDate   = year(time, TZ) * 10000 + month(time, TZ) * 100 + dayofmonth(time, TZ)
+
+rthOpenMod  = rthOpenH * 60 + rthOpenM
+rthEndMod   = 16 * 60  // 16:00 ET RTH close (early-close fallback)
+rangeEndMod = rthOpenMod + rangeMin
+expireMod   = rangeEndMod + expireMin
+flatMod     = flatH * 60 + flatM
+noEntryMod  = noEntryH * 60 + noEntryM
+rthJustEnded = nyMod >= rthEndMod and nyMod[1] < rthEndMod
+
+inRangeWindow = nyMod >= rthOpenMod and nyMod < rangeEndMod
+rangeJustDone = nyMod >= rangeEndMod and nyMod[1] < rangeEndMod
+newNyDay      = nyDate != nyDate[1]
+isMonday      = dayofweek(time, TZ) == dayofweek.monday
+skipToday     = skipMon and isMonday
+
+// ── Daily state ──────────────────────────────────────────────────────────────
+var float orHigh       = na
+var float orLow        = na
+var bool  rangeLocked  = false
+var bool  ordersPlaced = false
+var bool  tradedToday  = false
+
+var float longEntryPx  = na
+var float shortEntryPx = na
+var float longStopPx   = na
+var float shortStopPx  = na
+var float longTpPx     = na
+var float shortTpPx    = na
+
+var line slLine = na
+var line tpLine = na
+
+if newNyDay
+    orHigh       := na
+    orLow        := na
+    rangeLocked  := false
+    ordersPlaced := false
+    tradedToday  := false
+    longEntryPx  := na
+    shortEntryPx := na
+    longStopPx   := na
+    shortStopPx  := na
+    longTpPx     := na
+    shortTpPx    := na
+
+if inRangeWindow
+    orHigh := na(orHigh) ? high : math.max(orHigh, high)
+    orLow  := na(orLow)  ? low  : math.min(orLow, low)
+
+if rangeJustDone and not na(orHigh) and not na(orLow) and orHigh > orLow
+    rangeLocked  := true
+    risk         = orHigh - orLow
+    longEntryPx  := orHigh + tickSz
+    shortEntryPx := orLow - tickSz
+    longStopPx   := orLow - tickSz
+    shortStopPx  := orHigh + tickSz
+    longTpPx     := longEntryPx + targetR * risk
+    shortTpPx    := shortEntryPx - targetR * risk
+
+canPlaceOrders = rangeLocked and not ordersPlaced and not tradedToday and not skipToday
+     and nyMod >= rangeEndMod and nyMod < noEntryMod and nyMod < expireMod
+     and strategy.position_size == 0
+
+// ── Orders ───────────────────────────────────────────────────────────────────
+if canPlaceOrders
+    strategy.entry("Long", strategy.long, qty=qty, stop=longEntryPx,
+         oca_name="ORB_OCO", oca_type=strategy.oca.cancel)
+    strategy.entry("Short", strategy.short, qty=qty, stop=shortEntryPx,
+         oca_name="ORB_OCO", oca_type=strategy.oca.cancel)
+    ordersPlaced := true
+
+inPosLong  = strategy.position_size > 0
+inPosShort = strategy.position_size < 0
+beforeFlat = nyMod < flatMod
+inFlatWin  = nyMod >= flatMod
+
+if inPosLong and beforeFlat
+    strategy.exit("XL", "Long", stop=longStopPx, limit=longTpPx)
+if inPosShort and beforeFlat
+    strategy.exit("XS", "Short", stop=shortStopPx, limit=shortTpPx)
+
+enteredLong  = inPosLong and strategy.position_size[1] == 0
+enteredShort = inPosShort and strategy.position_size[1] == 0
+exited       = strategy.position_size == 0 and strategy.position_size[1] != 0
+
+if enteredLong or enteredShort
+    tradedToday := true
+    line.delete(slLine)
+    line.delete(tpLine)
+    sl = enteredLong ? longStopPx : shortStopPx
+    tp = enteredLong ? longTpPx : shortTpPx
+    slLine := line.new(bar_index, sl, bar_index, sl,
+         color=color.new(#FF5252, 0), width=2, style=line.style_solid, extend=extend.right)
+    tpLine := line.new(bar_index, tp, bar_index, tp,
+         color=color.new(#00E676, 0), width=2, style=line.style_solid, extend=extend.right)
+
+if exited
+    line.set_x2(slLine, bar_index)
+    line.set_x2(tpLine, bar_index)
+    line.set_extend(slLine, extend.none)
+    line.set_extend(tpLine, extend.none)
+
+if ordersPlaced and strategy.position_size == 0 and (nyModClose >= expireMod or nyModClose >= noEntryMod)
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+
+// Force flat 15:55 ET — rev B (same as lucid_orb_width_25k.pine)
+flatFired = inFlatWin and strategy.position_size != 0
+if inFlatWin
+    strategy.cancel("XL")
+    strategy.cancel("XS")
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+    if inPosLong
+        strategy.close("Long", comment="Flat 15:55")
+    if inPosShort
+        strategy.close("Short", comment="Flat 15:55")
+
+if rthJustEnded and strategy.position_size != 0
+    strategy.cancel("XL")
+    strategy.cancel("XS")
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+    if strategy.position_size > 0
+        strategy.close("Long", comment="Flat RTH end")
+    if strategy.position_size < 0
+        strategy.close("Short", comment="Flat RTH end")
+
+// ── Opening range box (subtle, pre-entry only) ────────────────────────────────
+orHi = showOR and rangeLocked and strategy.position_size == 0 ? orHigh : na
+orLo = showOR and rangeLocked and strategy.position_size == 0 ? orLow  : na
+pHi  = plot(orHi, "OR High", color=color.new(color.blue, 50), linewidth=1, style=plot.style_linebr)
+pLo  = plot(orLo, "OR Low",  color=color.new(color.blue, 50), linewidth=1, style=plot.style_linebr)
+fill(pHi, pLo, color=showOR and rangeLocked and strategy.position_size == 0 ? color.new(color.blue, 93) : na)
+
+// ── Entry arrows (fill only) ─────────────────────────────────────────────────
+plotshape(enteredLong,
+     title="Long entry", style=shape.arrowup, location=location.belowbar,
+     color=color.new(#00E676, 0), size=size.small, text="")
+plotshape(enteredShort,
+     title="Short entry", style=shape.arrowdown, location=location.abovebar,
+     color=color.new(#FF5252, 0), size=size.small, text="")
+
+// ── Skip Monday badge ────────────────────────────────────────────────────────
+if skipToday and rangeJustDone and rangeLocked and barstate.isconfirmed
+    label.new(bar_index, high, "SKIP MON",
+         style=label.style_label_down, color=color.new(color.orange, 20),
+         textcolor=color.white, size=size.tiny)
+
+// ── Status table ─────────────────────────────────────────────────────────────
+var table status = table.new(position.top_right, 2, 5,
+     bgcolor=color.new(#1E1E1E, 15), border_width=1, border_color=color.new(color.gray, 70))
+
+if showTable and barstate.islast
+    inPos = strategy.position_size != 0
+    slPx  = strategy.position_size > 0 ? longStopPx : strategy.position_size < 0 ? shortStopPx : na
+    tpPx  = strategy.position_size > 0 ? longTpPx : strategy.position_size < 0 ? shortTpPx : na
+    stat  = skipToday ? "Skip Mon" : inPos ? (strategy.position_size > 0 ? "Long" : "Short") : rangeLocked ? "Ready" : "Range…"
+
+    table.cell(status, 0, 0, "ORB 25K", text_color=color.white, text_size=size.small)
+    table.cell(status, 1, 0, stat, text_color=skipToday ? color.orange : color.aqua, text_size=size.small)
+    table.cell(status, 0, 1, "SL", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 1, inPos ? str.tostring(slPx, format.mintick) : "—",
+         text_color=color.new(#FF5252, 0), text_size=size.small)
+    table.cell(status, 0, 2, "TP", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 2, inPos ? str.tostring(tpPx, format.mintick) : "—",
+         text_color=color.new(#00E676, 0), text_size=size.small)
+    table.cell(status, 0, 3, "1R", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 3, rangeLocked ? str.tostring(orHigh - orLow, format.mintick) : "—",
+         text_color=color.white, text_size=size.tiny)
+    table.cell(status, 0, 4, "Skip Mon", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 4, skipMon ? "ON" : "OFF", text_color=skipMon ? color.lime : color.gray, text_size=size.tiny)
+
+// ── Alerts ───────────────────────────────────────────────────────────────────
+alertcondition(rangeJustDone and rangeLocked and not skipToday, "ORB ready",
+     "ORB: Range locked — orders armed")
+alertcondition(enteredLong,  "Long entry",  "ORB: Long filled")
+alertcondition(enteredShort, "Short entry", "ORB: Short filled")
+alertcondition(skipToday and rangeJustDone, "Skip Monday",
+     "ORB: Monday — no trade today")

@@ -1,0 +1,90 @@
+{
+ "holdout": [
+  {
+   "family": "overnight_fade",
+   "net": 6053.315585600356,
+   "trades": 68,
+   "pass": 0.9923,
+   "params": {
+    "entry_end_minute": 720,
+    "entry_start_minute": 575,
+    "expire_minutes": 120,
+    "mode": "fade",
+    "require_pdh_confluence": false,
+    "stop_atr": 1.75,
+    "target_r": 1.5,
+    "tick": 0.25
+   }
+  },
+  {
+   "family": "structure_gated_orb",
+   "net": 1093.1599999999999,
+   "trades": 8,
+   "pass": 1.0,
+   "params": {
+    "allow_regimes": "up",
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "pivot_n": 2,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.5
+   }
+  },
+  {
+   "family": "mes_agree_orb",
+   "net": 1038.8599999999992,
+   "trades": 43,
+   "pass": 0.464,
+   "params": {
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "mes_mode": "agree",
+    "mes_path": "data/processed/mes/continuous_5m.parquet",
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "skip_weekdays": [],
+    "target_r": 1.0
+   }
+  },
+  {
+   "family": "mes_diverge_orb",
+   "net": 1155.8999999999996,
+   "trades": 20,
+   "pass": 0.674,
+   "params": {
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "mes_mode": "diverge",
+    "mes_path": "data/processed/mes/continuous_5m.parquet",
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0
+   }
+  },
+  {
+   "family": "round_break",
+   "net": -779.9590281449587,
+   "trades": 243,
+   "pass": 0.2818,
+   "params": {
+    "entry_end_minute": 660,
+    "expire_minutes": 90,
+    "mode": "break",
+    "round_step": 100.0,
+    "stop_atr": 1.75,
+    "target_r": 1.5,
+    "tick": 0.25
+   }
+  }
+ ]
+}

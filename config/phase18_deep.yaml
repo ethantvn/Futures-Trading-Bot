@@ -1,0 +1,299 @@
+# Phase 18 — Deep multi-family search (Lucid 25K pass / pass+payout)
+# Train scorer: UPI (+ Lucid penalties). Holdout 2026 once.
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-06-28
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 30
+  scorer: upi   # upi | sharpe
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  accounts: [lucid_25k]
+  primary_account: lucid_25k
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+baseline:
+  name: "ORB-W long-only + skipMon (incumbent)"
+  trades_parquet: data/processed/trades_phase9_orb_longonly_wf_oos.parquet
+  skip_monday: true
+
+# Density gate for promotion / leaderboard highlight
+gates:
+  min_oos_trades: 100
+  min_trades_per_month: 4.0
+  min_fold_pos_share: 0.50
+  min_pass_to_challenge: 0.55
+
+families:
+  # ----- Control -----
+  orb_w_control:
+    strategy: filtered_orb
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      skip_macro_days: [false]
+
+  # ----- Mean reversion / fade -----
+  orb_fade:
+    strategy: orb_fade
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [15, 30]
+      target_r: [1.0, 1.5]
+      stop_buffer_ticks: [2, 4]
+      expire_minutes: [60, 120]
+      long_only: [false, true]
+      skip_weekdays: [[], [1]]
+      entry_end_minute: [840]  # 14:00
+
+  vwap_reversion:
+    strategy: vwap_reversion
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      band_k: [1.5, 2.0, 2.5]
+      stop_atr: [1.0, 1.5]
+      target_r: [1.0, 1.5]
+      adx_max: [20.0, 30.0]
+      expire_minutes: [45, 90]
+      skip_weekdays: [[1]]
+      long_only: [false]
+
+  bollinger_mr:
+    strategy: bollinger_mr
+    timeframe_minutes: 5
+    max_trades_per_day: 3
+    max_hold_minutes: 90
+    param_grid:
+      bb_n: [20]
+      bb_k: [1.5, 2.0, 2.5]
+      adx_max: [15.0, 20.0, 25.0]
+      stop_atr: [1.0, 1.5, 2.0]
+      entry_start_minute: [600]  # 10:00
+
+  rsi_fade:
+    strategy: rsi_fade
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      rsi_n: [14]
+      rsi_ob: [70, 80]
+      rsi_os: [20, 30]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      adx_max: [20.0, 30.0]
+      expire_minutes: [60]
+      use_stoch: [false]
+      skip_weekdays: [[1]]
+
+  stoch_fade:
+    strategy: rsi_fade
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      use_stoch: [true]
+      stoch_k: [14]
+      stoch_d: [3]
+      stoch_ob: [80]
+      stoch_os: [20]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      adx_max: [25.0]
+      expire_minutes: [60]
+      skip_weekdays: [[1]]
+
+  prior_day_fade:
+    strategy: prior_day_levels
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      mode: [fade]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      expire_minutes: [90, 180]
+      entry_end_minute: [840]
+      structure_gate: [false]
+
+  prior_day_break:
+    strategy: prior_day_levels
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      mode: [break]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120, 180]
+      entry_end_minute: [840]
+      structure_gate: [false]
+
+  overnight_fade:
+    strategy: overnight_levels
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    min_trades_train: 40
+    param_grid:
+      mode: [fade]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      expire_minutes: [90, 120]
+      entry_end_minute: [720]
+
+  overnight_break:
+    strategy: overnight_levels
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      mode: [break]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      expire_minutes: [90, 120]
+      entry_end_minute: [720]
+
+  # ----- Trend / breakout -----
+  donchian:
+    strategy: donchian_breakout
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      channel_n: [10, 20, 40]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5, 2.0]
+      adx_min: [0.0, 20.0]
+      expire_minutes: [120]
+      skip_weekdays: [[1]]
+      long_only: [true, false]
+
+  ema_trend:
+    strategy: ema_trend
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      ema_fast: [8, 12]
+      ema_slow: [21, 34]
+      ema_filter: [50]
+      stop_atr: [1.5, 2.0]
+      target_r: [1.5, 2.5]
+      entry_start_minute: [600]
+
+  atr_breakout:
+    strategy: atr_breakout
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      break_atr: [0.75, 1.0, 1.5]
+      stop_atr: [0.75, 1.0]
+      target_r: [1.0, 1.5, 2.0]
+      expire_minutes: [90, 150]
+      skip_weekdays: [[1]]
+      long_only: [true, false]
+
+  # ----- Momentum -----
+  macd_mom:
+    strategy: macd_momentum
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      fast: [12]
+      slow: [26]
+      signal: [9]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5, 2.0]
+      expire_minutes: [60, 120]
+      skip_weekdays: [[1]]
+
+  roc_vol_mom:
+    strategy: roc_momentum
+    timeframe_minutes: 5
+    max_trades_per_day: 2
+    param_grid:
+      roc_n: [5, 10]
+      roc_thresh: [0.10, 0.20]
+      vol_mult: [1.25, 1.75]
+      stop_atr: [1.25, 1.75]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60]
+      skip_weekdays: [[1]]
+
+  # ----- Seasonality / filters on ORB-W -----
+  orb_tod:
+    strategy: session_tod_orb
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [90, 120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      trade_window: [full, first60, midday, last90]
+
+  orb_macro_skip:
+    strategy: filtered_orb
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      skip_macro_days: [true]
+      macro_events: [all, nfp, cpi]
+
+  orb_risk_cap:
+    strategy: filtered_orb
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+      skip_weekdays: [[1]]
+      max_risk_points: [150, 200, 250, 300]
+
+  # ----- Cross-asset (MES overlay) -----
+  mes_diverge_orb:
+    strategy: mes_divergence_orb
+    timeframe_minutes: 5
+    max_trades_per_day: 1
+    needs_mes: true
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      mes_mode: [diverge, agree]
+      long_only: [true]
+      skip_weekdays: [[1]]

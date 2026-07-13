@@ -1,0 +1,278 @@
+//@version=5
+// Lucid Flex 25K — Phase 16 Overnight Fade rev C (causal overnight)
+// ─────────────────────────────────────────────────────────────────────────────
+// CHART SETTINGS (required):
+//   Symbol MNQ1! · Timeframe 5 minutes · timezone America/New_York
+//   Session template must include Globex (ETH / extended hours).
+//   Order size 1 micro.
+//
+// OVERNIGHT (causal — matches fixed Python overnight_levels):
+//   High/low of session 18:00–09:30 ET only. Locked at 09:30. Afternoon
+//   Globex is NOT included (that leaked into an earlier research bug).
+//
+// ENTRIES 09:35–12:00 ET:
+//   Long: rising-edge rejection of overnight low → limit at ON low
+//   Short: rising-edge rejection of overnight high → limit at ON high
+//   Defaults: stop 1.25×ATR(14), target 1.0R (re-WF after causal fix),
+//   pending expires 120m, max 2 trades/day, force flat 15:55 ET
+//
+// HONEST RESEARCH (causal overnight — NOT the revoked ~96% figures):
+//   WF OOS Lucid 25K pass ~14% — REJECTED vs ORB-W (~64%). Reference only.
+//   See docs/PHASE_16_REPORT.md
+//
+// Re-validate TV export vs Python after pasting into a BLANK strategy tab.
+// ─────────────────────────────────────────────────────────────────────────────
+strategy(
+     title                  = "Lucid Overnight Fade 25K (Phase 16 C)",
+     shorttitle             = "ON-Fade 25K C",
+     overlay                = true,
+     pyramiding             = 0,
+     initial_capital        = 25000,
+     default_qty_type       = strategy.fixed,
+     default_qty_value      = 1,
+     commission_type        = strategy.commission.cash_per_contract,
+     commission_value       = 0.99,
+     slippage               = 1,
+     calc_on_every_tick     = false,
+     process_orders_on_close = false,
+     max_labels_count       = 500,
+     max_lines_count        = 500)
+
+// ── Inputs ──────────────────────────────────────────────────────────────────
+grpCore   = "Strategy (Phase 16)"
+stopAtr   = input.float(1.25, "Stop (ATR multiple)", minval=0.5, maxval=4, step=0.05, group=grpCore)
+targetR   = input.float(1.0,  "Target (R multiple)", minval=0.5, maxval=5, step=0.05, group=grpCore)
+atrLen    = input.int(14,     "ATR length", minval=5, maxval=50, group=grpCore)
+expireMin = input.int(120,    "Pending expiry (minutes)", minval=15, maxval=300, group=grpCore)
+maxTrades = input.int(2,      "Max trades per day", minval=1, maxval=6, group=grpCore)
+qty       = input.int(1,      "Contracts", minval=1, maxval=20, group=grpCore)
+longOk    = input.bool(true,  "Allow longs", group=grpCore)
+shortOk   = input.bool(true,  "Allow shorts", group=grpCore)
+
+grpWin    = "Windows (ET)"
+entryStartH = input.int(9,  "Entry start hour", group=grpWin)
+entryStartM = input.int(35, "Entry start minute", group=grpWin)
+entryEndH   = input.int(12, "Entry end hour", group=grpWin)
+entryEndM   = input.int(0,  "Entry end minute", group=grpWin)
+flatH       = input.int(15, "Force flat hour", group=grpWin)
+flatM       = input.int(55, "Force flat minute", group=grpWin)
+
+grpVis    = "Visuals"
+showON    = input.bool(true, "Show overnight levels", group=grpVis)
+showTable = input.bool(true, "Show status table", group=grpVis)
+
+TZ = "America/New_York"
+
+// ── Time / sessions ──────────────────────────────────────────────────────────
+nyHour   = hour(time, TZ)
+nyMinute = minute(time, TZ)
+nyMod    = nyHour * 60 + nyMinute
+nyModClose = hour(time_close, TZ) * 60 + minute(time_close, TZ)
+
+entryStartMod = entryStartH * 60 + entryStartM
+entryEndMod   = entryEndH * 60 + entryEndM
+flatMod       = flatH * 60 + flatM
+
+// TradingView session strings (timezone America/New_York)
+inOvernight = not na(time(timeframe.period, "1800-0930", TZ))
+inRthOpenBar = not na(time(timeframe.period, "0930-0935", TZ))  // first RTH 5m bar
+inEntryWin  = nyMod >= entryStartMod and nyMod < entryEndMod
+beforeFlat  = nyMod < flatMod
+inFlatWin   = nyMod >= flatMod
+
+// New Globex day at 18:00 ET
+newGlobex = not na(time(timeframe.period, "1800-1805", TZ))
+
+atrVal = ta.atr(atrLen)
+
+// ── Overnight high / low (accumulate 18:00–09:30 only; lock at 09:30) ────────
+var float onBuildH = na
+var float onBuildL = na
+var float onHigh = na
+var float onLow  = na
+var bool  onLocked = false
+var int   tradesToday = 0
+var bool  longArmed = false
+var bool  shortArmed = false
+var int   longArmMod = na
+var int   shortArmMod = na
+var int   longExpireMod = na
+var int   shortExpireMod = na
+
+var float longEntryPx = na
+var float shortEntryPx = na
+var float longStopPx = na
+var float shortStopPx = na
+var float longTpPx = na
+var float shortTpPx = na
+
+if newGlobex
+    onBuildH := high
+    onBuildL := low
+    onHigh := na
+    onLow := na
+    onLocked := false
+    tradesToday := 0
+    longArmed := false
+    shortArmed := false
+    longArmMod := na
+    shortArmMod := na
+    longExpireMod := na
+    shortExpireMod := na
+    longEntryPx := na
+    shortEntryPx := na
+    longStopPx := na
+    shortStopPx := na
+    longTpPx := na
+    shortTpPx := na
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+
+if inOvernight
+    onBuildH := na(onBuildH) ? high : math.max(onBuildH, high)
+    onBuildL := na(onBuildL) ? low  : math.min(onBuildL, low)
+
+// Lock once at the 09:30 bar (levels known; no afternoon leak)
+if inRthOpenBar and not onLocked and not na(onBuildH) and not na(onBuildL)
+    onHigh := onBuildH
+    onLow  := onBuildL
+    onLocked := true
+
+// ── Fade signals (confirmed bar close) ───────────────────────────────────────
+longReject = onLocked and inEntryWin and not na(onLow) and not na(atrVal)
+     and low <= onLow and close > onLow
+     and not (low[1] <= onLow[1] and close[1] > onLow[1])
+shortReject = onLocked and inEntryWin and not na(onHigh) and not na(atrVal)
+     and high >= onHigh and close < onHigh
+     and not (high[1] >= onHigh[1] and close[1] < onHigh[1])
+
+canTrade = strategy.position_size == 0 and tradesToday < maxTrades and beforeFlat
+     and not longArmed and not shortArmed and onLocked
+
+if canTrade and longOk and longReject and barstate.isconfirmed
+    risk = stopAtr * atrVal
+    longEntryPx := onLow
+    longStopPx  := onLow - risk
+    longTpPx    := onLow + targetR * risk
+    strategy.entry("Long", strategy.long, qty=qty, limit=longEntryPx)
+    longArmed := true
+    longArmMod := nyMod
+    longExpireMod := nyMod + expireMin
+
+if canTrade and shortOk and shortReject and barstate.isconfirmed
+    risk = stopAtr * atrVal
+    shortEntryPx := onHigh
+    shortStopPx  := onHigh + risk
+    shortTpPx    := onHigh - targetR * risk
+    strategy.entry("Short", strategy.short, qty=qty, limit=shortEntryPx)
+    shortArmed := true
+    shortArmMod := nyMod
+    shortExpireMod := nyMod + expireMin
+
+inPosLong  = strategy.position_size > 0
+inPosShort = strategy.position_size < 0
+enteredLong  = inPosLong and strategy.position_size[1] == 0
+enteredShort = inPosShort and strategy.position_size[1] == 0
+
+if enteredLong or enteredShort
+    tradesToday += 1
+    longArmed := false
+    shortArmed := false
+
+if inPosLong and beforeFlat and not na(longStopPx)
+    strategy.exit("XL", "Long", stop=longStopPx, limit=longTpPx)
+if inPosShort and beforeFlat and not na(shortStopPx)
+    strategy.exit("XS", "Short", stop=shortStopPx, limit=shortTpPx)
+
+// Cancel unfilled limits after expiry or end of entry window
+longExpired = longArmed and strategy.position_size == 0
+     and (nyModClose >= longExpireMod or nyModClose >= entryEndMod or not beforeFlat)
+shortExpired = shortArmed and strategy.position_size == 0
+     and (nyModClose >= shortExpireMod or nyModClose >= entryEndMod or not beforeFlat)
+
+if longExpired
+    strategy.cancel("Long")
+    longArmed := false
+if shortExpired
+    strategy.cancel("Short")
+    shortArmed := false
+
+// ── Force flat 15:55 ET ──────────────────────────────────────────────────────
+flatFired = inFlatWin and strategy.position_size != 0
+if inFlatWin
+    strategy.cancel("XL")
+    strategy.cancel("XS")
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+    longArmed := false
+    shortArmed := false
+    if inPosLong
+        strategy.close("Long", comment="Flat 15:55")
+    if inPosShort
+        strategy.close("Short", comment="Flat 15:55")
+
+// ── Visuals ──────────────────────────────────────────────────────────────────
+plot(showON and onLocked ? onHigh : na, "ON High",
+     color=color.new(#FF9800, 20), linewidth=2, style=plot.style_linebr)
+plot(showON and onLocked ? onLow : na, "ON Low",
+     color=color.new(#2196F3, 20), linewidth=2, style=plot.style_linebr)
+
+pending = (longArmed or shortArmed) and strategy.position_size == 0
+showLongBrackets  = inPosLong or longArmed
+showShortBrackets = inPosShort or shortArmed
+
+plot(showLongBrackets ? longStopPx : na, "Long SL",
+     color=color.new(#FF5252, 0), linewidth=2, style=plot.style_linebr)
+plot(showLongBrackets ? longTpPx : na, "Long TP",
+     color=color.new(#00E676, 0), linewidth=2, style=plot.style_linebr)
+plot(showShortBrackets ? shortStopPx : na, "Short SL",
+     color=color.new(#FF5252, 0), linewidth=2, style=plot.style_linebr)
+plot(showShortBrackets ? shortTpPx : na, "Short TP",
+     color=color.new(#00E676, 0), linewidth=2, style=plot.style_linebr)
+
+plotshape(enteredLong, title="Long entry", style=shape.arrowup,
+     location=location.belowbar, color=color.new(#00E676, 0), size=size.small)
+plotshape(enteredShort, title="Short entry", style=shape.arrowdown,
+     location=location.abovebar, color=color.new(#FF5252, 0), size=size.small)
+
+if flatFired and barstate.isconfirmed
+    label.new(bar_index, high, "FLAT 15:55",
+         style=label.style_label_down, color=color.new(color.red, 25),
+         textcolor=color.white, size=size.tiny)
+
+var table status = table.new(position.top_right, 2, 6,
+     bgcolor=color.new(#1E1E1E, 15), border_width=1, border_color=color.new(color.gray, 70))
+
+if showTable and barstate.islast
+    inPos = strategy.position_size != 0
+    showLvls = showLongBrackets or showShortBrackets
+    slPx = showLongBrackets ? longStopPx : showShortBrackets ? shortStopPx : na
+    tpPx = showLongBrackets ? longTpPx : showShortBrackets ? shortTpPx : na
+    stat = inPos ? (strategy.position_size > 0 ? "Long" : "Short") :
+         pending ? "Pending" : onLocked ? (inEntryWin ? "Watch" : "Locked") : "ON…"
+    table.cell(status, 0, 0, "ON-Fade C", text_color=color.white, text_size=size.small)
+    table.cell(status, 1, 0, stat, text_color=color.aqua, text_size=size.small)
+    table.cell(status, 0, 1, "ON Hi", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 1, onLocked ? str.tostring(onHigh, format.mintick) : "—",
+         text_color=color.new(#FF9800, 0), text_size=size.small)
+    table.cell(status, 0, 2, "ON Lo", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 2, onLocked ? str.tostring(onLow, format.mintick) : "—",
+         text_color=color.new(#2196F3, 0), text_size=size.small)
+    table.cell(status, 0, 3, "SL", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 3, showLvls ? str.tostring(slPx, format.mintick) : "—",
+         text_color=color.new(#FF5252, 0), text_size=size.small)
+    table.cell(status, 0, 4, "TP", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 4, showLvls ? str.tostring(tpPx, format.mintick) : "—",
+         text_color=color.new(#00E676, 0), text_size=size.small)
+    table.cell(status, 0, 5, "Trades", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 5, str.tostring(tradesToday) + "/" + str.tostring(maxTrades),
+         text_color=color.white, text_size=size.tiny)
+
+alertcondition(longReject and canTrade and longOk, "Long fade signal",
+     "ON-Fade: long rejection — limit at overnight low")
+alertcondition(shortReject and canTrade and shortOk, "Short fade signal",
+     "ON-Fade: short rejection — limit at overnight high")
+alertcondition(enteredLong,  "Long entry",  "ON-Fade: Long filled")
+alertcondition(enteredShort, "Short entry", "ON-Fade: Short filled")
+alertcondition(flatFired, "Flat 15:55",
+     "ON-Fade: force-flat — position closes 15:55 ET")

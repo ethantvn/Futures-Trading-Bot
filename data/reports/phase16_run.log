@@ -1,0 +1,502 @@
+2026-07-12 14:21:17 INFO    run_phase16 | Phase 16: 9 WF folds
+2026-07-12 14:21:17 INFO    run_phase16 | === Phase 16 structure_gated_orb (18 combos, 5m) ===
+2026-07-12 14:21:19 INFO    src.backtest.engine | structure_gated_orb: 498 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:21:19 INFO    src.validation.walk_forward | grid 1/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 2, 'allow_regimes': 'up,range'} -> 498 trades, net $10303
+2026-07-12 14:21:21 INFO    src.backtest.engine | structure_gated_orb: 169 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:21:21 INFO    src.validation.walk_forward | grid 2/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 2, 'allow_regimes': 'up'} -> 169 trades, net $3705
+2026-07-12 14:21:22 INFO    src.backtest.engine | structure_gated_orb: 329 trades, 0 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:21:22 INFO    src.validation.walk_forward | grid 3/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 2, 'allow_regimes': 'range'} -> 329 trades, net $6599
+2026-07-12 14:21:24 INFO    src.backtest.engine | structure_gated_orb: 475 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:21:24 INFO    src.validation.walk_forward | grid 4/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'up,range'} -> 475 trades, net $7117
+2026-07-12 14:21:26 INFO    src.backtest.engine | structure_gated_orb: 193 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:21:27 INFO    src.validation.walk_forward | grid 5/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'up'} -> 193 trades, net $3829
+2026-07-12 14:21:28 INFO    src.backtest.engine | structure_gated_orb: 282 trades, 0 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:21:28 INFO    src.validation.walk_forward | grid 6/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'range'} -> 282 trades, net $3288
+2026-07-12 14:21:30 INFO    src.backtest.engine | structure_gated_orb: 498 trades, 1 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:21:30 INFO    src.validation.walk_forward | grid 7/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'up,range'} -> 498 trades, net $2678
+2026-07-12 14:21:32 INFO    src.backtest.engine | structure_gated_orb: 181 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:21:32 INFO    src.validation.walk_forward | grid 8/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'up'} -> 181 trades, net $176
+2026-07-12 14:21:33 INFO    src.backtest.engine | structure_gated_orb: 317 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:21:33 INFO    src.validation.walk_forward | grid 9/18 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'range'} -> 317 trades, net $2502
+2026-07-12 14:21:35 INFO    src.backtest.engine | structure_gated_orb: 498 trades, 1 ambiguous bars, 5 forced session-end exits
+2026-07-12 14:21:35 INFO    src.validation.walk_forward | grid 10/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 2, 'allow_regimes': 'up,range'} -> 498 trades, net $12810
+2026-07-12 14:21:37 INFO    src.backtest.engine | structure_gated_orb: 169 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:21:37 INFO    src.validation.walk_forward | grid 11/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 2, 'allow_regimes': 'up'} -> 169 trades, net $4752
+2026-07-12 14:21:38 INFO    src.backtest.engine | structure_gated_orb: 329 trades, 0 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:21:38 INFO    src.validation.walk_forward | grid 12/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 2, 'allow_regimes': 'range'} -> 329 trades, net $8059
+2026-07-12 14:21:40 INFO    src.backtest.engine | structure_gated_orb: 475 trades, 1 ambiguous bars, 5 forced session-end exits
+2026-07-12 14:21:40 INFO    src.validation.walk_forward | grid 13/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'up,range'} -> 475 trades, net $9099
+2026-07-12 14:21:42 INFO    src.backtest.engine | structure_gated_orb: 193 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:21:42 INFO    src.validation.walk_forward | grid 14/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'up'} -> 193 trades, net $6284
+2026-07-12 14:21:43 INFO    src.backtest.engine | structure_gated_orb: 282 trades, 0 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:21:43 INFO    src.validation.walk_forward | grid 15/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'range'} -> 282 trades, net $2816
+2026-07-12 14:21:45 INFO    src.backtest.engine | structure_gated_orb: 498 trades, 1 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:21:45 INFO    src.validation.walk_forward | grid 16/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'up,range'} -> 498 trades, net $5463
+2026-07-12 14:21:46 INFO    src.backtest.engine | structure_gated_orb: 181 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:21:46 INFO    src.validation.walk_forward | grid 17/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'up'} -> 181 trades, net $1528
+2026-07-12 14:21:48 INFO    src.backtest.engine | structure_gated_orb: 317 trades, 0 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:21:48 INFO    src.validation.walk_forward | grid 18/18 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'range'} -> 317 trades, net $3935
+2026-07-12 14:21:48 INFO    run_phase16 | structure_gated_orb done: OOS 169 net $5837 fold+=78% pass=66.0%
+2026-07-12 14:21:48 INFO    run_phase16 | === Phase 16 structure_gated_vwap (32 combos, 5m) ===
+2026-07-12 14:21:50 INFO    src.backtest.engine | structure_gated_vwap: 1551 trades, 113 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:21:50 INFO    src.validation.walk_forward | grid 1/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1551 trades, net $-1898
+2026-07-12 14:21:52 INFO    src.backtest.engine | structure_gated_vwap: 1565 trades, 115 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:21:52 INFO    src.validation.walk_forward | grid 2/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1565 trades, net $-2318
+2026-07-12 14:21:54 INFO    src.backtest.engine | structure_gated_vwap: 1528 trades, 158 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:21:54 INFO    src.validation.walk_forward | grid 3/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1528 trades, net $739
+2026-07-12 14:21:56 INFO    src.backtest.engine | structure_gated_vwap: 1546 trades, 165 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:21:56 INFO    src.validation.walk_forward | grid 4/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1546 trades, net $259
+2026-07-12 14:21:58 INFO    src.backtest.engine | structure_gated_vwap: 1499 trades, 83 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:21:58 INFO    src.validation.walk_forward | grid 5/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1499 trades, net $-583
+2026-07-12 14:21:59 INFO    src.backtest.engine | structure_gated_vwap: 1530 trades, 103 ambiguous bars, 5 forced session-end exits
+2026-07-12 14:21:59 INFO    src.validation.walk_forward | grid 6/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1530 trades, net $-1147
+2026-07-12 14:22:01 INFO    src.backtest.engine | structure_gated_vwap: 1404 trades, 135 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:22:01 INFO    src.validation.walk_forward | grid 7/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1404 trades, net $-1211
+2026-07-12 14:22:03 INFO    src.backtest.engine | structure_gated_vwap: 1456 trades, 170 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:22:03 INFO    src.validation.walk_forward | grid 8/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1456 trades, net $-2145
+2026-07-12 14:22:04 INFO    src.backtest.engine | structure_gated_vwap: 1614 trades, 104 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:22:05 INFO    src.validation.walk_forward | grid 9/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1614 trades, net $-7036
+2026-07-12 14:22:06 INFO    src.backtest.engine | structure_gated_vwap: 1632 trades, 112 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:22:06 INFO    src.validation.walk_forward | grid 10/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1632 trades, net $-7032
+2026-07-12 14:22:08 INFO    src.backtest.engine | structure_gated_vwap: 1593 trades, 128 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:22:08 INFO    src.validation.walk_forward | grid 11/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1593 trades, net $-8519
+2026-07-12 14:22:10 INFO    src.backtest.engine | structure_gated_vwap: 1620 trades, 140 ambiguous bars, 5 forced session-end exits
+2026-07-12 14:22:10 INFO    src.validation.walk_forward | grid 12/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1620 trades, net $-8307
+2026-07-12 14:22:11 INFO    src.backtest.engine | structure_gated_vwap: 1558 trades, 68 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:22:11 INFO    src.validation.walk_forward | grid 13/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1558 trades, net $-8312
+2026-07-12 14:22:13 INFO    src.backtest.engine | structure_gated_vwap: 1601 trades, 89 ambiguous bars, 9 forced session-end exits
+2026-07-12 14:22:13 INFO    src.validation.walk_forward | grid 14/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1601 trades, net $-7938
+2026-07-12 14:22:15 INFO    src.backtest.engine | structure_gated_vwap: 1497 trades, 87 ambiguous bars, 11 forced session-end exits
+2026-07-12 14:22:15 INFO    src.validation.walk_forward | grid 15/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1497 trades, net $-7669
+2026-07-12 14:22:17 INFO    src.backtest.engine | structure_gated_vwap: 1549 trades, 115 ambiguous bars, 12 forced session-end exits
+2026-07-12 14:22:17 INFO    src.validation.walk_forward | grid 16/32 {'mode': 'reversion', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1549 trades, net $-8060
+2026-07-12 14:22:19 INFO    src.backtest.engine | structure_gated_vwap: 513 trades, 18 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:19 INFO    src.validation.walk_forward | grid 17/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 513 trades, net $-2123
+2026-07-12 14:22:20 INFO    src.backtest.engine | structure_gated_vwap: 532 trades, 22 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:20 INFO    src.validation.walk_forward | grid 18/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 532 trades, net $-2242
+2026-07-12 14:22:22 INFO    src.backtest.engine | structure_gated_vwap: 507 trades, 21 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:22 INFO    src.validation.walk_forward | grid 19/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 507 trades, net $-1228
+2026-07-12 14:22:23 INFO    src.backtest.engine | structure_gated_vwap: 527 trades, 26 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:23 INFO    src.validation.walk_forward | grid 20/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 527 trades, net $-1199
+2026-07-12 14:22:25 INFO    src.backtest.engine | structure_gated_vwap: 498 trades, 12 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:22:25 INFO    src.validation.walk_forward | grid 21/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 498 trades, net $-1266
+2026-07-12 14:22:27 INFO    src.backtest.engine | structure_gated_vwap: 519 trades, 19 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:22:27 INFO    src.validation.walk_forward | grid 22/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 519 trades, net $-1495
+2026-07-12 14:22:28 INFO    src.backtest.engine | structure_gated_vwap: 488 trades, 13 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:22:28 INFO    src.validation.walk_forward | grid 23/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 488 trades, net $-876
+2026-07-12 14:22:30 INFO    src.backtest.engine | structure_gated_vwap: 507 trades, 21 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:22:30 INFO    src.validation.walk_forward | grid 24/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 0.75, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 507 trades, net $-800
+2026-07-12 14:22:32 INFO    src.backtest.engine | structure_gated_vwap: 513 trades, 18 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:32 INFO    src.validation.walk_forward | grid 25/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 513 trades, net $-2123
+2026-07-12 14:22:33 INFO    src.backtest.engine | structure_gated_vwap: 532 trades, 22 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:33 INFO    src.validation.walk_forward | grid 26/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 532 trades, net $-2242
+2026-07-12 14:22:35 INFO    src.backtest.engine | structure_gated_vwap: 507 trades, 21 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:35 INFO    src.validation.walk_forward | grid 27/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 507 trades, net $-1228
+2026-07-12 14:22:37 INFO    src.backtest.engine | structure_gated_vwap: 527 trades, 26 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:37 INFO    src.validation.walk_forward | grid 28/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 527 trades, net $-1199
+2026-07-12 14:22:38 INFO    src.backtest.engine | structure_gated_vwap: 498 trades, 12 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:22:38 INFO    src.validation.walk_forward | grid 29/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 498 trades, net $-1266
+2026-07-12 14:22:40 INFO    src.backtest.engine | structure_gated_vwap: 519 trades, 19 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:22:40 INFO    src.validation.walk_forward | grid 30/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 519 trades, net $-1495
+2026-07-12 14:22:42 INFO    src.backtest.engine | structure_gated_vwap: 488 trades, 13 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:22:42 INFO    src.validation.walk_forward | grid 31/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 45, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 488 trades, net $-876
+2026-07-12 14:22:44 INFO    src.backtest.engine | structure_gated_vwap: 507 trades, 21 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:22:44 INFO    src.validation.walk_forward | grid 32/32 {'mode': 'pullback', 'pivot_n': 3, 'band_atr': 1.25, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 507 trades, net $-800
+2026-07-12 14:22:44 INFO    run_phase16 | structure_gated_vwap done: OOS 919 net $242 fold+=56% pass=18.8%
+2026-07-12 14:22:44 INFO    run_phase16 | === Phase 16 overnight_break (24 combos, 5m) ===
+2026-07-12 14:22:46 INFO    src.backtest.engine | overnight_levels: 782 trades, 14 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:22:46 INFO    src.validation.walk_forward | grid 1/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 782 trades, net $-12897
+2026-07-12 14:22:47 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:47 INFO    src.validation.walk_forward | grid 2/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $202
+2026-07-12 14:22:49 INFO    src.backtest.engine | overnight_levels: 790 trades, 14 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:22:49 INFO    src.validation.walk_forward | grid 3/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 150, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 790 trades, net $-13478
+2026-07-12 14:22:51 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:51 INFO    src.validation.walk_forward | grid 4/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 150, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $202
+2026-07-12 14:22:52 INFO    src.backtest.engine | overnight_levels: 782 trades, 14 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:22:52 INFO    src.validation.walk_forward | grid 5/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 782 trades, net $-21411
+2026-07-12 14:22:54 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:54 INFO    src.validation.walk_forward | grid 6/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-461
+2026-07-12 14:22:56 INFO    src.backtest.engine | overnight_levels: 790 trades, 14 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:22:56 INFO    src.validation.walk_forward | grid 7/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 150, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 790 trades, net $-21923
+2026-07-12 14:22:57 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:22:57 INFO    src.validation.walk_forward | grid 8/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 150, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-461
+2026-07-12 14:22:59 INFO    src.backtest.engine | overnight_levels: 782 trades, 14 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:22:59 INFO    src.validation.walk_forward | grid 9/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 90, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 782 trades, net $-28225
+2026-07-12 14:23:00 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:00 INFO    src.validation.walk_forward | grid 10/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 90, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-575
+2026-07-12 14:23:02 INFO    src.backtest.engine | overnight_levels: 790 trades, 14 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:23:02 INFO    src.validation.walk_forward | grid 11/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 150, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 790 trades, net $-28736
+2026-07-12 14:23:03 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:03 INFO    src.validation.walk_forward | grid 12/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 150, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-575
+2026-07-12 14:23:05 INFO    src.backtest.engine | overnight_levels: 782 trades, 4 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:23:05 INFO    src.validation.walk_forward | grid 13/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 782 trades, net $-23652
+2026-07-12 14:23:07 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:07 INFO    src.validation.walk_forward | grid 14/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-427
+2026-07-12 14:23:08 INFO    src.backtest.engine | overnight_levels: 790 trades, 4 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:23:08 INFO    src.validation.walk_forward | grid 15/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 150, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 790 trades, net $-24208
+2026-07-12 14:23:10 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:10 INFO    src.validation.walk_forward | grid 16/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 150, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-427
+2026-07-12 14:23:11 INFO    src.backtest.engine | overnight_levels: 782 trades, 4 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:23:11 INFO    src.validation.walk_forward | grid 17/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 782 trades, net $-35213
+2026-07-12 14:23:13 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:13 INFO    src.validation.walk_forward | grid 18/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-743
+2026-07-12 14:23:15 INFO    src.backtest.engine | overnight_levels: 790 trades, 4 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:23:15 INFO    src.validation.walk_forward | grid 19/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 150, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 790 trades, net $-35569
+2026-07-12 14:23:16 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:16 INFO    src.validation.walk_forward | grid 20/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 150, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-743
+2026-07-12 14:23:18 INFO    src.backtest.engine | overnight_levels: 782 trades, 4 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:23:18 INFO    src.validation.walk_forward | grid 21/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 90, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 782 trades, net $-47923
+2026-07-12 14:23:20 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:20 INFO    src.validation.walk_forward | grid 22/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 90, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-747
+2026-07-12 14:23:22 INFO    src.backtest.engine | overnight_levels: 790 trades, 4 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:23:22 INFO    src.validation.walk_forward | grid 23/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 150, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 790 trades, net $-48280
+2026-07-12 14:23:23 INFO    src.backtest.engine | overnight_levels: 14 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:23 INFO    src.validation.walk_forward | grid 24/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 150, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $-747
+2026-07-12 14:23:24 INFO    run_phase16 | overnight_break done: OOS 558 net $-9452 fold+=11% pass=0.1%
+2026-07-12 14:23:24 INFO    run_phase16 | === Phase 16 overnight_fade (16 combos, 5m) ===
+2026-07-12 14:23:25 INFO    src.backtest.engine | overnight_levels: 1072 trades, 42 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:23:25 INFO    src.validation.walk_forward | grid 1/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 60, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1072 trades, net $13142
+2026-07-12 14:23:27 INFO    src.backtest.engine | overnight_levels: 16 trades, 2 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:27 INFO    src.validation.walk_forward | grid 2/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 60, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 16 trades, net $500
+2026-07-12 14:23:28 INFO    src.backtest.engine | overnight_levels: 1131 trades, 47 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:23:28 INFO    src.validation.walk_forward | grid 3/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 120, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1131 trades, net $14180
+2026-07-12 14:23:30 INFO    src.backtest.engine | overnight_levels: 17 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:30 INFO    src.validation.walk_forward | grid 4/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 120, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 17 trades, net $573
+2026-07-12 14:23:32 INFO    src.backtest.engine | overnight_levels: 1027 trades, 60 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:23:32 INFO    src.validation.walk_forward | grid 5/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 60, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1027 trades, net $18917
+2026-07-12 14:23:33 INFO    src.backtest.engine | overnight_levels: 15 trades, 2 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:33 INFO    src.validation.walk_forward | grid 6/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 60, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 15 trades, net $498
+2026-07-12 14:23:35 INFO    src.backtest.engine | overnight_levels: 1092 trades, 73 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:23:35 INFO    src.validation.walk_forward | grid 7/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 120, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1092 trades, net $19868
+2026-07-12 14:23:37 INFO    src.backtest.engine | overnight_levels: 16 trades, 2 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:37 INFO    src.validation.walk_forward | grid 8/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 120, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 16 trades, net $590
+2026-07-12 14:23:38 INFO    src.backtest.engine | overnight_levels: 1003 trades, 42 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:23:38 INFO    src.validation.walk_forward | grid 9/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 60, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1003 trades, net $26115
+2026-07-12 14:23:40 INFO    src.backtest.engine | overnight_levels: 14 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:40 INFO    src.validation.walk_forward | grid 10/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 60, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $475
+2026-07-12 14:23:41 INFO    src.backtest.engine | overnight_levels: 1066 trades, 48 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:23:41 INFO    src.validation.walk_forward | grid 11/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 120, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1066 trades, net $28154
+2026-07-12 14:23:43 INFO    src.backtest.engine | overnight_levels: 15 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:43 INFO    src.validation.walk_forward | grid 12/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 120, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 15 trades, net $562
+2026-07-12 14:23:45 INFO    src.backtest.engine | overnight_levels: 952 trades, 51 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:23:45 INFO    src.validation.walk_forward | grid 13/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 60, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 952 trades, net $34228
+2026-07-12 14:23:46 INFO    src.backtest.engine | overnight_levels: 14 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:46 INFO    src.validation.walk_forward | grid 14/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 60, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 14 trades, net $735
+2026-07-12 14:23:48 INFO    src.backtest.engine | overnight_levels: 1005 trades, 60 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:23:48 INFO    src.validation.walk_forward | grid 15/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 120, 'require_pdh_confluence': False, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 1005 trades, net $35607
+2026-07-12 14:23:50 INFO    src.backtest.engine | overnight_levels: 15 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:50 INFO    src.validation.walk_forward | grid 16/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 120, 'require_pdh_confluence': True, 'tick': 0.25, 'entry_start_minute': 575, 'entry_end_minute': 720} -> 15 trades, net $866
+2026-07-12 14:23:50 INFO    run_phase16 | overnight_fade done: OOS 697 net $28105 fold+=100% pass=96.5%
+2026-07-12 14:23:50 INFO    run_phase16 | === Phase 16 prior_day_break (24 combos, 5m) ===
+2026-07-12 14:23:52 INFO    src.backtest.engine | prior_day_levels: 1328 trades, 87 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:52 INFO    src.validation.walk_forward | grid 1/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 120, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1328 trades, net $-5032
+2026-07-12 14:23:54 INFO    src.backtest.engine | prior_day_levels: 1376 trades, 81 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:54 INFO    src.validation.walk_forward | grid 2/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 120, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1376 trades, net $-5703
+2026-07-12 14:23:55 INFO    src.backtest.engine | prior_day_levels: 1371 trades, 92 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:55 INFO    src.validation.walk_forward | grid 3/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 180, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1371 trades, net $-4811
+2026-07-12 14:23:57 INFO    src.backtest.engine | prior_day_levels: 1420 trades, 85 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:57 INFO    src.validation.walk_forward | grid 4/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 180, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1420 trades, net $-6385
+2026-07-12 14:23:59 INFO    src.backtest.engine | prior_day_levels: 1328 trades, 88 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:23:59 INFO    src.validation.walk_forward | grid 5/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 120, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1328 trades, net $-5977
+2026-07-12 14:24:01 INFO    src.backtest.engine | prior_day_levels: 1376 trades, 82 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:01 INFO    src.validation.walk_forward | grid 6/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 120, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1376 trades, net $-6435
+2026-07-12 14:24:02 INFO    src.backtest.engine | prior_day_levels: 1371 trades, 93 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:02 INFO    src.validation.walk_forward | grid 7/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 180, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1371 trades, net $-5704
+2026-07-12 14:24:04 INFO    src.backtest.engine | prior_day_levels: 1420 trades, 86 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:04 INFO    src.validation.walk_forward | grid 8/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 180, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1420 trades, net $-6849
+2026-07-12 14:24:06 INFO    src.backtest.engine | prior_day_levels: 1328 trades, 87 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:06 INFO    src.validation.walk_forward | grid 9/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 120, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1328 trades, net $-9349
+2026-07-12 14:24:07 INFO    src.backtest.engine | prior_day_levels: 1376 trades, 81 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:07 INFO    src.validation.walk_forward | grid 10/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 120, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1376 trades, net $-8051
+2026-07-12 14:24:09 INFO    src.backtest.engine | prior_day_levels: 1371 trades, 92 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:09 INFO    src.validation.walk_forward | grid 11/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 180, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1371 trades, net $-9299
+2026-07-12 14:24:11 INFO    src.backtest.engine | prior_day_levels: 1420 trades, 85 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:11 INFO    src.validation.walk_forward | grid 12/24 {'mode': 'break', 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 180, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1420 trades, net $-8483
+2026-07-12 14:24:13 INFO    src.backtest.engine | prior_day_levels: 1328 trades, 31 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:13 INFO    src.validation.walk_forward | grid 13/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 120, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1328 trades, net $-4941
+2026-07-12 14:24:15 INFO    src.backtest.engine | prior_day_levels: 1376 trades, 32 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:15 INFO    src.validation.walk_forward | grid 14/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 120, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1376 trades, net $-5411
+2026-07-12 14:24:17 INFO    src.backtest.engine | prior_day_levels: 1371 trades, 31 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:17 INFO    src.validation.walk_forward | grid 15/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 180, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1371 trades, net $-4752
+2026-07-12 14:24:18 INFO    src.backtest.engine | prior_day_levels: 1420 trades, 34 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:18 INFO    src.validation.walk_forward | grid 16/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 180, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1420 trades, net $-6354
+2026-07-12 14:24:20 INFO    src.backtest.engine | prior_day_levels: 1328 trades, 31 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:20 INFO    src.validation.walk_forward | grid 17/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 120, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1328 trades, net $-9279
+2026-07-12 14:24:22 INFO    src.backtest.engine | prior_day_levels: 1376 trades, 32 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:22 INFO    src.validation.walk_forward | grid 18/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 120, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1376 trades, net $-8973
+2026-07-12 14:24:23 INFO    src.backtest.engine | prior_day_levels: 1371 trades, 31 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:23 INFO    src.validation.walk_forward | grid 19/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 180, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1371 trades, net $-9189
+2026-07-12 14:24:25 INFO    src.backtest.engine | prior_day_levels: 1420 trades, 34 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:25 INFO    src.validation.walk_forward | grid 20/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 180, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1420 trades, net $-9878
+2026-07-12 14:24:27 INFO    src.backtest.engine | prior_day_levels: 1328 trades, 31 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:24:27 INFO    src.validation.walk_forward | grid 21/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 120, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1328 trades, net $-8507
+2026-07-12 14:24:29 INFO    src.backtest.engine | prior_day_levels: 1376 trades, 32 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:24:29 INFO    src.validation.walk_forward | grid 22/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 120, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1376 trades, net $-5512
+2026-07-12 14:24:30 INFO    src.backtest.engine | prior_day_levels: 1371 trades, 31 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:24:30 INFO    src.validation.walk_forward | grid 23/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 180, 'structure_gate': False, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1371 trades, net $-8257
+2026-07-12 14:24:32 INFO    src.backtest.engine | prior_day_levels: 1420 trades, 34 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:24:32 INFO    src.validation.walk_forward | grid 24/24 {'mode': 'break', 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 180, 'structure_gate': True, 'allow_regimes': 'up,range', 'tick': 0.25} -> 1420 trades, net $-6948
+2026-07-12 14:24:33 INFO    run_phase16 | prior_day_break done: OOS 934 net $-4141 fold+=33% pass=3.6%
+2026-07-12 14:24:33 INFO    run_phase16 | === Phase 16 prior_day_fade (16 combos, 5m) ===
+2026-07-12 14:24:34 INFO    src.backtest.engine | prior_day_levels: 1505 trades, 87 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:34 INFO    src.validation.walk_forward | grid 1/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1505 trades, net $-1172
+2026-07-12 14:24:36 INFO    src.backtest.engine | prior_day_levels: 880 trades, 48 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:36 INFO    src.validation.walk_forward | grid 2/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 880 trades, net $-245
+2026-07-12 14:24:38 INFO    src.backtest.engine | prior_day_levels: 1533 trades, 94 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:38 INFO    src.validation.walk_forward | grid 3/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 150, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1533 trades, net $-1061
+2026-07-12 14:24:40 INFO    src.backtest.engine | prior_day_levels: 909 trades, 52 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:40 INFO    src.validation.walk_forward | grid 4/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 150, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 909 trades, net $-503
+2026-07-12 14:24:41 INFO    src.backtest.engine | prior_day_levels: 1473 trades, 130 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:41 INFO    src.validation.walk_forward | grid 5/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1473 trades, net $21
+2026-07-12 14:24:43 INFO    src.backtest.engine | prior_day_levels: 866 trades, 75 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:43 INFO    src.validation.walk_forward | grid 6/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 866 trades, net $148
+2026-07-12 14:24:45 INFO    src.backtest.engine | prior_day_levels: 1506 trades, 136 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:45 INFO    src.validation.walk_forward | grid 7/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 150, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1506 trades, net $351
+2026-07-12 14:24:47 INFO    src.backtest.engine | prior_day_levels: 897 trades, 81 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:47 INFO    src.validation.walk_forward | grid 8/16 {'mode': 'fade', 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 150, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 897 trades, net $-174
+2026-07-12 14:24:49 INFO    src.backtest.engine | prior_day_levels: 1447 trades, 95 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:49 INFO    src.validation.walk_forward | grid 9/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1447 trades, net $2440
+2026-07-12 14:24:50 INFO    src.backtest.engine | prior_day_levels: 845 trades, 60 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:50 INFO    src.validation.walk_forward | grid 10/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 845 trades, net $1386
+2026-07-12 14:24:52 INFO    src.backtest.engine | prior_day_levels: 1487 trades, 104 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:52 INFO    src.validation.walk_forward | grid 11/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 150, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1487 trades, net $2405
+2026-07-12 14:24:54 INFO    src.backtest.engine | prior_day_levels: 880 trades, 69 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:54 INFO    src.validation.walk_forward | grid 12/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 150, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 880 trades, net $1250
+2026-07-12 14:24:56 INFO    src.backtest.engine | prior_day_levels: 1391 trades, 128 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:24:56 INFO    src.validation.walk_forward | grid 13/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1391 trades, net $1251
+2026-07-12 14:24:58 INFO    src.backtest.engine | prior_day_levels: 814 trades, 76 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:24:58 INFO    src.validation.walk_forward | grid 14/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 814 trades, net $1337
+2026-07-12 14:25:00 INFO    src.backtest.engine | prior_day_levels: 1436 trades, 147 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:25:00 INFO    src.validation.walk_forward | grid 15/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 150, 'structure_gate': False, 'allow_regimes': 'range', 'tick': 0.25} -> 1436 trades, net $1169
+2026-07-12 14:25:01 INFO    src.backtest.engine | prior_day_levels: 852 trades, 91 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:25:01 INFO    src.validation.walk_forward | grid 16/16 {'mode': 'fade', 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 150, 'structure_gate': True, 'allow_regimes': 'range', 'tick': 0.25} -> 852 trades, net $1475
+2026-07-12 14:25:02 INFO    run_phase16 | prior_day_fade done: OOS 851 net $-78 fold+=44% pass=15.4%
+2026-07-12 14:25:02 INFO    run_phase16 | === Phase 16 poc_reversion (24 combos, 5m) ===
+2026-07-12 14:25:04 INFO    src.backtest.engine | poc_value_area: 3282 trades, 131 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:25:04 INFO    src.validation.walk_forward | grid 1/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3282 trades, net $-6960
+2026-07-12 14:25:06 INFO    src.backtest.engine | poc_value_area: 3292 trades, 137 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:25:06 INFO    src.validation.walk_forward | grid 2/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3292 trades, net $-6870
+2026-07-12 14:25:08 INFO    src.backtest.engine | poc_value_area: 3282 trades, 131 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:25:08 INFO    src.validation.walk_forward | grid 3/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3282 trades, net $-6960
+2026-07-12 14:25:11 INFO    src.backtest.engine | poc_value_area: 3292 trades, 137 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:25:11 INFO    src.validation.walk_forward | grid 4/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3292 trades, net $-6870
+2026-07-12 14:25:13 INFO    src.backtest.engine | poc_value_area: 3264 trades, 108 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:13 INFO    src.validation.walk_forward | grid 5/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3264 trades, net $-8672
+2026-07-12 14:25:15 INFO    src.backtest.engine | poc_value_area: 3274 trades, 113 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:15 INFO    src.validation.walk_forward | grid 6/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3274 trades, net $-8527
+2026-07-12 14:25:17 INFO    src.backtest.engine | poc_value_area: 3264 trades, 108 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:17 INFO    src.validation.walk_forward | grid 7/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3264 trades, net $-8672
+2026-07-12 14:25:20 INFO    src.backtest.engine | poc_value_area: 3274 trades, 113 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:20 INFO    src.validation.walk_forward | grid 8/24 {'mode': 'reversion', 'bin_size': 5.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3274 trades, net $-8527
+2026-07-12 14:25:22 INFO    src.backtest.engine | poc_value_area: 3288 trades, 132 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:22 INFO    src.validation.walk_forward | grid 9/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3288 trades, net $-12348
+2026-07-12 14:25:24 INFO    src.backtest.engine | poc_value_area: 3295 trades, 137 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:24 INFO    src.validation.walk_forward | grid 10/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3295 trades, net $-12393
+2026-07-12 14:25:26 INFO    src.backtest.engine | poc_value_area: 3288 trades, 132 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:26 INFO    src.validation.walk_forward | grid 11/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3288 trades, net $-12348
+2026-07-12 14:25:28 INFO    src.backtest.engine | poc_value_area: 3295 trades, 137 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:28 INFO    src.validation.walk_forward | grid 12/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3295 trades, net $-12393
+2026-07-12 14:25:30 INFO    src.backtest.engine | poc_value_area: 3265 trades, 95 ambiguous bars, 9 forced session-end exits
+2026-07-12 14:25:30 INFO    src.validation.walk_forward | grid 13/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3265 trades, net $-11957
+2026-07-12 14:25:32 INFO    src.backtest.engine | poc_value_area: 3273 trades, 103 ambiguous bars, 9 forced session-end exits
+2026-07-12 14:25:32 INFO    src.validation.walk_forward | grid 14/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3273 trades, net $-11729
+2026-07-12 14:25:34 INFO    src.backtest.engine | poc_value_area: 3265 trades, 95 ambiguous bars, 9 forced session-end exits
+2026-07-12 14:25:34 INFO    src.validation.walk_forward | grid 15/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3265 trades, net $-11957
+2026-07-12 14:25:36 INFO    src.backtest.engine | poc_value_area: 3273 trades, 103 ambiguous bars, 9 forced session-end exits
+2026-07-12 14:25:37 INFO    src.validation.walk_forward | grid 16/24 {'mode': 'reversion', 'bin_size': 10.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3273 trades, net $-11729
+2026-07-12 14:25:39 INFO    src.backtest.engine | poc_value_area: 3293 trades, 131 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:39 INFO    src.validation.walk_forward | grid 17/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3293 trades, net $-9529
+2026-07-12 14:25:41 INFO    src.backtest.engine | poc_value_area: 3296 trades, 132 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:41 INFO    src.validation.walk_forward | grid 18/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3296 trades, net $-9831
+2026-07-12 14:25:43 INFO    src.backtest.engine | poc_value_area: 3293 trades, 131 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:43 INFO    src.validation.walk_forward | grid 19/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3293 trades, net $-9529
+2026-07-12 14:25:45 INFO    src.backtest.engine | poc_value_area: 3296 trades, 132 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:25:45 INFO    src.validation.walk_forward | grid 20/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3296 trades, net $-9831
+2026-07-12 14:25:47 INFO    src.backtest.engine | poc_value_area: 3276 trades, 92 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:47 INFO    src.validation.walk_forward | grid 21/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3276 trades, net $-10072
+2026-07-12 14:25:49 INFO    src.backtest.engine | poc_value_area: 3280 trades, 96 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:49 INFO    src.validation.walk_forward | grid 22/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3280 trades, net $-10526
+2026-07-12 14:25:52 INFO    src.backtest.engine | poc_value_area: 3276 trades, 92 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:52 INFO    src.validation.walk_forward | grid 23/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 60, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3276 trades, net $-10072
+2026-07-12 14:25:54 INFO    src.backtest.engine | poc_value_area: 3280 trades, 96 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:25:54 INFO    src.validation.walk_forward | grid 24/24 {'mode': 'reversion', 'bin_size': 20.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 120, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 3280 trades, net $-10526
+2026-07-12 14:25:55 INFO    run_phase16 | poc_reversion done: OOS 2234 net $-7546 fold+=11% pass=4.2%
+2026-07-12 14:25:55 INFO    run_phase16 | === Phase 16 poc_breakout (24 combos, 5m) ===
+2026-07-12 14:25:57 INFO    src.backtest.engine | poc_value_area: 1691 trades, 331 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:25:57 INFO    src.validation.walk_forward | grid 1/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-10710
+2026-07-12 14:25:59 INFO    src.backtest.engine | poc_value_area: 1691 trades, 331 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:25:59 INFO    src.validation.walk_forward | grid 2/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-10710
+2026-07-12 14:26:01 INFO    src.backtest.engine | poc_value_area: 1691 trades, 327 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:26:01 INFO    src.validation.walk_forward | grid 3/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-9123
+2026-07-12 14:26:03 INFO    src.backtest.engine | poc_value_area: 1691 trades, 327 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:26:03 INFO    src.validation.walk_forward | grid 4/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-9123
+2026-07-12 14:26:05 INFO    src.backtest.engine | poc_value_area: 1691 trades, 326 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:05 INFO    src.validation.walk_forward | grid 5/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-8979
+2026-07-12 14:26:08 INFO    src.backtest.engine | poc_value_area: 1691 trades, 326 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:08 INFO    src.validation.walk_forward | grid 6/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-8979
+2026-07-12 14:26:10 INFO    src.backtest.engine | poc_value_area: 1691 trades, 331 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:26:10 INFO    src.validation.walk_forward | grid 7/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-10710
+2026-07-12 14:26:12 INFO    src.backtest.engine | poc_value_area: 1691 trades, 331 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:26:12 INFO    src.validation.walk_forward | grid 8/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-10710
+2026-07-12 14:26:14 INFO    src.backtest.engine | poc_value_area: 1691 trades, 327 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:26:14 INFO    src.validation.walk_forward | grid 9/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-9123
+2026-07-12 14:26:16 INFO    src.backtest.engine | poc_value_area: 1691 trades, 327 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:26:16 INFO    src.validation.walk_forward | grid 10/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-9123
+2026-07-12 14:26:18 INFO    src.backtest.engine | poc_value_area: 1691 trades, 326 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:18 INFO    src.validation.walk_forward | grid 11/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-8979
+2026-07-12 14:26:21 INFO    src.backtest.engine | poc_value_area: 1691 trades, 326 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:21 INFO    src.validation.walk_forward | grid 12/24 {'mode': 'breakout', 'bin_size': 10.0, 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1691 trades, net $-8979
+2026-07-12 14:26:23 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:23 INFO    src.validation.walk_forward | grid 13/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7106
+2026-07-12 14:26:25 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:25 INFO    src.validation.walk_forward | grid 14/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7106
+2026-07-12 14:26:27 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:27 INFO    src.validation.walk_forward | grid 15/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7718
+2026-07-12 14:26:29 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:29 INFO    src.validation.walk_forward | grid 16/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7718
+2026-07-12 14:26:31 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:31 INFO    src.validation.walk_forward | grid 17/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7233
+2026-07-12 14:26:33 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:33 INFO    src.validation.walk_forward | grid 18/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.25, 'target_r': 2.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7233
+2026-07-12 14:26:35 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:35 INFO    src.validation.walk_forward | grid 19/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7106
+2026-07-12 14:26:37 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 4 forced session-end exits
+2026-07-12 14:26:37 INFO    src.validation.walk_forward | grid 20/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7106
+2026-07-12 14:26:39 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:39 INFO    src.validation.walk_forward | grid 21/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7718
+2026-07-12 14:26:41 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:41 INFO    src.validation.walk_forward | grid 22/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7718
+2026-07-12 14:26:43 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:43 INFO    src.validation.walk_forward | grid 23/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 90, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7233
+2026-07-12 14:26:45 INFO    src.backtest.engine | poc_value_area: 1687 trades, 412 ambiguous bars, 7 forced session-end exits
+2026-07-12 14:26:45 INFO    src.validation.walk_forward | grid 24/24 {'mode': 'breakout', 'bin_size': 20.0, 'stop_atr': 1.75, 'target_r': 2.0, 'expire_minutes': 150, 'entry_start_minute': 600, 'entry_end_minute': 900} -> 1687 trades, net $-7233
+2026-07-12 14:26:46 INFO    run_phase16 | poc_breakout done: OOS 1155 net $-7166 fold+=11% pass=0.9%
+2026-07-12 14:26:46 INFO    run_phase16 | === Phase 16 mes_agree_orb (4 combos, 5m) ===
+2026-07-12 14:26:47 INFO    src.backtest.engine | mes_divergence_orb: 1 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:47 INFO    src.validation.walk_forward | grid 1/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 1 trades, net $217
+2026-07-12 14:26:49 INFO    src.backtest.engine | mes_divergence_orb: 2 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:49 INFO    src.validation.walk_forward | grid 2/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 2 trades, net $-3
+2026-07-12 14:26:51 INFO    src.backtest.engine | mes_divergence_orb: 1 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:51 INFO    src.validation.walk_forward | grid 3/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 1 trades, net $108
+2026-07-12 14:26:53 INFO    src.backtest.engine | mes_divergence_orb: 2 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:53 INFO    src.validation.walk_forward | grid 4/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 2 trades, net $-112
+2026-07-12 14:26:53 INFO    run_phase16 | mes_agree_orb done: OOS 0 net $0 fold+=0% pass=0.0%
+2026-07-12 14:26:53 INFO    run_phase16 | === Phase 16 mes_diverge_orb (4 combos, 5m) ===
+2026-07-12 14:26:55 INFO    src.backtest.engine | mes_divergence_orb: 3 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:55 INFO    src.validation.walk_forward | grid 1/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 3 trades, net $-226
+2026-07-12 14:26:56 INFO    src.backtest.engine | mes_divergence_orb: 3 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:56 INFO    src.validation.walk_forward | grid 2/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': False, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 3 trades, net $-226
+2026-07-12 14:26:58 INFO    src.backtest.engine | mes_divergence_orb: 3 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:26:58 INFO    src.validation.walk_forward | grid 3/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 3 trades, net $-226
+2026-07-12 14:27:00 INFO    src.backtest.engine | mes_divergence_orb: 3 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:00 INFO    src.validation.walk_forward | grid 4/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': False, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 3 trades, net $-226
+2026-07-12 14:27:00 INFO    run_phase16 | mes_diverge_orb done: OOS 0 net $0 fold+=0% pass=0.0%
+2026-07-12 14:27:00 INFO    run_phase16 | === Phase 16 round_fade (16 combos, 5m) ===
+2026-07-12 14:27:01 INFO    src.backtest.engine | round_number_magnet: 754 trades, 31 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:01 INFO    src.validation.walk_forward | grid 1/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 754 trades, net $-853
+2026-07-12 14:27:03 INFO    src.backtest.engine | round_number_magnet: 757 trades, 31 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:03 INFO    src.validation.walk_forward | grid 2/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 757 trades, net $-810
+2026-07-12 14:27:04 INFO    src.backtest.engine | round_number_magnet: 747 trades, 32 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:05 INFO    src.validation.walk_forward | grid 3/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 747 trades, net $740
+2026-07-12 14:27:06 INFO    src.backtest.engine | round_number_magnet: 754 trades, 33 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:06 INFO    src.validation.walk_forward | grid 4/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 754 trades, net $794
+2026-07-12 14:27:08 INFO    src.backtest.engine | round_number_magnet: 735 trades, 20 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:08 INFO    src.validation.walk_forward | grid 5/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 735 trades, net $3706
+2026-07-12 14:27:10 INFO    src.backtest.engine | round_number_magnet: 744 trades, 21 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:10 INFO    src.validation.walk_forward | grid 6/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 744 trades, net $3668
+2026-07-12 14:27:11 INFO    src.backtest.engine | round_number_magnet: 724 trades, 20 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:27:11 INFO    src.validation.walk_forward | grid 7/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 724 trades, net $1664
+2026-07-12 14:27:13 INFO    src.backtest.engine | round_number_magnet: 734 trades, 21 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:27:13 INFO    src.validation.walk_forward | grid 8/16 {'mode': 'fade', 'round_step': 50.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 734 trades, net $1433
+2026-07-12 14:27:14 INFO    src.backtest.engine | round_number_magnet: 391 trades, 16 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:14 INFO    src.validation.walk_forward | grid 9/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 391 trades, net $-1861
+2026-07-12 14:27:16 INFO    src.backtest.engine | round_number_magnet: 392 trades, 16 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:16 INFO    src.validation.walk_forward | grid 10/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.0, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 392 trades, net $-1823
+2026-07-12 14:27:17 INFO    src.backtest.engine | round_number_magnet: 385 trades, 15 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:17 INFO    src.validation.walk_forward | grid 11/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 385 trades, net $-1455
+2026-07-12 14:27:19 INFO    src.backtest.engine | round_number_magnet: 388 trades, 16 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:19 INFO    src.validation.walk_forward | grid 12/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.0, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 388 trades, net $-1361
+2026-07-12 14:27:21 INFO    src.backtest.engine | round_number_magnet: 381 trades, 10 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:21 INFO    src.validation.walk_forward | grid 13/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 381 trades, net $1523
+2026-07-12 14:27:22 INFO    src.backtest.engine | round_number_magnet: 384 trades, 11 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:22 INFO    src.validation.walk_forward | grid 14/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.5, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 384 trades, net $1659
+2026-07-12 14:27:24 INFO    src.backtest.engine | round_number_magnet: 378 trades, 9 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:24 INFO    src.validation.walk_forward | grid 15/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 378 trades, net $915
+2026-07-12 14:27:26 INFO    src.backtest.engine | round_number_magnet: 380 trades, 9 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:26 INFO    src.validation.walk_forward | grid 16/16 {'mode': 'fade', 'round_step': 100.0, 'stop_atr': 1.5, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 380 trades, net $896
+2026-07-12 14:27:26 INFO    run_phase16 | round_fade done: OOS 507 net $2889 fold+=44% pass=19.2%
+2026-07-12 14:27:26 INFO    run_phase16 | === Phase 16 round_break (16 combos, 5m) ===
+2026-07-12 14:27:28 INFO    src.backtest.engine | round_number_magnet: 3241 trades, 32 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:28 INFO    src.validation.walk_forward | grid 1/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 3241 trades, net $-5352
+2026-07-12 14:27:29 INFO    src.backtest.engine | round_number_magnet: 3241 trades, 32 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:27:29 INFO    src.validation.walk_forward | grid 2/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 3241 trades, net $-5352
+2026-07-12 14:27:31 INFO    src.backtest.engine | round_number_magnet: 3231 trades, 29 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:27:31 INFO    src.validation.walk_forward | grid 3/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 3231 trades, net $-7780
+2026-07-12 14:27:32 INFO    src.backtest.engine | round_number_magnet: 3234 trades, 29 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:27:32 INFO    src.validation.walk_forward | grid 4/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 3234 trades, net $-7764
+2026-07-12 14:27:34 INFO    src.backtest.engine | round_number_magnet: 3219 trades, 8 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:27:34 INFO    src.validation.walk_forward | grid 5/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 3219 trades, net $-523
+2026-07-12 14:27:36 INFO    src.backtest.engine | round_number_magnet: 3223 trades, 8 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:27:36 INFO    src.validation.walk_forward | grid 6/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 3223 trades, net $-593
+2026-07-12 14:27:37 INFO    src.backtest.engine | round_number_magnet: 3175 trades, 9 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:27:37 INFO    src.validation.walk_forward | grid 7/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 3175 trades, net $-10386
+2026-07-12 14:27:39 INFO    src.backtest.engine | round_number_magnet: 3189 trades, 9 ambiguous bars, 8 forced session-end exits
+2026-07-12 14:27:39 INFO    src.validation.walk_forward | grid 8/16 {'mode': 'break', 'round_step': 50.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 3189 trades, net $-10035
+2026-07-12 14:27:40 INFO    src.backtest.engine | round_number_magnet: 2803 trades, 26 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:40 INFO    src.validation.walk_forward | grid 9/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 2803 trades, net $-9396
+2026-07-12 14:27:42 INFO    src.backtest.engine | round_number_magnet: 2809 trades, 26 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:42 INFO    src.validation.walk_forward | grid 10/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.25, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 2809 trades, net $-9606
+2026-07-12 14:27:44 INFO    src.backtest.engine | round_number_magnet: 2784 trades, 24 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:27:44 INFO    src.validation.walk_forward | grid 11/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 2784 trades, net $-6086
+2026-07-12 14:27:45 INFO    src.backtest.engine | round_number_magnet: 2799 trades, 24 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:27:45 INFO    src.validation.walk_forward | grid 12/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.25, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 2799 trades, net $-6141
+2026-07-12 14:27:47 INFO    src.backtest.engine | round_number_magnet: 2767 trades, 5 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:27:47 INFO    src.validation.walk_forward | grid 13/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 2767 trades, net $-3442
+2026-07-12 14:27:49 INFO    src.backtest.engine | round_number_magnet: 2782 trades, 5 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:27:49 INFO    src.validation.walk_forward | grid 14/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.75, 'target_r': 1.0, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 2782 trades, net $-3571
+2026-07-12 14:27:51 INFO    src.backtest.engine | round_number_magnet: 2716 trades, 5 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:27:51 INFO    src.validation.walk_forward | grid 15/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 45, 'entry_end_minute': 660, 'tick': 0.25} -> 2716 trades, net $55
+2026-07-12 14:27:53 INFO    src.backtest.engine | round_number_magnet: 2746 trades, 5 ambiguous bars, 6 forced session-end exits
+2026-07-12 14:27:53 INFO    src.validation.walk_forward | grid 16/16 {'mode': 'break', 'round_step': 100.0, 'stop_atr': 1.75, 'target_r': 1.5, 'expire_minutes': 90, 'entry_end_minute': 660, 'tick': 0.25} -> 2746 trades, net $-98
+2026-07-12 14:27:53 INFO    run_phase16 | round_break done: OOS 2065 net $2708 fold+=44% pass=22.4%
+2026-07-12 14:27:54 INFO    src.backtest.engine | overnight_levels: 148 trades, 7 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:54 INFO    src.backtest.engine | overnight_levels: 148 trades, 7 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:55 INFO    src.backtest.engine | overnight_levels: 148 trades, 7 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:55 INFO    src.backtest.engine | structure_gated_orb: 19 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:55 INFO    src.backtest.engine | structure_gated_orb: 19 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:55 INFO    src.backtest.engine | structure_gated_orb: 19 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:56 INFO    src.backtest.engine | round_number_magnet: 476 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:56 INFO    src.backtest.engine | round_number_magnet: 476 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:56 INFO    src.backtest.engine | round_number_magnet: 476 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:27:56 INFO    run_phase16 | Report → data/reports/phase16_leaderboard.md
+2026-07-12 14:38:40 INFO    run_phase16 | Phase 16: 9 WF folds
+2026-07-12 14:38:40 INFO    run_phase16 | === Phase 16 mes_agree_orb (4 combos, 5m) ===
+2026-07-12 14:38:42 INFO    src.backtest.engine | mes_divergence_orb: 462 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:38:42 INFO    src.validation.walk_forward | grid 1/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 462 trades, net $8698
+2026-07-12 14:38:43 INFO    src.backtest.engine | mes_divergence_orb: 569 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 14:38:43 INFO    src.validation.walk_forward | grid 2/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 569 trades, net $9549
+2026-07-12 14:38:45 INFO    src.backtest.engine | mes_divergence_orb: 462 trades, 2 ambiguous bars, 5 forced session-end exits
+2026-07-12 14:38:45 INFO    src.validation.walk_forward | grid 3/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 462 trades, net $10376
+2026-07-12 14:38:47 INFO    src.backtest.engine | mes_divergence_orb: 569 trades, 2 ambiguous bars, 5 forced session-end exits
+2026-07-12 14:38:47 INFO    src.validation.walk_forward | grid 4/4 {'mes_mode': 'agree', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 569 trades, net $11481
+2026-07-12 14:38:47 INFO    run_phase16 | mes_agree_orb done: OOS 337 net $8620 fold+=78% pass=62.0%
+2026-07-12 14:38:47 INFO    run_phase16 | === Phase 16 mes_diverge_orb (4 combos, 5m) ===
+2026-07-12 14:38:49 INFO    src.backtest.engine | mes_divergence_orb: 206 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:38:49 INFO    src.validation.walk_forward | grid 1/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 206 trades, net $1550
+2026-07-12 14:38:50 INFO    src.backtest.engine | mes_divergence_orb: 460 trades, 1 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:38:50 INFO    src.validation.walk_forward | grid 2/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': False, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 460 trades, net $6201
+2026-07-12 14:38:52 INFO    src.backtest.engine | mes_divergence_orb: 206 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:38:52 INFO    src.validation.walk_forward | grid 3/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 206 trades, net $1462
+2026-07-12 14:38:54 INFO    src.backtest.engine | mes_divergence_orb: 460 trades, 1 ambiguous bars, 2 forced session-end exits
+2026-07-12 14:38:54 INFO    src.validation.walk_forward | grid 4/4 {'mes_mode': 'diverge', 'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': False, 'skip_weekdays': [1], 'mes_path': 'data/processed/mes/continuous_5m.parquet'} -> 460 trades, net $8130
+2026-07-12 14:38:54 INFO    run_phase16 | mes_diverge_orb done: OOS 227 net $4992 fold+=78% pass=57.8%
+2026-07-12 14:38:55 INFO    src.backtest.engine | overnight_levels: 148 trades, 7 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:38:55 INFO    src.backtest.engine | overnight_levels: 148 trades, 7 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:38:55 INFO    src.backtest.engine | overnight_levels: 148 trades, 7 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:38:55 INFO    src.backtest.engine | structure_gated_orb: 19 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:38:56 INFO    src.backtest.engine | structure_gated_orb: 19 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:38:56 INFO    src.backtest.engine | structure_gated_orb: 19 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 14:38:56 INFO    src.backtest.engine | mes_divergence_orb: 83 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:38:56 INFO    src.backtest.engine | mes_divergence_orb: 83 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:38:56 INFO    src.backtest.engine | mes_divergence_orb: 83 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 14:38:56 INFO    run_phase16 | Report → data/reports/phase16_leaderboard.md

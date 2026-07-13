@@ -1,0 +1,109 @@
+# Phase 12: Focused deep search (~700 combos). Expand Phase 11 axes.
+
+splits:
+  grid_start: 2021-06-11
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-07-10
+
+walk_forward:
+  first_train_start: 2021-06-11
+  last_test_end: 2025-12-31
+  train_months: 18
+  test_months: 6
+  min_trades_train: 20
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  account: lucid_50k
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+families:
+  macro_nfp_cpi:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 12
+    param_grid:
+      macro_kind: [nfp_cpi]
+      release_minute: [510]
+      pre_range_minutes: [15, 30, 45]
+      post_delay_minutes: [0, 5, 15]
+      target_r: [1.0, 1.5, 2.0]
+      expire_minutes: [60, 90]
+      max_risk_points: [3.0, 4.0, 5.0]
+      long_only: [false, true]
+
+  macro_nfp:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 8
+    param_grid:
+      macro_kind: [nfp]
+      release_minute: [510]
+      pre_range_minutes: [15, 30]
+      post_delay_minutes: [0, 5]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [3.0, 5.0]
+      long_only: [false, true]
+
+  macro_cpi:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 8
+    param_grid:
+      macro_kind: [cpi]
+      release_minute: [510]
+      pre_range_minutes: [15, 30]
+      post_delay_minutes: [0, 5]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [3.0, 5.0]
+      long_only: [false, true]
+
+  macro_fomc:
+    strategy: gc_macro_breakout
+    max_trades_per_day: 1
+    min_trades_train: 6
+    param_grid:
+      macro_kind: [fomc]
+      release_minute: [840]
+      pre_range_minutes: [15, 30]
+      post_delay_minutes: [0, 5]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60, 90]
+      max_risk_points: [3.0, 5.0]
+      long_only: [false, true]
+
+  ny_orb_deep:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [570]
+      range_minutes: [15, 30, 45]
+      target_r: [1.0, 1.5]
+      expire_minutes: [90, 120]
+      min_width_ratio: [0.2, 0.25, 0.3]
+      max_width_ratio: [0.7, 1.0e+9]
+      max_risk_points: [3.0, 5.0]
+      long_only: [false, true]
+
+  comex_orb_deep:
+    strategy: gc_session_orb
+    max_trades_per_day: 1
+    param_grid:
+      anchor_minute: [500]
+      range_minutes: [15, 30, 45]
+      target_r: [1.0, 1.5]
+      expire_minutes: [90, 120]
+      min_width_ratio: [0.2, 0.25, 0.3]
+      max_width_ratio: [0.7, 1.0e+9]
+      max_risk_points: [3.0, 5.0]
+      long_only: [false, true]

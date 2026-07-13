@@ -1,0 +1,83 @@
+# Phase 7: consistency-focused candidate search.
+# Same splits/folds/MC discipline as Phase 5 (config/validation.yaml).
+# Holdout 2026 is touched exactly once, for the finalists, via --holdout.
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-06-28
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 40
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1, 2]
+  account: lucid_25k
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+# Candidate families. Each runs the full-period grid + walk-forward and
+# produces data/processed/trades_phase7_<family>_wf_oos.parquet.
+# Grids are deliberately small (prompt: fewer, robust params).
+families:
+  orb_width:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.0, 0.2, 0.25, 0.3]
+      max_width_ratio: [0.55, 0.7, 1.0e+9]
+
+  orb_target:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.25, 1.5, 2.5, 999.0]   # 999 = no target (ride to EOD)
+      expire_minutes: [120]
+
+  orb_timestop:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.5]
+      expire_minutes: [120]
+      exit_minute: [720, 810, 870, null]        # 12:00, 13:30, 14:30, none
+
+  nr7_orb:
+    strategy: nr7_orb
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.5]
+      expire_minutes: [120]
+      nr_n: [5, 7]
+      mode: [nr, inside, either]
+
+  afternoon_breakout:
+    strategy: afternoon_breakout
+    max_trades_per_day: 1
+    param_grid:
+      range_start_minute: [780]
+      range_minutes: [60]
+      target_r: [1.0, 1.5]
+      expire_minutes: [60]
+      with_trend_filter: [true, false]
+
+# Rejected Phase 3-5 families re-scored with consistency metrics only
+# (single fixed-param run each; no walk-forward, no candidacy).
+rescore_rejected: [ema_trend, vwap_pullback, prev_day_hl_breakout, bollinger_mean_reversion]

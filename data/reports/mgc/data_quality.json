@@ -1,0 +1,188 @@
+{
+  "quality": {
+    "tick_size": 0.1,
+    "rows": 3005052,
+    "contracts": 42,
+    "first_bar_utc": "2021-06-11 00:00:00+00:00",
+    "last_bar_utc": "2026-07-10 20:59:00+00:00",
+    "duplicate_rows": 0,
+    "ohlc_violations": 0,
+    "nonpositive_prices": 0,
+    "non_tick_aligned_prices": 0,
+    "zero_volume_bars": 0,
+    "trading_days": 1312,
+    "median_minutes_per_day": 1373.0,
+    "short_days": 27,
+    "short_day_list": [
+      {
+        "date": "2025-11-28",
+        "minutes": 604,
+        "symbol": "MGCG6"
+      },
+      {
+        "date": "2021-09-06",
+        "minutes": 1048,
+        "symbol": "MGCZ1"
+      },
+      {
+        "date": "2021-07-05",
+        "minutes": 1101,
+        "symbol": "MGCQ1"
+      },
+      {
+        "date": "2023-09-04",
+        "minutes": 1105,
+        "symbol": "MGCZ3"
+      },
+      {
+        "date": "2021-11-25",
+        "minutes": 1113,
+        "symbol": "MGCZ1"
+      },
+      {
+        "date": "2022-01-17",
+        "minutes": 1133,
+        "symbol": "MGCG2"
+      },
+      {
+        "date": "2025-07-04",
+        "minutes": 1140,
+        "symbol": "MGCQ5"
+      },
+      {
+        "date": "2026-06-19",
+        "minutes": 1140,
+        "symbol": "MGCQ6"
+      },
+      {
+        "date": "2026-07-03",
+        "minutes": 1140,
+        "symbol": "MGCQ6"
+      },
+      {
+        "date": "2023-11-24",
+        "minutes": 1151,
+        "symbol": "MGCZ3"
+      },
+      {
+        "date": "2022-09-05",
+        "minutes": 1153,
+        "symbol": "MGCZ2"
+      },
+      {
+        "date": "2022-07-04",
+        "minutes": 1159,
+        "symbol": "MGCQ2"
+      },
+      {
+        "date": "2022-11-25",
+        "minutes": 1159,
+        "symbol": "MGCZ2"
+      },
+      {
+        "date": "2023-07-04",
+        "minutes": 1165,
+        "symbol": "MGCQ3"
+      },
+      {
+        "date": "2021-11-26",
+        "minutes": 1166,
+        "symbol": "MGCZ1"
+      },
+      {
+        "date": "2023-05-29",
+        "minutes": 1171,
+        "symbol": "MGCQ3"
+      },
+      {
+        "date": "2022-05-30",
+        "minutes": 1173,
+        "symbol": "MGCQ2"
+      },
+      {
+        "date": "2023-11-23",
+        "minutes": 1176,
+        "symbol": "MGCZ3"
+      },
+      {
+        "date": "2022-06-20",
+        "minutes": 1179,
+        "symbol": "MGCQ2"
+      },
+      {
+        "date": "2024-12-24",
+        "minutes": 1183,
+        "symbol": "MGCG5"
+      },
+      {
+        "date": "2025-12-24",
+        "minutes": 1185,
+        "symbol": "MGCG6"
+      },
+      {
+        "date": "2022-11-24",
+        "minutes": 1188,
+        "symbol": "MGCZ2"
+      },
+      {
+        "date": "2024-02-19",
+        "minutes": 1189,
+        "symbol": "MGCJ4"
+      },
+      {
+        "date": "2023-02-20",
+        "minutes": 1192,
+        "symbol": "MGCJ3"
+      },
+      {
+        "date": "2023-01-16",
+        "minutes": 1198,
+        "symbol": "MGCG3"
+      },
+      {
+        "date": "2023-06-19",
+        "minutes": 1198,
+        "symbol": "MGCQ3"
+      },
+      {
+        "date": "2024-07-04",
+        "minutes": 1199,
+        "symbol": "MGCQ4"
+      }
+    ]
+  },
+  "condition": {
+    "total_days": 1612,
+    "counts": {
+      "available": 1590,
+      "degraded": 9,
+      "missing": 13
+    },
+    "degraded_dates": [
+      "2021-12-05",
+      "2022-01-02",
+      "2025-09-17",
+      "2025-09-24",
+      "2025-11-28",
+      "2026-03-15",
+      "2026-03-16",
+      "2026-04-10",
+      "2026-05-24"
+    ],
+    "missing_dates": [
+      "2026-02-14",
+      "2026-02-21",
+      "2026-02-28",
+      "2026-03-07",
+      "2026-03-14",
+      "2026-03-21",
+      "2026-03-28",
+      "2026-04-04",
+      "2026-04-11",
+      "2026-04-18",
+      "2026-04-25",
+      "2026-05-02",
+      "2026-05-09"
+    ]
+  }
+}

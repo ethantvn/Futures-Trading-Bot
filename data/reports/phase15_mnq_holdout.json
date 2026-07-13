@@ -1,0 +1,95 @@
+{
+ "holdout": [
+  {
+   "family": "mnq_fvg_vol",
+   "net": 423.3699999999999,
+   "trades": 31,
+   "ambiguity_pct": 0.12903225806451613,
+   "mc": {
+    "lucid_25k": {
+     "1": {
+      "pass_rate": 0.3792,
+      "fail_rate": 0.0002,
+      "timeout_rate": 0.6206,
+      "median_days": 47.0,
+      "expected_resets": 1.637130801687764,
+      "expected_cost": 198.22784810126583,
+      "expected_profit_per_attempt": 929.3821390000295
+     }
+    }
+   },
+   "params": {
+    "entry_end_minute": 900,
+    "entry_start_minute": 575,
+    "expire_minutes": 40,
+    "min_gap_points": 30.0,
+    "min_stop_points": 20.0,
+    "target_r": 1.0,
+    "tick": 0.25,
+    "vol_lookback": 20,
+    "vwap_filter": true,
+    "z_threshold": 1.5
+   }
+  },
+  {
+   "family": "mnq_vol_spike",
+   "net": -2872.040000000001,
+   "trades": 323,
+   "ambiguity_pct": 0.09597523219814241,
+   "mc": {
+    "lucid_25k": {
+     "1": {
+      "pass_rate": 0.0466,
+      "fail_rate": 0.8728,
+      "timeout_rate": 0.0806,
+      "median_days": 29.0,
+      "expected_resets": 20.459227467811157,
+      "expected_cost": 1327.5536480686694,
+      "expected_profit_per_attempt": -689.2494779999653
+     }
+    }
+   },
+   "params": {
+    "entry_end_minute": 900,
+    "entry_start_minute": 575,
+    "expire_minutes": 10,
+    "min_stop_points": 15.0,
+    "range_mult": 1.5,
+    "target_r": 1.0,
+    "tick": 0.25,
+    "vol_lookback": 20,
+    "z_threshold": 3.0
+   }
+  },
+  {
+   "family": "mnq_fvg_3m",
+   "net": -195.95999999999998,
+   "trades": 127,
+   "ambiguity_pct": 0.047244094488188976,
+   "mc": {
+    "lucid_25k": {
+     "1": {
+      "pass_rate": 0.0051,
+      "fail_rate": 0.1088,
+      "timeout_rate": 0.8861,
+      "median_days": 49.0,
+      "expected_resets": 195.078431372549,
+      "expected_cost": 11804.70588235294,
+      "expected_profit_per_attempt": -179.5064689999517
+     }
+    }
+   },
+   "params": {
+    "entry_end_minute": 900,
+    "entry_mode": "mid",
+    "entry_start_minute": 575,
+    "expire_minutes": 60,
+    "min_gap_points": 30.0,
+    "min_stop_points": 25.0,
+    "target_r": 1.0,
+    "tick": 0.25,
+    "vwap_filter": false
+   }
+  }
+ ]
+}

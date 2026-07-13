@@ -1,0 +1,306 @@
+{
+  "quality": {
+    "rows": 3528331,
+    "contracts": 33,
+    "first_bar_utc": "2019-05-29 00:00:00+00:00",
+    "last_bar_utc": "2026-06-29 20:59:00+00:00",
+    "duplicate_rows": 0,
+    "ohlc_violations": 0,
+    "nonpositive_prices": 0,
+    "non_tick_aligned_prices": 0,
+    "zero_volume_bars": 0,
+    "trading_days": 1832,
+    "median_minutes_per_day": 1380.0,
+    "short_days": 72,
+    "short_day_list": [
+      {
+        "date": "2025-11-28",
+        "minutes": 510,
+        "symbol": "MESZ5"
+      },
+      {
+        "date": "2020-03-16",
+        "minutes": 584,
+        "symbol": "MESM0"
+      },
+      {
+        "date": "2021-04-02",
+        "minutes": 882,
+        "symbol": "MESM1"
+      },
+      {
+        "date": "2023-04-07",
+        "minutes": 898,
+        "symbol": "MESM3"
+      },
+      {
+        "date": "2019-12-24",
+        "minutes": 914,
+        "symbol": "MESH0"
+      },
+      {
+        "date": "2026-04-03",
+        "minutes": 915,
+        "symbol": "MESM6"
+      },
+      {
+        "date": "2025-01-09",
+        "minutes": 930,
+        "symbol": "MESH5"
+      },
+      {
+        "date": "2020-03-09",
+        "minutes": 969,
+        "symbol": "MESH0"
+      },
+      {
+        "date": "2020-06-30",
+        "minutes": 971,
+        "symbol": "MESU0"
+      },
+      {
+        "date": "2020-03-18",
+        "minutes": 975,
+        "symbol": "MESM0"
+      },
+      {
+        "date": "2019-07-04",
+        "minutes": 1007,
+        "symbol": "MESU9"
+      },
+      {
+        "date": "2020-02-28",
+        "minutes": 1019,
+        "symbol": "MESH0"
+      },
+      {
+        "date": "2020-01-20",
+        "minutes": 1047,
+        "symbol": "MESH0"
+      },
+      {
+        "date": "2019-11-28",
+        "minutes": 1057,
+        "symbol": "MESZ9"
+      },
+      {
+        "date": "2020-02-17",
+        "minutes": 1096,
+        "symbol": "MESH0"
+      },
+      {
+        "date": "2019-11-29",
+        "minutes": 1105,
+        "symbol": "MESZ9"
+      },
+      {
+        "date": "2023-07-04",
+        "minutes": 1119,
+        "symbol": "MESU3"
+      },
+      {
+        "date": "2019-07-03",
+        "minutes": 1120,
+        "symbol": "MESU9"
+      },
+      {
+        "date": "2019-12-26",
+        "minutes": 1120,
+        "symbol": "MESH0"
+      },
+      {
+        "date": "2023-11-23",
+        "minutes": 1129,
+        "symbol": "MESZ3"
+      },
+      {
+        "date": "2024-07-04",
+        "minutes": 1129,
+        "symbol": "MESU4"
+      },
+      {
+        "date": "2021-07-05",
+        "minutes": 1130,
+        "symbol": "MESU1"
+      },
+      {
+        "date": "2024-06-19",
+        "minutes": 1131,
+        "symbol": "MESU4"
+      },
+      {
+        "date": "2024-11-28",
+        "minutes": 1132,
+        "symbol": "MESZ4"
+      },
+      {
+        "date": "2024-05-27",
+        "minutes": 1133,
+        "symbol": "MESM4"
+      },
+      {
+        "date": "2021-05-31",
+        "minutes": 1134,
+        "symbol": "MESM1"
+      },
+      {
+        "date": "2021-09-06",
+        "minutes": 1135,
+        "symbol": "MESU1"
+      },
+      {
+        "date": "2023-09-04",
+        "minutes": 1135,
+        "symbol": "MESU3"
+      },
+      {
+        "date": "2021-02-15",
+        "minutes": 1138,
+        "symbol": "MESH1"
+      },
+      {
+        "date": "2021-11-25",
+        "minutes": 1138,
+        "symbol": "MESZ1"
+      },
+      {
+        "date": "2023-11-24",
+        "minutes": 1138,
+        "symbol": "MESZ3"
+      },
+      {
+        "date": "2024-02-19",
+        "minutes": 1138,
+        "symbol": "MESH4"
+      },
+      {
+        "date": "2019-09-02",
+        "minutes": 1139,
+        "symbol": "MESU9"
+      },
+      {
+        "date": "2021-01-18",
+        "minutes": 1139,
+        "symbol": "MESH1"
+      },
+      {
+        "date": "2023-06-19",
+        "minutes": 1139,
+        "symbol": "MESU3"
+      },
+      {
+        "date": "2024-01-15",
+        "minutes": 1139,
+        "symbol": "MESH4"
+      },
+      {
+        "date": "2024-09-02",
+        "minutes": 1139,
+        "symbol": "MESU4"
+      },
+      {
+        "date": "2020-05-25",
+        "minutes": 1140,
+        "symbol": "MESM0"
+      },
+      {
+        "date": "2020-07-03",
+        "minutes": 1140,
+        "symbol": "MESU0"
+      },
+      {
+        "date": "2020-09-07",
+        "minutes": 1140,
+        "symbol": "MESU0"
+      },
+      {
+        "date": "2020-11-26",
+        "minutes": 1140,
+        "symbol": "MESZ0"
+      },
+      {
+        "date": "2022-01-17",
+        "minutes": 1140,
+        "symbol": "MESH2"
+      },
+      {
+        "date": "2022-02-21",
+        "minutes": 1140,
+        "symbol": "MESH2"
+      },
+      {
+        "date": "2022-05-30",
+        "minutes": 1140,
+        "symbol": "MESM2"
+      },
+      {
+        "date": "2022-06-20",
+        "minutes": 1140,
+        "symbol": "MESU2"
+      },
+      {
+        "date": "2022-07-04",
+        "minutes": 1140,
+        "symbol": "MESU2"
+      },
+      {
+        "date": "2022-09-05",
+        "minutes": 1140,
+        "symbol": "MESU2"
+      },
+      {
+        "date": "2022-11-24",
+        "minutes": 1140,
+        "symbol": "MESZ2"
+      },
+      {
+        "date": "2023-01-16",
+        "minutes": 1140,
+        "symbol": "MESH3"
+      },
+      {
+        "date": "2023-02-20",
+        "minutes": 1140,
+        "symbol": "MESH3"
+      }
+    ]
+  },
+  "condition": {
+    "total_days": 2239,
+    "counts": {
+      "available": 2213,
+      "degraded": 13,
+      "missing": 13
+    },
+    "degraded_dates": [
+      "2020-02-27",
+      "2020-02-28",
+      "2020-06-30",
+      "2020-07-01",
+      "2021-12-05",
+      "2022-01-02",
+      "2025-09-17",
+      "2025-09-24",
+      "2025-11-28",
+      "2026-03-15",
+      "2026-03-16",
+      "2026-04-10",
+      "2026-05-24"
+    ],
+    "missing_dates": [
+      "2026-02-14",
+      "2026-02-21",
+      "2026-02-28",
+      "2026-03-07",
+      "2026-03-14",
+      "2026-03-21",
+      "2026-03-28",
+      "2026-04-04",
+      "2026-04-11",
+      "2026-04-18",
+      "2026-04-25",
+      "2026-05-02",
+      "2026-05-09"
+    ]
+  }
+}

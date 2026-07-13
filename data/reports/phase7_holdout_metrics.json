@@ -1,0 +1,503 @@
+{
+ "holdout": [
+  {
+   "name": "orb_width (holdout)",
+   "trade_metrics": {
+    "n_trades": 96,
+    "net_pnl": 2072.9199999999983,
+    "gross_pnl": 2263.0,
+    "total_costs": 190.07999999999998,
+    "win_rate": 0.59375,
+    "avg_win": 241.61649122807017,
+    "avg_loss": -299.98,
+    "expectancy": 21.59291666666665,
+    "profit_factor": 1.1771844618701075,
+    "max_consecutive_losses": 4,
+    "max_drawdown": -2845.0799999999995,
+    "n_active_days": 96,
+    "best_day": 487.52,
+    "worst_day": -638.98,
+    "sharpe_daily": 1.1470303795387606,
+    "sortino_daily": 2.665050730826057,
+    "trades_per_day": 1.0,
+    "avg_hold_minutes": 179.30208333333334,
+    "time_in_market_pct": 12.99290458937198,
+    "pct_ambiguous_trades": 0.0,
+    "exit_reasons": {
+     "stop": 30,
+     "eod": 29,
+     "target": 37
+    }
+   },
+   "consistency": {
+    "full": {
+     "active_days": 96,
+     "net_pnl": 2072.9200000000005,
+     "sharpe_daily": 1.1470303795387595,
+     "sortino_daily": 2.6650507308260543,
+     "max_drawdown": -2845.0799999999995,
+     "ulcer_index": 817.8840386733722,
+     "upi": 6.65303972532109,
+     "equity_r2": 0.6055297430591238,
+     "max_consec_losing_days": 4,
+     "win_day_rate": 0.59375,
+     "worst_day": -638.98,
+     "best_day": 487.52
+    },
+    "last_90d": {
+     "active_days": 90,
+     "net_pnl": 1790.2999999999993,
+     "sharpe_daily": 1.0413204935017,
+     "sortino_daily": 2.4076142397816915,
+     "max_drawdown": -2845.08,
+     "ulcer_index": 843.5996491543445,
+     "upi": 5.942202566140291,
+     "equity_r2": 0.5218784890951069,
+     "max_consec_losing_days": 4,
+     "win_day_rate": 0.5888888888888889,
+     "worst_day": -638.98,
+     "best_day": 487.52
+    },
+    "last_252d": {
+     "active_days": 96,
+     "net_pnl": 2072.9200000000005,
+     "sharpe_daily": 1.1470303795387595,
+     "sortino_daily": 2.6650507308260543,
+     "max_drawdown": -2845.0799999999995,
+     "ulcer_index": 817.8840386733722,
+     "upi": 6.65303972532109,
+     "equity_r2": 0.6055297430591238,
+     "max_consec_losing_days": 4,
+     "win_day_rate": 0.59375,
+     "worst_day": -638.98,
+     "best_day": 487.52
+    },
+    "last_756d": {
+     "active_days": 96,
+     "net_pnl": 2072.9200000000005,
+     "sharpe_daily": 1.1470303795387595,
+     "sortino_daily": 2.6650507308260543,
+     "max_drawdown": -2845.0799999999995,
+     "ulcer_index": 817.8840386733722,
+     "upi": 6.65303972532109,
+     "equity_r2": 0.6055297430591238,
+     "max_consec_losing_days": 4,
+     "win_day_rate": 0.59375,
+     "worst_day": -638.98,
+     "best_day": 487.52
+    }
+   },
+   "rolling_6m": {
+    "n_windows": 0,
+    "negative_share": null,
+    "worst_window": null
+   },
+   "year_pnls": {
+    "2026": 2072.919999999999
+   },
+   "mc": {
+    "1": {
+     "pass_rate": 0.5104,
+     "fail_rate": 0.4888,
+     "timeout_rate": 0.0008,
+     "median_days": 14.0,
+     "expected_resets": 0.9592476489028214,
+     "expected_cost": 157.5548589341693,
+     "expected_profit_per_attempt": 384.9226500000061
+    },
+    "2": {
+     "pass_rate": 0.4473,
+     "fail_rate": 0.5527,
+     "timeout_rate": 0.0,
+     "median_days": 6.0,
+     "expected_resets": 1.23563603845294,
+     "expected_cost": 174.1381623071764,
+     "expected_profit_per_attempt": 355.31273600000554
+    }
+   },
+   "params": {
+    "expire_minutes": 120,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "target_r": 1.0
+   }
+  },
+  {
+   "name": "orb_width +skipMon (holdout)",
+   "trade_metrics": {
+    "n_trades": 76,
+    "net_pnl": 1870.5199999999986,
+    "gross_pnl": 2021.0,
+    "total_costs": 150.48,
+    "win_rate": 0.6052631578947368,
+    "avg_win": 233.23739130434782,
+    "avg_loss": -295.28000000000003,
+    "expectancy": 24.612105263157876,
+    "profit_factor": 1.2111577711550616,
+    "max_consecutive_losses": 5,
+    "max_drawdown": -1860.6400000000003,
+    "n_active_days": 76,
+    "best_day": 457.02,
+    "worst_day": -638.98,
+    "sharpe_daily": 1.3398250836339265,
+    "sortino_daily": 2.823278853672805,
+    "trades_per_day": 1.0,
+    "avg_hold_minutes": 183.3815789473684,
+    "time_in_market_pct": 13.288520213577423,
+    "pct_ambiguous_trades": 0.0,
+    "exit_reasons": {
+     "target": 29,
+     "stop": 22,
+     "eod": 25
+    }
+   },
+   "consistency": {
+    "full": {
+     "active_days": 76,
+     "net_pnl": 1870.5199999999986,
+     "sharpe_daily": 1.3398250836339265,
+     "sortino_daily": 2.823278853672805,
+     "max_drawdown": -1860.6400000000003,
+     "ulcer_index": 624.4061675830801,
+     "upi": 9.933038538557591,
+     "equity_r2": 0.6800034679053493,
+     "max_consec_losing_days": 5,
+     "win_day_rate": 0.6052631578947368,
+     "worst_day": -638.98,
+     "best_day": 457.02
+    },
+    "last_90d": {
+     "active_days": 76,
+     "net_pnl": 1870.5199999999986,
+     "sharpe_daily": 1.3398250836339265,
+     "sortino_daily": 2.823278853672805,
+     "max_drawdown": -1860.6400000000003,
+     "ulcer_index": 624.4061675830801,
+     "upi": 9.933038538557591,
+     "equity_r2": 0.6800034679053493,
+     "max_consec_losing_days": 5,
+     "win_day_rate": 0.6052631578947368,
+     "worst_day": -638.98,
+     "best_day": 457.02
+    },
+    "last_252d": {
+     "active_days": 76,
+     "net_pnl": 1870.5199999999986,
+     "sharpe_daily": 1.3398250836339265,
+     "sortino_daily": 2.823278853672805,
+     "max_drawdown": -1860.6400000000003,
+     "ulcer_index": 624.4061675830801,
+     "upi": 9.933038538557591,
+     "equity_r2": 0.6800034679053493,
+     "max_consec_losing_days": 5,
+     "win_day_rate": 0.6052631578947368,
+     "worst_day": -638.98,
+     "best_day": 457.02
+    },
+    "last_756d": {
+     "active_days": 76,
+     "net_pnl": 1870.5199999999986,
+     "sharpe_daily": 1.3398250836339265,
+     "sortino_daily": 2.823278853672805,
+     "max_drawdown": -1860.6400000000003,
+     "ulcer_index": 624.4061675830801,
+     "upi": 9.933038538557591,
+     "equity_r2": 0.6800034679053493,
+     "max_consec_losing_days": 5,
+     "win_day_rate": 0.6052631578947368,
+     "worst_day": -638.98,
+     "best_day": 457.02
+    }
+   },
+   "rolling_6m": {
+    "n_windows": 0,
+    "negative_share": null,
+    "worst_window": null
+   },
+   "year_pnls": {
+    "2026": 1870.5199999999993
+   },
+   "mc": {
+    "1": {
+     "pass_rate": 0.5416,
+     "fail_rate": 0.4574,
+     "timeout_rate": 0.001,
+     "median_days": 15.0,
+     "expected_resets": 0.8463810930576072,
+     "expected_cost": 150.78286558345644,
+     "expected_profit_per_attempt": 429.77602800000665
+    },
+    "2": {
+     "pass_rate": 0.4583,
+     "fail_rate": 0.5417,
+     "timeout_rate": 0.0,
+     "median_days": 7.0,
+     "expected_resets": 1.181976871045167,
+     "expected_cost": 170.91861226271004,
+     "expected_profit_per_attempt": 459.7679400000061
+    }
+   },
+   "params": {
+    "expire_minutes": 120,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "target_r": 1.0,
+    "skip_weekdays": [
+     1
+    ]
+   }
+  },
+  {
+   "name": "nr7_orb (holdout)",
+   "trade_metrics": {
+    "n_trades": 20,
+    "net_pnl": 748.8999999999997,
+    "gross_pnl": 788.5,
+    "total_costs": 39.6,
+    "win_rate": 0.45,
+    "avg_win": 361.96444444444444,
+    "avg_loss": -228.0709090909091,
+    "expectancy": 37.444999999999986,
+    "profit_factor": 1.298511627165395,
+    "max_consecutive_losses": 3,
+    "max_drawdown": -731.96,
+    "n_active_days": 20,
+    "best_day": 686.77,
+    "worst_day": -683.48,
+    "sharpe_daily": 1.6322964639549582,
+    "sortino_daily": 2.892900487187668,
+    "trades_per_day": 1.0,
+    "avg_hold_minutes": 246.35,
+    "time_in_market_pct": 17.85144927536232,
+    "pct_ambiguous_trades": 0.0,
+    "exit_reasons": {
+     "session_end": 1,
+     "stop": 5,
+     "target": 4,
+     "eod": 10
+    }
+   },
+   "consistency": {
+    "full": {
+     "active_days": 20,
+     "net_pnl": 748.8999999999996,
+     "sharpe_daily": 1.6322964639549584,
+     "sortino_daily": 2.892900487187668,
+     "max_drawdown": -731.96,
+     "ulcer_index": 234.68274044973995,
+     "upi": 40.20806976225358,
+     "equity_r2": 0.7445293001340725,
+     "max_consec_losing_days": 3,
+     "win_day_rate": 0.45,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    },
+    "last_90d": {
+     "active_days": 20,
+     "net_pnl": 748.8999999999996,
+     "sharpe_daily": 1.6322964639549584,
+     "sortino_daily": 2.892900487187668,
+     "max_drawdown": -731.96,
+     "ulcer_index": 234.68274044973995,
+     "upi": 40.20806976225358,
+     "equity_r2": 0.7445293001340725,
+     "max_consec_losing_days": 3,
+     "win_day_rate": 0.45,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    },
+    "last_252d": {
+     "active_days": 20,
+     "net_pnl": 748.8999999999996,
+     "sharpe_daily": 1.6322964639549584,
+     "sortino_daily": 2.892900487187668,
+     "max_drawdown": -731.96,
+     "ulcer_index": 234.68274044973995,
+     "upi": 40.20806976225358,
+     "equity_r2": 0.7445293001340725,
+     "max_consec_losing_days": 3,
+     "win_day_rate": 0.45,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    },
+    "last_756d": {
+     "active_days": 20,
+     "net_pnl": 748.8999999999996,
+     "sharpe_daily": 1.6322964639549584,
+     "sortino_daily": 2.892900487187668,
+     "max_drawdown": -731.96,
+     "ulcer_index": 234.68274044973995,
+     "upi": 40.20806976225358,
+     "equity_r2": 0.7445293001340725,
+     "max_consec_losing_days": 3,
+     "win_day_rate": 0.45,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    }
+   },
+   "rolling_6m": {
+    "n_windows": 0,
+    "negative_share": null,
+    "worst_window": null
+   },
+   "year_pnls": {
+    "2026": 748.8999999999997
+   },
+   "mc": {
+    "1": {
+     "pass_rate": 0.558,
+     "fail_rate": 0.4409,
+     "timeout_rate": 0.0011,
+     "median_days": 17.0,
+     "expected_resets": 0.7921146953405016,
+     "expected_cost": 147.52688172043008,
+     "expected_profit_per_attempt": 544.8696630000073
+    },
+    "2": {
+     "pass_rate": 0.2862,
+     "fail_rate": 0.7137,
+     "timeout_rate": 0.0001,
+     "median_days": 12.0,
+     "expected_resets": 2.4940600978336827,
+     "expected_cost": 249.64360587002096,
+     "expected_profit_per_attempt": 207.52231800000706
+    }
+   },
+   "params": {
+    "expire_minutes": 120,
+    "mode": "nr",
+    "nr_n": 5,
+    "range_minutes": 30,
+    "target_r": 1.5
+   }
+  },
+  {
+   "name": "nr7_orb +skipMon (holdout)",
+   "trade_metrics": {
+    "n_trades": 15,
+    "net_pnl": 133.54999999999978,
+    "gross_pnl": 163.25,
+    "total_costs": 29.700000000000003,
+    "win_rate": 0.4666666666666667,
+    "avg_win": 314.77,
+    "avg_loss": -258.73,
+    "expectancy": 8.903333333333318,
+    "profit_factor": 1.0645218954122055,
+    "max_consecutive_losses": 2,
+    "max_drawdown": -731.96,
+    "n_active_days": 15,
+    "best_day": 686.77,
+    "worst_day": -683.48,
+    "sharpe_daily": 0.3908240585165087,
+    "sortino_daily": 0.658349661810355,
+    "trades_per_day": 1.0,
+    "avg_hold_minutes": 252.93333333333334,
+    "time_in_market_pct": 18.32850241545894,
+    "pct_ambiguous_trades": 0.0,
+    "exit_reasons": {
+     "target": 3,
+     "stop": 4,
+     "eod": 8
+    }
+   },
+   "consistency": {
+    "full": {
+     "active_days": 15,
+     "net_pnl": 133.54999999999973,
+     "sharpe_daily": 0.3908240585165086,
+     "sortino_daily": 0.658349661810355,
+     "max_drawdown": -731.96,
+     "ulcer_index": 346.95186358725135,
+     "upi": 6.466718399498568,
+     "equity_r2": 0.13565699272517628,
+     "max_consec_losing_days": 2,
+     "win_day_rate": 0.4666666666666667,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    },
+    "last_90d": {
+     "active_days": 15,
+     "net_pnl": 133.54999999999973,
+     "sharpe_daily": 0.3908240585165086,
+     "sortino_daily": 0.658349661810355,
+     "max_drawdown": -731.96,
+     "ulcer_index": 346.95186358725135,
+     "upi": 6.466718399498568,
+     "equity_r2": 0.13565699272517628,
+     "max_consec_losing_days": 2,
+     "win_day_rate": 0.4666666666666667,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    },
+    "last_252d": {
+     "active_days": 15,
+     "net_pnl": 133.54999999999973,
+     "sharpe_daily": 0.3908240585165086,
+     "sortino_daily": 0.658349661810355,
+     "max_drawdown": -731.96,
+     "ulcer_index": 346.95186358725135,
+     "upi": 6.466718399498568,
+     "equity_r2": 0.13565699272517628,
+     "max_consec_losing_days": 2,
+     "win_day_rate": 0.4666666666666667,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    },
+    "last_756d": {
+     "active_days": 15,
+     "net_pnl": 133.54999999999973,
+     "sharpe_daily": 0.3908240585165086,
+     "sortino_daily": 0.658349661810355,
+     "max_drawdown": -731.96,
+     "ulcer_index": 346.95186358725135,
+     "upi": 6.466718399498568,
+     "equity_r2": 0.13565699272517628,
+     "max_consec_losing_days": 2,
+     "win_day_rate": 0.4666666666666667,
+     "worst_day": -683.48,
+     "best_day": 686.77
+    }
+   },
+   "rolling_6m": {
+    "n_windows": 0,
+    "negative_share": null,
+    "worst_window": null
+   },
+   "year_pnls": {
+    "2026": 133.54999999999978
+   },
+   "mc": {
+    "1": {
+     "pass_rate": 0.3219,
+     "fail_rate": 0.6711,
+     "timeout_rate": 0.007,
+     "median_days": 21.0,
+     "expected_resets": 2.1065548306927613,
+     "expected_cost": 226.39328984156566,
+     "expected_profit_per_attempt": 26.728415000008187
+    },
+    "2": {
+     "pass_rate": 0.1887,
+     "fail_rate": 0.8111,
+     "timeout_rate": 0.0002,
+     "median_days": 12.0,
+     "expected_resets": 4.299417064122946,
+     "expected_cost": 357.96502384737676,
+     "expected_profit_per_attempt": -237.77645999999345
+    }
+   },
+   "params": {
+    "expire_minutes": 120,
+    "mode": "nr",
+    "nr_n": 5,
+    "range_minutes": 30,
+    "target_r": 1.5,
+    "skip_weekdays": [
+     1
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+# Phase 5 validation configuration.
+# Holdout 2026 is run exactly once via scripts/run_validation.py --holdout.
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+  validation_start: 2023-01-01
+  validation_end: 2024-12-31
+  oos_year_start: 2025-01-01
+  oos_year_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-06-28
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 40
+
+strategies:
+  opening_range_breakout:
+    param_grid:
+      range_minutes: [15, 30, 45, 60]
+      target_r: [1.5, 2.0, 2.5, 3.0]
+      expire_minutes: [60, 90, 120]
+
+  ema_trend:
+    param_grid:
+      ema_fast: [5, 9, 12]
+      ema_slow: [21, 34]
+      stop_atr: [1.5, 2.0, 2.5]
+      target_r: [2.0, 3.0]
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1, 2]
+  account: lucid_25k

@@ -1,0 +1,29 @@
+# MES micro futures data pipeline (Databento GLBX-20260630-9QLQUMUJC8).
+raw:
+  dir: data/raw/GLBX-20260630-9QLQUMUJC8
+  bars_file: glbx-mdp3-20190529-20260629.ohlcv-1m.csv.zst
+  condition_file: condition.json
+  metadata_file: metadata.json
+
+processed_dir: data/processed/mes
+reports_dir: data/reports/mes
+
+timezone: America/New_York
+tick_size: 0.25
+# MES micro contract economics ($5 per index point).
+point_value: 5.0
+
+sessions:
+  open: "18:00"
+  close: "17:00"
+  rth_start: "09:30"
+  rth_end: "16:00"
+
+rollover:
+  method: volume
+  confirm_sessions: 1
+
+resample_minutes: [3, 5, 15, 30]
+
+quality:
+  min_minutes_full_day: 1200

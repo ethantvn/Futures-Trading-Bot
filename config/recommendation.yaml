@@ -1,0 +1,37 @@
+# Phase 6 final recommendation settings.
+strategy: opening_range_breakout
+ledger: trades_opening_range_breakout_wf_oos.parquet
+params_file: wf_params_opening_range_breakout.yaml
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  sample_mode: block
+  block_size: 5
+
+accounts:
+  - lucid_25k
+  - lucid_50k
+
+# Fixed-size policies (micro contracts every day).
+fixed_policies:
+  conservative:
+    contracts: 1
+  moderate:
+    contracts: 2
+
+# Dynamic: start each session at `max_contracts`, drop to `min_contracts`
+# when prior EOD cushion (balance - MLL) is below threshold dollars.
+dynamic_policies:
+  downshift_400:
+    max_contracts: 2
+    min_contracts: 1
+    cushion_threshold: 400
+  downshift_600:
+    max_contracts: 2
+    min_contracts: 1
+    cushion_threshold: 600
+
+# Use discounted eval fees from lucid configs by default.
+use_discounted_eval_fee: true

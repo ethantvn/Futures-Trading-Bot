@@ -1,0 +1,46 @@
+# Lucid Flex 25K — verified 2026-07-12 (user confirmation + lucidtrading.com)
+account:
+  name: LucidFlex 25K
+  starting_balance: 25000.0
+  profit_target: 1250.0
+  max_drawdown: 1000.0
+  drawdown_method: eod_trailing
+  drawdown_locks_at_start_balance: true
+  lock_buffer: 0.0
+  daily_loss_limit: null
+  consistency_rule_pct: 50.0            # eval only; not applied on funded Flex
+  min_trading_days: 2
+  max_contracts_mini: 2
+  max_contracts_micro: 20
+  allow_overnight: false
+  # Lucid Flex eval: no calendar/trading-day time limit (one-time fee).
+  eval_time_limit_days: null
+  # EOD balance / MLL snapshot; positions flat by 4:45 PM ET.
+  session_close_et: "16:45"
+  session_reopen_et: "18:00"
+
+funded:
+  qualifying_day_min_profit: 100.0      # $25K tier
+  qualifying_days_required: 5
+  min_payout_request: 500.0
+  max_payout_pct: 0.50
+  max_payout_cap: 1000.0                # $25K tier cap per cycle
+  max_payouts_before_live: 5
+  consistency_rule: false               # Flex funded: no consistency rule
+  buffer_required: false
+  # Scaling tiers (sim profit → max micros); updates at EOD only.
+  scaling_tiers:
+    - profit_upto: 999.99
+      max_micros: 10
+    - profit_upto: null
+      max_micros: 20
+
+costs:
+  # Lucid published MNQ micro commission: $0.50/side ($1.00 RT).
+  commission_per_side: 0.50
+  exchange_fees_per_side: 0.0
+  slippage_ticks: 1
+  evaluation_cost: 100.0
+  evaluation_cost_discounted: 70.0
+  reset_cost: 60.0
+  monthly_automation_cost: 0.0

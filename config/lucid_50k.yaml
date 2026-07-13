@@ -1,0 +1,31 @@
+# Lucid Flex 50K evaluation rules.
+# Source: user's Lucid dashboard + lucidtrading.com, checked 2026-07-06.
+# Items marked VERIFY are unresolved (see docs/PHASE_1_PLAN.md section 3);
+# they must be confirmed against the official help center before Phase 4.
+account:
+  name: LucidFlex 50K
+  starting_balance: 50000.0
+  profit_target: 3000.0
+  max_drawdown: 2000.0
+  drawdown_method: eod_trailing        # eod_trailing | intraday_trailing
+  # MLL trails highest EOD close, locks permanently at starting balance
+  # (confirmed by 4 independent sources 2026-07-06; official help center down).
+  drawdown_locks_at_start_balance: true
+  lock_buffer: 0.0                      # some tiers lock at start + $100; 0 for eval
+  daily_loss_limit: null                # Flex has no DLL
+  consistency_rule_pct: 50.0            # largest day <= 50% of total profit at pass
+  min_trading_days: 2                   # confirmed by multiple sources 2026-07-06
+  max_contracts_mini: 4
+  max_contracts_micro: 40
+  allow_overnight: false                # strategy-level choice; VERIFY firm rule
+
+costs:
+  # Per micro (MNQ) contract, per side, in dollars. VERIFY against the
+  # platform you will trade on; these are typical all-in placeholders.
+  commission_per_side: 0.62
+  exchange_fees_per_side: 0.37
+  slippage_ticks: 1
+  evaluation_cost: 140.0
+  evaluation_cost_discounted: 98.0
+  reset_cost: 95.0
+  monthly_automation_cost: 0.0

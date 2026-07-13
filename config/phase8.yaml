@@ -1,0 +1,47 @@
+# Phase 8: tail-risk exit overlays on the Phase 7 winner (orb_width family).
+# Each overlay value re-runs the FULL Phase 7 orb_width grid + walk-forward
+# (same folds), so fold-level band selection stays identical in procedure and
+# only the overlay differs. Baseline = Phase 7 ledger as-is.
+#
+# NOT re-tested here: exit_minute midday time-stops (rejected in Phase 7 —
+# folds chose "no exit" 8/9 times, pass rate fell to ~45-49%).
+# friday_flat: engine force-flats 15:55 EVERY day; verified zero multi-day
+# holds across all 16 ledgers -> no-op in Python, TV-only fix (see report).
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 40
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  account: lucid_25k
+
+# Phase 7 orb_width base grid (unchanged)
+base_family:
+  strategy: orb_filtered
+  max_trades_per_day: 1
+  param_grid:
+    range_minutes: [30]
+    target_r: [1.0, 1.5]
+    expire_minutes: [120]
+    min_width_ratio: [0.0, 0.2, 0.25, 0.3]
+    max_width_ratio: [0.55, 0.7, 1.0e+9]
+
+overlays:
+  # exit at min(entry + N minutes, 15:55 flat) — engine max_hold_minutes
+  max_hold_minutes: [60, 90, 120, 180]
+  # protective-stop distance cap in points (x $2/pt/micro = $400/$500/$600);
+  # with 1 trade/day this caps the daily loss at ~cap + slippage + fees
+  max_risk_points: [200.0, 250.0, 300.0]
+
+baseline_ledger: trades_phase7_orb_width_wf_oos.parquet

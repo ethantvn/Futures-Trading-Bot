@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+
+# Data is large / licensed; keep reports out of ignore so results are shareable.
+data/raw/
+data/processed/
+data/tradingview_exports/

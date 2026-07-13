@@ -1,0 +1,32 @@
+# Lucid Flex 100K evaluation rules.
+# Source: Phase 1 capture 2026-07-06 (docs/PHASE_1_PLAN.md §3) — VERIFY against
+# the user's dashboard before purchase; official help center was down at capture.
+# NOTE target/MLL ratio = $6,000/$3,000 = 2.0x — hardest tier per dollar of edge
+# (25K = 1.25x, 50K = 1.5x).
+account:
+  name: LucidFlex 100K
+  starting_balance: 100000.0
+  profit_target: 6000.0
+  max_drawdown: 3000.0
+  drawdown_method: eod_trailing        # eod_trailing | intraday_trailing
+  # MLL trails highest EOD close, locks permanently at starting balance
+  # (same mechanism as 25K/50K; confirmed pattern 2026-07-06).
+  drawdown_locks_at_start_balance: true
+  lock_buffer: 0.0
+  daily_loss_limit: null                # Flex has no DLL
+  consistency_rule_pct: 50.0            # largest day <= 50% of total profit at pass
+  min_trading_days: 2
+  max_contracts_mini: 6
+  max_contracts_micro: 60
+  allow_overnight: false                # strategy-level choice; VERIFY firm rule
+
+costs:
+  # Per micro (MNQ) contract, per side, in dollars. Same placeholders as
+  # lucid_25k/50k — VERIFY against the live platform.
+  commission_per_side: 0.62
+  exchange_fees_per_side: 0.37
+  slippage_ticks: 1
+  evaluation_cost: 225.0                # VERIFY — Phase 1 capture
+  evaluation_cost_discounted: 157.50    # VERIFY — Phase 1 capture
+  reset_cost: 140.0                     # VERIFY — Phase 1 capture
+  monthly_automation_cost: 0.0

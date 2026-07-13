@@ -1,0 +1,306 @@
+{
+  "quality": {
+    "rows": 3736515,
+    "contracts": 33,
+    "first_bar_utc": "2019-05-29 00:00:00+00:00",
+    "last_bar_utc": "2026-06-28 23:59:00+00:00",
+    "duplicate_rows": 0,
+    "ohlc_violations": 0,
+    "nonpositive_prices": 0,
+    "non_tick_aligned_prices": 0,
+    "zero_volume_bars": 0,
+    "trading_days": 1832,
+    "median_minutes_per_day": 1380.0,
+    "short_days": 73,
+    "short_day_list": [
+      {
+        "date": "2026-06-29",
+        "minutes": 120,
+        "symbol": "MNQU6"
+      },
+      {
+        "date": "2025-11-28",
+        "minutes": 510,
+        "symbol": "MNQZ5"
+      },
+      {
+        "date": "2020-03-16",
+        "minutes": 570,
+        "symbol": "MNQM0"
+      },
+      {
+        "date": "2021-04-02",
+        "minutes": 915,
+        "symbol": "MNQM1"
+      },
+      {
+        "date": "2023-04-07",
+        "minutes": 915,
+        "symbol": "MNQM3"
+      },
+      {
+        "date": "2026-04-03",
+        "minutes": 915,
+        "symbol": "MNQM6"
+      },
+      {
+        "date": "2025-01-09",
+        "minutes": 930,
+        "symbol": "MNQH5"
+      },
+      {
+        "date": "2020-03-18",
+        "minutes": 936,
+        "symbol": "MNQM0"
+      },
+      {
+        "date": "2020-06-30",
+        "minutes": 971,
+        "symbol": "MNQU0"
+      },
+      {
+        "date": "2020-03-09",
+        "minutes": 1005,
+        "symbol": "MNQH0"
+      },
+      {
+        "date": "2019-07-04",
+        "minutes": 1008,
+        "symbol": "MNQU9"
+      },
+      {
+        "date": "2020-02-28",
+        "minutes": 1019,
+        "symbol": "MNQH0"
+      },
+      {
+        "date": "2020-03-17",
+        "minutes": 1073,
+        "symbol": "MNQM0"
+      },
+      {
+        "date": "2019-11-28",
+        "minutes": 1117,
+        "symbol": "MNQZ9"
+      },
+      {
+        "date": "2019-12-24",
+        "minutes": 1119,
+        "symbol": "MNQH0"
+      },
+      {
+        "date": "2020-01-20",
+        "minutes": 1120,
+        "symbol": "MNQH0"
+      },
+      {
+        "date": "2019-07-03",
+        "minutes": 1130,
+        "symbol": "MNQU9"
+      },
+      {
+        "date": "2019-09-02",
+        "minutes": 1139,
+        "symbol": "MNQU9"
+      },
+      {
+        "date": "2021-02-15",
+        "minutes": 1139,
+        "symbol": "MNQH1"
+      },
+      {
+        "date": "2021-07-05",
+        "minutes": 1139,
+        "symbol": "MNQU1"
+      },
+      {
+        "date": "2021-09-06",
+        "minutes": 1139,
+        "symbol": "MNQU1"
+      },
+      {
+        "date": "2023-07-04",
+        "minutes": 1139,
+        "symbol": "MNQU3"
+      },
+      {
+        "date": "2020-02-17",
+        "minutes": 1140,
+        "symbol": "MNQH0"
+      },
+      {
+        "date": "2020-05-25",
+        "minutes": 1140,
+        "symbol": "MNQM0"
+      },
+      {
+        "date": "2020-07-03",
+        "minutes": 1140,
+        "symbol": "MNQU0"
+      },
+      {
+        "date": "2020-09-07",
+        "minutes": 1140,
+        "symbol": "MNQU0"
+      },
+      {
+        "date": "2020-11-26",
+        "minutes": 1140,
+        "symbol": "MNQZ0"
+      },
+      {
+        "date": "2021-01-18",
+        "minutes": 1140,
+        "symbol": "MNQH1"
+      },
+      {
+        "date": "2021-05-31",
+        "minutes": 1140,
+        "symbol": "MNQM1"
+      },
+      {
+        "date": "2021-11-25",
+        "minutes": 1140,
+        "symbol": "MNQZ1"
+      },
+      {
+        "date": "2022-01-17",
+        "minutes": 1140,
+        "symbol": "MNQH2"
+      },
+      {
+        "date": "2022-02-21",
+        "minutes": 1140,
+        "symbol": "MNQH2"
+      },
+      {
+        "date": "2022-05-30",
+        "minutes": 1140,
+        "symbol": "MNQM2"
+      },
+      {
+        "date": "2022-06-20",
+        "minutes": 1140,
+        "symbol": "MNQU2"
+      },
+      {
+        "date": "2022-07-04",
+        "minutes": 1140,
+        "symbol": "MNQU2"
+      },
+      {
+        "date": "2022-09-05",
+        "minutes": 1140,
+        "symbol": "MNQU2"
+      },
+      {
+        "date": "2022-11-24",
+        "minutes": 1140,
+        "symbol": "MNQZ2"
+      },
+      {
+        "date": "2023-01-16",
+        "minutes": 1140,
+        "symbol": "MNQH3"
+      },
+      {
+        "date": "2023-02-20",
+        "minutes": 1140,
+        "symbol": "MNQH3"
+      },
+      {
+        "date": "2023-05-29",
+        "minutes": 1140,
+        "symbol": "MNQM3"
+      },
+      {
+        "date": "2023-06-19",
+        "minutes": 1140,
+        "symbol": "MNQU3"
+      },
+      {
+        "date": "2023-09-04",
+        "minutes": 1140,
+        "symbol": "MNQU3"
+      },
+      {
+        "date": "2023-11-23",
+        "minutes": 1140,
+        "symbol": "MNQZ3"
+      },
+      {
+        "date": "2024-01-15",
+        "minutes": 1140,
+        "symbol": "MNQH4"
+      },
+      {
+        "date": "2024-02-19",
+        "minutes": 1140,
+        "symbol": "MNQH4"
+      },
+      {
+        "date": "2024-05-27",
+        "minutes": 1140,
+        "symbol": "MNQM4"
+      },
+      {
+        "date": "2024-06-19",
+        "minutes": 1140,
+        "symbol": "MNQU4"
+      },
+      {
+        "date": "2024-07-04",
+        "minutes": 1140,
+        "symbol": "MNQU4"
+      },
+      {
+        "date": "2024-09-02",
+        "minutes": 1140,
+        "symbol": "MNQU4"
+      },
+      {
+        "date": "2024-11-28",
+        "minutes": 1140,
+        "symbol": "MNQZ4"
+      }
+    ]
+  },
+  "condition": {
+    "total_days": 2238,
+    "counts": {
+      "available": 2212,
+      "degraded": 13,
+      "missing": 13
+    },
+    "degraded_dates": [
+      "2020-02-27",
+      "2020-02-28",
+      "2020-06-30",
+      "2020-07-01",
+      "2021-12-05",
+      "2022-01-02",
+      "2025-09-17",
+      "2025-09-24",
+      "2025-11-28",
+      "2026-03-15",
+      "2026-03-16",
+      "2026-04-10",
+      "2026-05-24"
+    ],
+    "missing_dates": [
+      "2026-02-14",
+      "2026-02-21",
+      "2026-02-28",
+      "2026-03-07",
+      "2026-03-14",
+      "2026-03-21",
+      "2026-03-28",
+      "2026-04-04",
+      "2026-04-11",
+      "2026-04-18",
+      "2026-04-25",
+      "2026-05-02",
+      "2026-05-09"
+    ]
+  }
+}

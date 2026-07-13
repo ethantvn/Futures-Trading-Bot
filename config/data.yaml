@@ -1,0 +1,35 @@
+# Data pipeline configuration.
+raw:
+  dir: data/raw/GLBX-20260630-99GU63VXQL
+  bars_file: glbx-mdp3-20190529-20260628.ohlcv-1m.csv.zst
+  condition_file: condition.json
+  metadata_file: metadata.json
+
+processed_dir: data/processed
+reports_dir: data/reports
+tradingview_exports_dir: data/tradingview_exports
+
+timezone: America/New_York
+tick_size: 0.25
+# MNQ contract economics
+point_value: 2.0          # dollars per index point per micro contract
+
+sessions:
+  # ET wall-clock. The CME Globex session opens 18:00 the prior calendar day
+  # and closes 17:00; a bar stamped >= 18:00 belongs to the NEXT trading date.
+  open: "18:00"
+  close: "17:00"
+  rth_start: "09:30"
+  rth_end: "16:00"
+
+rollover:
+  method: volume
+  # Number of consecutive sessions the next contract's volume must exceed the
+  # current front contract before rolling (roll takes effect the NEXT session).
+  confirm_sessions: 1
+
+resample_minutes: [3, 5, 15, 30]
+
+quality:
+  # Full Globex day has 1380 one-minute bars; days below this are flagged.
+  min_minutes_full_day: 1200

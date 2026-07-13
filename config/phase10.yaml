@@ -1,0 +1,57 @@
+# Phase 10: MES ORB-W validation (second unique Lucid bot).
+# Same splits/folds/MC as Phases 7–9. Do not tune on 2026 holdout.
+
+splits:
+  grid_start: 2019-06-01
+  grid_end: 2025-12-31
+  holdout_start: 2026-01-01
+  holdout_end: 2026-06-28
+
+walk_forward:
+  first_train_start: 2019-06-01
+  last_test_end: 2025-12-31
+  train_months: 24
+  test_months: 6
+  min_trades_train: 40
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: 60
+  seed: 42
+  contracts: [1]
+  account: lucid_25k
+
+stress:
+  slippage_ticks: [0, 1, 2]
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+
+families:
+  orb_width:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.0, 0.2, 0.25, 0.3]
+      max_width_ratio: [0.55, 0.7, 1.0e+9]
+
+  orb_longonly:
+    strategy: orb_filtered
+    max_trades_per_day: 1
+    param_grid:
+      range_minutes: [30]
+      target_r: [1.0, 1.5]
+      expire_minutes: [120]
+      min_width_ratio: [0.25]
+      max_width_ratio: [0.7]
+      long_only: [true]
+
+post_overlays:
+  skip_monday: true
+
+# MNQ Phase 9 winner for side-by-side comparison (same MC window).
+mnq_baseline:
+  name: "MNQ orb_longonly +skipMon (Phase 9)"
+  ledger: data/processed/trades_phase9_orb_longonly_wf_oos.parquet

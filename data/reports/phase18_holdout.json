@@ -1,0 +1,107 @@
+{
+ "holdout": [
+  {
+   "family": "orb_w_control",
+   "net": 2784.5399999999986,
+   "pass": 0.6643,
+   "pass_and_payout": 0.4613,
+   "params": {
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "skip_macro_days": false,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0
+   }
+  },
+  {
+   "family": "orb_tod",
+   "net": 2584.3799999999997,
+   "pass": 0.9144,
+   "pass_and_payout": 0.8357,
+   "params": {
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0,
+    "trade_window": "midday"
+   }
+  },
+  {
+   "family": "orb_risk_cap",
+   "net": 1783.039999999999,
+   "pass": 0.59,
+   "pass_and_payout": 0.3663,
+   "params": {
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_risk_points": 150,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0
+   }
+  },
+  {
+   "family": "mes_diverge_orb",
+   "net": 1155.8999999999996,
+   "pass": 0.674,
+   "pass_and_payout": 0.4877,
+   "params": {
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "mes_mode": "diverge",
+    "min_width_ratio": 0.25,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0
+   }
+  },
+  {
+   "family": "ema_trend",
+   "net": -833.4101852543647,
+   "pass": 0.2518,
+   "pass_and_payout": 0.0818,
+   "params": {
+    "ema_fast": 8,
+    "ema_filter": 50,
+    "ema_slow": 21,
+    "entry_start_minute": 600,
+    "stop_atr": 1.5,
+    "target_r": 1.5
+   }
+  },
+  {
+   "family": "roc_vol_mom",
+   "net": -569.3120493280262,
+   "pass": 0.2623,
+   "pass_and_payout": 0.0859,
+   "params": {
+    "expire_minutes": 60,
+    "roc_n": 10,
+    "roc_thresh": 0.2,
+    "skip_weekdays": [
+     1
+    ],
+    "stop_atr": 1.25,
+    "target_r": 1.5,
+    "vol_mult": 1.25
+   }
+  }
+ ]
+}

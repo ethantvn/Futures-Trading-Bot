@@ -1,0 +1,49 @@
+# Phase 19 — Eval-policy optimization on frozen ORB-W ledger (no new alpha)
+# Optimizes Lucid pass / pass+payout via state-dependent sizing on the same trades.
+
+ledgers:
+  wf_oos:
+    path: data/processed/trades_phase9_orb_longonly_wf_oos.parquet
+    skip_monday: true
+    label: "ORB-W WF OOS"
+  holdout:
+    path: data/processed/trades_phase9_orb_longonly_holdout.parquet
+    skip_monday: true
+    label: "ORB-W 2026 holdout"
+
+monte_carlo:
+  n_attempts: 10000
+  max_days: [60, 90, 120]
+  seeds: [42, 7, 99]
+  sample_modes: [block, day]
+  block_size: 5
+
+account: lucid_25k
+use_discounted_eval_fee: true
+
+# Baseline incumbent (fixed 1 micro) for comparison
+baseline:
+  policy: fixed_1
+  max_days: 60
+  pass_target: 0.643
+  pass_payout_target: 0.456
+
+# Acceptance: beat baseline by ≥3 pts pass OR ≥3 pts pass+payout on BOTH ledgers,
+# all seeds, both sample modes at max_days=60 (primary).
+acceptance:
+  min_pass_lift: 0.03
+  min_payout_lift: 0.03
+  require_all_seeds: true
+  require_both_sample_modes: true
+
+policy_grid:
+  include_baseline: true
+  upshift_threshold: [400, 500, 600, 700, 800]
+  downshift_threshold: [400, 600]
+  post_lock_max: [2, 3]
+  cushion_skip_floor: [200, 300, 400]
+  upshift_with_consistency_cap:
+    - threshold: 600
+      profit_threshold: 800
+    - threshold: 700
+      profit_threshold: 900

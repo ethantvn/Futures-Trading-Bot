@@ -1,0 +1,261 @@
+2026-07-12 15:13:19 INFO    run_phase17 | === Phase 17 orb_w_control (1 combos) ===
+2026-07-12 15:13:21 INFO    src.backtest.engine | orb_enhanced: 672 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:21 INFO    src.validation.walk_forward | grid 1/1 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': '', 'skip_inside_day': False, 'only_inside_day': False} -> 672 trades, net $10582
+2026-07-12 15:13:22 INFO    run_phase17 | orb_w_control done: n=473 net=$12037 fold+=89% pass=64.5% payout=46.4%
+2026-07-12 15:13:22 INFO    run_phase17 | === Phase 17 orb_vix_band (9 combos) ===
+2026-07-12 15:13:24 INFO    src.backtest.engine | orb_enhanced: 392 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:13:24 INFO    src.validation.walk_forward | grid 1/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 20.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 392 trades, net $3643
+2026-07-12 15:13:26 INFO    src.backtest.engine | orb_enhanced: 537 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:13:26 INFO    src.validation.walk_forward | grid 2/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 537 trades, net $6758
+2026-07-12 15:13:27 INFO    src.backtest.engine | orb_enhanced: 609 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:13:27 INFO    src.validation.walk_forward | grid 3/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 609 trades, net $8487
+2026-07-12 15:13:29 INFO    src.backtest.engine | orb_enhanced: 389 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:13:29 INFO    src.validation.walk_forward | grid 4/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 20.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 389 trades, net $3662
+2026-07-12 15:13:31 INFO    src.backtest.engine | orb_enhanced: 534 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:13:31 INFO    src.validation.walk_forward | grid 5/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 534 trades, net $6777
+2026-07-12 15:13:32 INFO    src.backtest.engine | orb_enhanced: 606 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:13:32 INFO    src.validation.walk_forward | grid 6/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 606 trades, net $8507
+2026-07-12 15:13:34 INFO    src.backtest.engine | orb_enhanced: 297 trades, 1 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:13:34 INFO    src.validation.walk_forward | grid 7/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 14.0, 'vix_max': 20.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 297 trades, net $1725
+2026-07-12 15:13:36 INFO    src.backtest.engine | orb_enhanced: 442 trades, 2 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:13:36 INFO    src.validation.walk_forward | grid 8/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 14.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 442 trades, net $4840
+2026-07-12 15:13:37 INFO    src.backtest.engine | orb_enhanced: 514 trades, 2 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:13:37 INFO    src.validation.walk_forward | grid 9/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 14.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 514 trades, net $6569
+2026-07-12 15:13:38 INFO    run_phase17 | orb_vix_band done: n=357 net=$5671 fold+=89% pass=52.2% payout=34.4%
+2026-07-12 15:13:38 INFO    run_phase17 | === Phase 17 orb_on_context (9 combos) ===
+2026-07-12 15:13:40 INFO    src.backtest.engine | orb_enhanced: 479 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:40 INFO    src.validation.walk_forward | grid 1/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 0.8, 'allow_regimes': ''} -> 479 trades, net $6231
+2026-07-12 15:13:42 INFO    src.backtest.engine | orb_enhanced: 615 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:42 INFO    src.validation.walk_forward | grid 2/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': ''} -> 615 trades, net $6736
+2026-07-12 15:13:44 INFO    src.backtest.engine | orb_enhanced: 666 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:44 INFO    src.validation.walk_forward | grid 3/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': ''} -> 666 trades, net $10489
+2026-07-12 15:13:45 INFO    src.backtest.engine | orb_enhanced: 479 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:45 INFO    src.validation.walk_forward | grid 4/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.15, 'on_range_max_ratio': 0.8, 'allow_regimes': ''} -> 479 trades, net $6231
+2026-07-12 15:13:47 INFO    src.backtest.engine | orb_enhanced: 615 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:47 INFO    src.validation.walk_forward | grid 5/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.15, 'on_range_max_ratio': 1.2, 'allow_regimes': ''} -> 615 trades, net $6736
+2026-07-12 15:13:49 INFO    src.backtest.engine | orb_enhanced: 666 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:49 INFO    src.validation.walk_forward | grid 6/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.15, 'on_range_max_ratio': 2.0, 'allow_regimes': ''} -> 666 trades, net $10489
+2026-07-12 15:13:50 INFO    src.backtest.engine | orb_enhanced: 476 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:50 INFO    src.validation.walk_forward | grid 7/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.25, 'on_range_max_ratio': 0.8, 'allow_regimes': ''} -> 476 trades, net $6095
+2026-07-12 15:13:52 INFO    src.backtest.engine | orb_enhanced: 612 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:52 INFO    src.validation.walk_forward | grid 8/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.25, 'on_range_max_ratio': 1.2, 'allow_regimes': ''} -> 612 trades, net $6600
+2026-07-12 15:13:54 INFO    src.backtest.engine | orb_enhanced: 663 trades, 2 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:13:54 INFO    src.validation.walk_forward | grid 9/9 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.25, 'on_range_max_ratio': 2.0, 'allow_regimes': ''} -> 663 trades, net $10353
+2026-07-12 15:13:55 INFO    run_phase17 | orb_on_context done: n=426 net=$9160 fold+=78% pass=57.4% payout=38.8%
+2026-07-12 15:13:55 INFO    run_phase17 | === Phase 17 orb_prior_regime (6 combos) ===
+2026-07-12 15:13:57 INFO    src.backtest.engine | orb_enhanced: 504 trades, 1 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:13:57 INFO    src.validation.walk_forward | grid 1/6 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'up,range', 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9'} -> 504 trades, net $5352
+2026-07-12 15:13:59 INFO    src.backtest.engine | orb_enhanced: 171 trades, 0 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:13:59 INFO    src.validation.walk_forward | grid 2/6 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'up', 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9'} -> 171 trades, net $1579
+2026-07-12 15:14:00 INFO    src.backtest.engine | orb_enhanced: 333 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:00 INFO    src.validation.walk_forward | grid 3/6 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 3, 'allow_regimes': 'range', 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9'} -> 333 trades, net $3772
+2026-07-12 15:14:02 INFO    src.backtest.engine | orb_enhanced: 493 trades, 1 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:02 INFO    src.validation.walk_forward | grid 4/6 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'up,range', 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9'} -> 493 trades, net $7099
+2026-07-12 15:14:04 INFO    src.backtest.engine | orb_enhanced: 198 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:14:04 INFO    src.validation.walk_forward | grid 5/6 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'up', 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9'} -> 198 trades, net $4508
+2026-07-12 15:14:05 INFO    src.backtest.engine | orb_enhanced: 295 trades, 1 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:05 INFO    src.validation.walk_forward | grid 6/6 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'pivot_n': 5, 'allow_regimes': 'range', 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9'} -> 295 trades, net $2591
+2026-07-12 15:14:06 INFO    run_phase17 | orb_prior_regime done: n=147 net=$3373 fold+=78% pass=61.6% payout=42.7%
+2026-07-12 15:14:06 INFO    run_phase17 | === Phase 17 orb_inside_day (1 combos) ===
+2026-07-12 15:14:08 INFO    src.backtest.engine | orb_enhanced: 608 trades, 2 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:08 INFO    src.validation.walk_forward | grid 1/1 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'skip_inside_day': True, 'only_inside_day': False, 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 608 trades, net $8658
+2026-07-12 15:14:09 INFO    run_phase17 | orb_inside_day done: n=423 net=$10502 fold+=89% pass=64.2% payout=45.8%
+2026-07-12 15:14:09 INFO    run_phase17 | === Phase 17 orb_only_inside (1 combos) ===
+2026-07-12 15:14:10 INFO    src.backtest.engine | orb_enhanced: 64 trades, 0 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:10 INFO    src.validation.walk_forward | grid 1/1 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'skip_inside_day': False, 'only_inside_day': True, 'vix_min': 0.0, 'vix_max': '1.0e9', 'on_range_min_ratio': 0.0, 'on_range_max_ratio': '1.0e9', 'allow_regimes': ''} -> 64 trades, net $1924
+2026-07-12 15:14:11 INFO    run_phase17 | orb_only_inside done: n=12 net=$1372 fold+=11% pass=98.1% payout=95.1%
+2026-07-12 15:14:11 INFO    run_phase17 | === Phase 17 orb_vix_on_stack (64 combos) ===
+2026-07-12 15:14:13 INFO    src.backtest.engine | orb_enhanced: 501 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:13 INFO    src.validation.walk_forward | grid 1/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 501 trades, net $4440
+2026-07-12 15:14:15 INFO    src.backtest.engine | orb_enhanced: 374 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:15 INFO    src.validation.walk_forward | grid 2/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 374 trades, net $2367
+2026-07-12 15:14:16 INFO    src.backtest.engine | orb_enhanced: 535 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:16 INFO    src.validation.walk_forward | grid 3/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 535 trades, net $6752
+2026-07-12 15:14:18 INFO    src.backtest.engine | orb_enhanced: 399 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:18 INFO    src.validation.walk_forward | grid 4/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 399 trades, net $3469
+2026-07-12 15:14:20 INFO    src.backtest.engine | orb_enhanced: 501 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:20 INFO    src.validation.walk_forward | grid 5/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 501 trades, net $4440
+2026-07-12 15:14:22 INFO    src.backtest.engine | orb_enhanced: 374 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:22 INFO    src.validation.walk_forward | grid 6/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 374 trades, net $2367
+2026-07-12 15:14:23 INFO    src.backtest.engine | orb_enhanced: 535 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:23 INFO    src.validation.walk_forward | grid 7/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 535 trades, net $6752
+2026-07-12 15:14:25 INFO    src.backtest.engine | orb_enhanced: 399 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:25 INFO    src.validation.walk_forward | grid 8/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 399 trades, net $3469
+2026-07-12 15:14:27 INFO    src.backtest.engine | orb_enhanced: 564 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:27 INFO    src.validation.walk_forward | grid 9/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 564 trades, net $5591
+2026-07-12 15:14:29 INFO    src.backtest.engine | orb_enhanced: 422 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:29 INFO    src.validation.walk_forward | grid 10/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 422 trades, net $2200
+2026-07-12 15:14:31 INFO    src.backtest.engine | orb_enhanced: 607 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:31 INFO    src.validation.walk_forward | grid 11/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 607 trades, net $8481
+2026-07-12 15:14:33 INFO    src.backtest.engine | orb_enhanced: 453 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:33 INFO    src.validation.walk_forward | grid 12/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 453 trades, net $3425
+2026-07-12 15:14:34 INFO    src.backtest.engine | orb_enhanced: 564 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:34 INFO    src.validation.walk_forward | grid 13/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 564 trades, net $5591
+2026-07-12 15:14:36 INFO    src.backtest.engine | orb_enhanced: 422 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:36 INFO    src.validation.walk_forward | grid 14/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 422 trades, net $2200
+2026-07-12 15:14:38 INFO    src.backtest.engine | orb_enhanced: 607 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:38 INFO    src.validation.walk_forward | grid 15/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 607 trades, net $8481
+2026-07-12 15:14:39 INFO    src.backtest.engine | orb_enhanced: 453 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:39 INFO    src.validation.walk_forward | grid 16/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 453 trades, net $3425
+2026-07-12 15:14:41 INFO    src.backtest.engine | orb_enhanced: 498 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:41 INFO    src.validation.walk_forward | grid 17/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 498 trades, net $4459
+2026-07-12 15:14:43 INFO    src.backtest.engine | orb_enhanced: 371 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:43 INFO    src.validation.walk_forward | grid 18/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 371 trades, net $2387
+2026-07-12 15:14:45 INFO    src.backtest.engine | orb_enhanced: 532 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:45 INFO    src.validation.walk_forward | grid 19/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 532 trades, net $6771
+2026-07-12 15:14:46 INFO    src.backtest.engine | orb_enhanced: 396 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:46 INFO    src.validation.walk_forward | grid 20/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 396 trades, net $3488
+2026-07-12 15:14:49 INFO    src.backtest.engine | orb_enhanced: 498 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:49 INFO    src.validation.walk_forward | grid 21/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 498 trades, net $4459
+2026-07-12 15:14:51 INFO    src.backtest.engine | orb_enhanced: 371 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:51 INFO    src.validation.walk_forward | grid 22/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 371 trades, net $2387
+2026-07-12 15:14:53 INFO    src.backtest.engine | orb_enhanced: 532 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:53 INFO    src.validation.walk_forward | grid 23/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 532 trades, net $6771
+2026-07-12 15:14:55 INFO    src.backtest.engine | orb_enhanced: 396 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:55 INFO    src.validation.walk_forward | grid 24/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 396 trades, net $3488
+2026-07-12 15:14:57 INFO    src.backtest.engine | orb_enhanced: 561 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:14:57 INFO    src.validation.walk_forward | grid 25/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 561 trades, net $5611
+2026-07-12 15:14:58 INFO    src.backtest.engine | orb_enhanced: 419 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:14:58 INFO    src.validation.walk_forward | grid 26/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 419 trades, net $2220
+2026-07-12 15:15:00 INFO    src.backtest.engine | orb_enhanced: 604 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:15:00 INFO    src.validation.walk_forward | grid 27/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 604 trades, net $8501
+2026-07-12 15:15:02 INFO    src.backtest.engine | orb_enhanced: 450 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:15:02 INFO    src.validation.walk_forward | grid 28/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 450 trades, net $3444
+2026-07-12 15:15:04 INFO    src.backtest.engine | orb_enhanced: 561 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:15:04 INFO    src.validation.walk_forward | grid 29/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 561 trades, net $5611
+2026-07-12 15:15:06 INFO    src.backtest.engine | orb_enhanced: 419 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:15:06 INFO    src.validation.walk_forward | grid 30/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 419 trades, net $2220
+2026-07-12 15:15:08 INFO    src.backtest.engine | orb_enhanced: 604 trades, 2 ambiguous bars, 2 forced session-end exits
+2026-07-12 15:15:08 INFO    src.validation.walk_forward | grid 31/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 604 trades, net $8501
+2026-07-12 15:15:10 INFO    src.backtest.engine | orb_enhanced: 450 trades, 1 ambiguous bars, 1 forced session-end exits
+2026-07-12 15:15:10 INFO    src.validation.walk_forward | grid 32/64 {'range_minutes': 30, 'target_r': 1.0, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 450 trades, net $3444
+2026-07-12 15:15:11 INFO    src.backtest.engine | orb_enhanced: 501 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:11 INFO    src.validation.walk_forward | grid 33/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 501 trades, net $6294
+2026-07-12 15:15:13 INFO    src.backtest.engine | orb_enhanced: 374 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:13 INFO    src.validation.walk_forward | grid 34/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 374 trades, net $4039
+2026-07-12 15:15:15 INFO    src.backtest.engine | orb_enhanced: 535 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:15 INFO    src.validation.walk_forward | grid 35/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 535 trades, net $8702
+2026-07-12 15:15:17 INFO    src.backtest.engine | orb_enhanced: 399 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:17 INFO    src.validation.walk_forward | grid 36/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 399 trades, net $5419
+2026-07-12 15:15:18 INFO    src.backtest.engine | orb_enhanced: 501 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:18 INFO    src.validation.walk_forward | grid 37/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 501 trades, net $6294
+2026-07-12 15:15:20 INFO    src.backtest.engine | orb_enhanced: 374 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:20 INFO    src.validation.walk_forward | grid 38/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 374 trades, net $4039
+2026-07-12 15:15:22 INFO    src.backtest.engine | orb_enhanced: 535 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:22 INFO    src.validation.walk_forward | grid 39/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 535 trades, net $8702
+2026-07-12 15:15:24 INFO    src.backtest.engine | orb_enhanced: 399 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:24 INFO    src.validation.walk_forward | grid 40/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 399 trades, net $5419
+2026-07-12 15:15:25 INFO    src.backtest.engine | orb_enhanced: 564 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:25 INFO    src.validation.walk_forward | grid 41/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 564 trades, net $8055
+2026-07-12 15:15:27 INFO    src.backtest.engine | orb_enhanced: 422 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:27 INFO    src.validation.walk_forward | grid 42/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 422 trades, net $4257
+2026-07-12 15:15:29 INFO    src.backtest.engine | orb_enhanced: 607 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:29 INFO    src.validation.walk_forward | grid 43/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 607 trades, net $11111
+2026-07-12 15:15:31 INFO    src.backtest.engine | orb_enhanced: 453 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:31 INFO    src.validation.walk_forward | grid 44/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 453 trades, net $5652
+2026-07-12 15:15:33 INFO    src.backtest.engine | orb_enhanced: 564 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:33 INFO    src.validation.walk_forward | grid 45/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 564 trades, net $8055
+2026-07-12 15:15:35 INFO    src.backtest.engine | orb_enhanced: 422 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:35 INFO    src.validation.walk_forward | grid 46/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 422 trades, net $4257
+2026-07-12 15:15:36 INFO    src.backtest.engine | orb_enhanced: 607 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:36 INFO    src.validation.walk_forward | grid 47/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 607 trades, net $11111
+2026-07-12 15:15:38 INFO    src.backtest.engine | orb_enhanced: 453 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:38 INFO    src.validation.walk_forward | grid 48/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 0.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 453 trades, net $5652
+2026-07-12 15:15:40 INFO    src.backtest.engine | orb_enhanced: 498 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:40 INFO    src.validation.walk_forward | grid 49/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 498 trades, net $6314
+2026-07-12 15:15:42 INFO    src.backtest.engine | orb_enhanced: 371 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:42 INFO    src.validation.walk_forward | grid 50/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 371 trades, net $4058
+2026-07-12 15:15:44 INFO    src.backtest.engine | orb_enhanced: 532 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:44 INFO    src.validation.walk_forward | grid 51/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 532 trades, net $8722
+2026-07-12 15:15:46 INFO    src.backtest.engine | orb_enhanced: 396 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:46 INFO    src.validation.walk_forward | grid 52/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 396 trades, net $5439
+2026-07-12 15:15:48 INFO    src.backtest.engine | orb_enhanced: 498 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:48 INFO    src.validation.walk_forward | grid 53/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 498 trades, net $6314
+2026-07-12 15:15:49 INFO    src.backtest.engine | orb_enhanced: 371 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:50 INFO    src.validation.walk_forward | grid 54/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 371 trades, net $4058
+2026-07-12 15:15:51 INFO    src.backtest.engine | orb_enhanced: 532 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:51 INFO    src.validation.walk_forward | grid 55/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 532 trades, net $8722
+2026-07-12 15:15:53 INFO    src.backtest.engine | orb_enhanced: 396 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:53 INFO    src.validation.walk_forward | grid 56/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 25.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 396 trades, net $5439
+2026-07-12 15:15:55 INFO    src.backtest.engine | orb_enhanced: 561 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:55 INFO    src.validation.walk_forward | grid 57/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 561 trades, net $8074
+2026-07-12 15:15:57 INFO    src.backtest.engine | orb_enhanced: 419 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:15:57 INFO    src.validation.walk_forward | grid 58/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 419 trades, net $4276
+2026-07-12 15:15:59 INFO    src.backtest.engine | orb_enhanced: 604 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:15:59 INFO    src.validation.walk_forward | grid 59/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 604 trades, net $11131
+2026-07-12 15:16:01 INFO    src.backtest.engine | orb_enhanced: 450 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:16:01 INFO    src.validation.walk_forward | grid 60/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.0, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 450 trades, net $5672
+2026-07-12 15:16:02 INFO    src.backtest.engine | orb_enhanced: 561 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:16:02 INFO    src.validation.walk_forward | grid 61/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': '', 'pivot_n': 3} -> 561 trades, net $8074
+2026-07-12 15:16:04 INFO    src.backtest.engine | orb_enhanced: 419 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:16:04 INFO    src.validation.walk_forward | grid 62/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 1.2, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 419 trades, net $4276
+2026-07-12 15:16:06 INFO    src.backtest.engine | orb_enhanced: 604 trades, 2 ambiguous bars, 4 forced session-end exits
+2026-07-12 15:16:06 INFO    src.validation.walk_forward | grid 63/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': '', 'pivot_n': 3} -> 604 trades, net $11131
+2026-07-12 15:16:08 INFO    src.backtest.engine | orb_enhanced: 450 trades, 1 ambiguous bars, 3 forced session-end exits
+2026-07-12 15:16:08 INFO    src.validation.walk_forward | grid 64/64 {'range_minutes': 30, 'target_r': 1.5, 'expire_minutes': 120, 'min_width_ratio': 0.25, 'max_width_ratio': 0.7, 'long_only': True, 'skip_weekdays': [1], 'vix_min': 12.0, 'vix_max': 30.0, 'on_range_min_ratio': 0.2, 'on_range_max_ratio': 2.0, 'allow_regimes': 'up,range', 'pivot_n': 3} -> 450 trades, net $5672
+2026-07-12 15:16:09 INFO    run_phase17 | orb_vix_on_stack done: n=356 net=$8192 fold+=89% pass=58.3% payout=38.9%
+Traceback (most recent call last):
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 449, in <module>
+    main()
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 445, in main
+    write_report()
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 317, in write_report
+    port = portfolio_mc(
+           ^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 96, in portfolio_mc
+    daily = daily.with_columns(
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/dataframe/frame.py", line 10650, in with_columns
+    .collect(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/_utils/deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/lazyframe/opt_flags.py", line 344, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/lazyframe/frame.py", line 2630, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.InvalidOperationError: got invalid or ambiguous dtypes: '[date, dyn float]' in expression 'fill_null'
+
+Consider explicitly casting your input types to resolve potential ambiguity.
+Traceback (most recent call last):
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 463, in <module>
+    main()
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 456, in main
+    write_report()
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 331, in write_report
+    port = portfolio_mc(
+           ^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase17.py", line 111, in portfolio_mc
+    r = evaluate_ledger("portfolio", syn, rules, mc_cfg, costs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/scripts/run_phase7.py", line 115, in evaluate_ledger
+    "trade_metrics": compute_metrics(trades),
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/src/backtest/metrics.py", line 23, in compute_metrics
+    m["gross_pnl"] = float(trades["gross_pnl"].sum())
+                           ~~~~~~^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/dataframe/frame.py", line 1443, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/_utils/getitem.py", line 163, in get_df_item_by_key
+    return df.get_column(key)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/ethannguyen/Desktop/MNQ Strategy/.venv/lib/python3.12/site-packages/polars/dataframe/frame.py", line 9309, in get_column
+    return wrap_s(self._df.get_column(name))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "gross_pnl" not found
+2026-07-12 15:16:36 INFO    src.backtest.engine | orb_enhanced: 52 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:37 INFO    src.backtest.engine | orb_enhanced: 51 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:37 INFO    src.backtest.engine | orb_enhanced: 24 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:38 INFO    src.backtest.engine | orb_enhanced: 50 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:39 INFO    run_phase17 | Holdout → data/reports/phase17_holdout.md
+2026-07-12 15:16:47 INFO    src.backtest.engine | orb_enhanced: 11 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:47 INFO    src.backtest.engine | orb_enhanced: 11 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:48 INFO    src.backtest.engine | orb_enhanced: 11 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:48 INFO    src.backtest.engine | orb_enhanced: 93 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:48 INFO    src.backtest.engine | orb_enhanced: 93 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:48 INFO    src.backtest.engine | orb_enhanced: 93 trades, 0 ambiguous bars, 0 forced session-end exits
+2026-07-12 15:16:48 INFO    run_phase17 | Report → data/reports/phase17_leaderboard.md

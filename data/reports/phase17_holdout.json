@@ -1,0 +1,98 @@
+{
+ "holdout": [
+  {
+   "family": "orb_w_control",
+   "net": 2784.5399999999986,
+   "pass": 0.6643,
+   "pass_and_payout": 0.4613,
+   "params": {
+    "allow_regimes": "",
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "on_range_max_ratio": "1.0e9",
+    "on_range_min_ratio": 0.0,
+    "only_inside_day": false,
+    "range_minutes": 30,
+    "skip_inside_day": false,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0,
+    "vix_max": "1.0e9",
+    "vix_min": 0.0
+   }
+  },
+  {
+   "family": "orb_inside_day",
+   "net": 2647.019999999999,
+   "pass": 0.6572,
+   "pass_and_payout": 0.4553,
+   "params": {
+    "allow_regimes": "",
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "on_range_max_ratio": "1.0e9",
+    "on_range_min_ratio": 0.0,
+    "only_inside_day": false,
+    "range_minutes": 30,
+    "skip_inside_day": true,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0,
+    "vix_max": "1.0e9",
+    "vix_min": 0.0
+   }
+  },
+  {
+   "family": "orb_prior_regime",
+   "net": 395.9799999999997,
+   "pass": 0.5327,
+   "pass_and_payout": 0.3014,
+   "params": {
+    "allow_regimes": "range",
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "on_range_max_ratio": "1.0e9",
+    "on_range_min_ratio": 0.0,
+    "pivot_n": 5,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0,
+    "vix_max": "1.0e9",
+    "vix_min": 0.0
+   }
+  },
+  {
+   "family": "orb_vix_on_stack",
+   "net": 3825.000000000001,
+   "pass": 0.8947,
+   "pass_and_payout": 0.7988,
+   "params": {
+    "allow_regimes": "",
+    "expire_minutes": 120,
+    "long_only": true,
+    "max_width_ratio": 0.7,
+    "min_width_ratio": 0.25,
+    "on_range_max_ratio": 2.0,
+    "on_range_min_ratio": 0.0,
+    "pivot_n": 3,
+    "range_minutes": 30,
+    "skip_weekdays": [
+     1
+    ],
+    "target_r": 1.0,
+    "vix_max": 30.0,
+    "vix_min": 12.0
+   }
+  }
+ ]
+}
