@@ -1,0 +1,419 @@
+//@version=5
+// Lucid Flex 25K — ORB-W Indicator (manual / alert guide)
+// Same rules as lucid_orb_width_25k.pine strategy — visuals only, no orders.
+// ─────────────────────────────────────────────────────────────────────────────
+// CHART: MNQ1! · 5 minutes · timezone America/New_York · 1 micro
+// HOW TO USE:
+//   1. Wait for status "ARMED" (range locked, width OK, not Monday).
+//   2. Place BUY STOP at ENTRY (cyan). SL = red, TP = green (table + lines).
+//   3. If not filled by expire / 15:30 ET — cancel. Flat any open trade by 15:55.
+// ─────────────────────────────────────────────────────────────────────────────
+indicator(
+     title      = "Lucid ORB-W 25K — Levels (Indicator)",
+     shorttitle = "ORB-W Levels",
+     overlay    = true,
+     max_labels_count = 500,
+     max_lines_count  = 500)
+
+// ── Inputs ──────────────────────────────────────────────────────────────────
+grpCore   = "Strategy"
+rangeMin  = input.int(30,   "Opening range (minutes)", minval=5, maxval=120, group=grpCore)
+targetR   = input.float(1.0, "Target (R multiple)", minval=0.5, maxval=5, step=0.05, group=grpCore)
+expireMin = input.int(120,  "Pending expiry (minutes)", minval=15, maxval=300, group=grpCore)
+tickSz    = input.float(0.25, "Tick size", group=grpCore)
+skipMon   = input.bool(true, "Skip Monday", group=grpCore)
+longOnly  = input.bool(true, "Long only", group=grpCore)
+
+grpWidth  = "Width filter"
+useWidth  = input.bool(true,  "Use width filter", group=grpWidth)
+minRatio  = input.float(0.25, "Min OR width / vol ref", minval=0.0, maxval=2, step=0.05, group=grpWidth)
+maxRatio  = input.float(0.70, "Max OR width / vol ref", minval=0.1, maxval=5, step=0.05, group=grpWidth)
+volRefLen = input.int(14,     "Vol ref EWM days", minval=2, maxval=60, group=grpWidth)
+
+grpSess   = "Session (ET)"
+rthOpenH  = input.int(9,  "RTH open hour", group=grpSess)
+rthOpenM  = input.int(30, "RTH open minute", group=grpSess)
+rthEndH   = input.int(16, "RTH end hour", group=grpSess)
+rthEndM   = input.int(0,  "RTH end minute", group=grpSess)
+flatH     = input.int(15, "Force flat hour", group=grpSess)
+flatM     = input.int(55, "Force flat minute", group=grpSess)
+noEntryH  = input.int(15, "No entries after hour", group=grpSess)
+noEntryM  = input.int(30, "No entries after minute", group=grpSess)
+
+grpVis    = "Visuals"
+showOR    = input.bool(true, "Show opening range box", group=grpVis)
+showTable = input.bool(true, "Show levels table", group=grpVis)
+showLabels = input.bool(true, "Label ENTRY / SL / TP on arm", group=grpVis)
+
+TZ = "America/New_York"
+
+// ── Time ─────────────────────────────────────────────────────────────────────
+nyHour   = hour(time, TZ)
+nyMinute = minute(time, TZ)
+nyMod    = nyHour * 60 + nyMinute
+nyModClose = hour(time_close, TZ) * 60 + minute(time_close, TZ)
+nyDate   = year(time, TZ) * 10000 + month(time, TZ) * 100 + dayofmonth(time, TZ)
+
+rthOpenMod  = rthOpenH * 60 + rthOpenM
+rthEndMod   = rthEndH * 60 + rthEndM
+rangeEndMod = rthOpenMod + rangeMin
+expireMod   = rangeEndMod + expireMin
+flatMod     = flatH * 60 + flatM
+noEntryMod  = noEntryH * 60 + noEntryM
+
+inRangeWindow = nyMod >= rthOpenMod and nyMod < rangeEndMod
+rangeJustDone = nyMod >= rangeEndMod and nyMod[1] < rangeEndMod
+newNyDay      = nyDate != nyDate[1]
+isMonday      = dayofweek(time, TZ) == dayofweek.monday
+rthJustEnded  = nyMod >= rthEndMod and nyMod[1] < rthEndMod
+
+// ── Vol ref (completed RTH days only) ────────────────────────────────────────
+var float rthHigh = na
+var float rthLow  = na
+var float volRef  = na
+
+foldNow = rthJustEnded or (newNyDay and not na(rthHigh))
+if foldNow
+    if not na(rthHigh) and not na(rthLow) and rthHigh > rthLow
+        dayRange = rthHigh - rthLow
+        volRef := na(volRef) ? dayRange : volRef + (dayRange - volRef) / volRefLen
+    rthHigh := na
+    rthLow  := na
+
+inRth = nyMod >= rthOpenMod and nyMod < rthEndMod
+if inRth
+    rthHigh := na(rthHigh) ? high : math.max(rthHigh, high)
+    rthLow  := na(rthLow)  ? low  : math.min(rthLow, low)
+
+// ── Daily levels ─────────────────────────────────────────────────────────────
+var float orHigh       = na
+var float orLow        = na
+var bool  rangeLocked  = false
+var bool  ordersArmed  = false
+var bool  tradedToday  = false
+var bool  widthOK      = false
+var int   side         = 0      // 1 long, -1 short, 0 flat
+var float fillPx       = na
+
+var float longEntryPx  = na
+var float shortEntryPx = na
+var float longStopPx   = na
+var float shortStopPx  = na
+var float longTpPx     = na
+var float shortTpPx    = na
+var float widthRatio   = na
+
+var line entryLine = na
+var line slLine    = na
+var line tpLine    = na
+var label entryLab = na
+var label slLab    = na
+var label tpLab    = na
+
+if newNyDay
+    orHigh       := na
+    orLow        := na
+    rangeLocked  := false
+    ordersArmed  := false
+    tradedToday  := false
+    widthOK      := false
+    side         := 0
+    fillPx       := na
+    longEntryPx  := na
+    shortEntryPx := na
+    longStopPx   := na
+    shortStopPx  := na
+    longTpPx     := na
+    shortTpPx    := na
+    widthRatio   := na
+    line.delete(entryLine)
+    line.delete(slLine)
+    line.delete(tpLine)
+    label.delete(entryLab)
+    label.delete(slLab)
+    label.delete(tpLab)
+    entryLine := na
+    slLine    := na
+    tpLine    := na
+    entryLab  := na
+    slLab     := na
+    tpLab     := na
+
+if inRangeWindow
+    orHigh := na(orHigh) ? high : math.max(orHigh, high)
+    orLow  := na(orLow)  ? low  : math.min(orLow, low)
+
+if rangeJustDone and not na(orHigh) and not na(orLow) and orHigh > orLow
+    rangeLocked  := true
+    risk         = orHigh - orLow
+    widthRatio   := na(volRef) ? na : risk / volRef
+    widthOK      := not useWidth or (not na(widthRatio) and widthRatio > minRatio and widthRatio <= maxRatio)
+    longEntryPx  := orHigh + tickSz
+    shortEntryPx := orLow - tickSz
+    longStopPx   := orLow - tickSz
+    shortStopPx  := orHigh + tickSz
+    longTpPx     := longEntryPx + targetR * risk
+    shortTpPx    := shortEntryPx - targetR * risk
+
+skipToday = (skipMon and isMonday) or (rangeLocked and not widthOK)
+
+canArm = rangeLocked and not ordersArmed and not tradedToday and not skipToday
+     and nyMod >= rangeEndMod and nyMod < noEntryMod and nyMod < expireMod
+     and side == 0
+
+armedThisBar = false
+if canArm
+    ordersArmed := true
+    armedThisBar := true
+
+// Pending window ends
+pendingDead = ordersArmed and side == 0 and (nyModClose >= expireMod or nyModClose >= noEntryMod or nyMod >= flatMod)
+if pendingDead
+    ordersArmed := false
+    line.delete(entryLine)
+    line.delete(slLine)
+    line.delete(tpLine)
+    label.delete(entryLab)
+    label.delete(slLab)
+    label.delete(tpLab)
+    entryLine := na
+    slLine    := na
+    tpLine    := na
+    entryLab  := na
+    slLab     := na
+    tpLab     := na
+
+// ── Simulate fill (stop entry) + exits ───────────────────────────────────────
+enteredLong  = false
+enteredShort = false
+hitSl = false
+hitTp = false
+flatFired = false
+
+if ordersArmed and side == 0 and not tradedToday
+    // OCO: first touch wins (long preferred if both — rare)
+    longHit  = high >= longEntryPx
+    shortHit = not longOnly and low <= shortEntryPx
+    if longHit
+        side        := 1
+        fillPx      := longEntryPx
+        tradedToday := true
+        enteredLong := true
+    else if shortHit
+        side         := -1
+        fillPx       := shortEntryPx
+        tradedToday  := true
+        enteredShort := true
+
+if side == 1
+    if low <= longStopPx
+        hitSl := true
+        side  := 0
+    else if high >= longTpPx
+        hitTp := true
+        side  := 0
+else if side == -1
+    if high >= shortStopPx
+        hitSl := true
+        side  := 0
+    else if low <= shortTpPx
+        hitTp := true
+        side  := 0
+
+if side != 0 and nyMod >= flatMod
+    flatFired := true
+    side      := 0
+
+if side != 0 and rthJustEnded
+    flatFired := true
+    side      := 0
+
+// Active bracket prices
+activeEntry = side == 1 ? fillPx : side == -1 ? fillPx : ordersArmed ? longEntryPx : na
+activeSl    = side == 1 ? longStopPx : side == -1 ? shortStopPx : ordersArmed ? longStopPx : na
+activeTp    = side == 1 ? longTpPx : side == -1 ? shortTpPx : ordersArmed ? longTpPx : na
+showLevels  = (ordersArmed and side == 0) or side != 0
+
+// Short pending levels (only if shorts enabled and still pending)
+showShortPend = ordersArmed and side == 0 and not longOnly
+
+// ── Draw / update level lines ────────────────────────────────────────────────
+if armedThisBar or enteredLong or enteredShort
+    line.delete(entryLine)
+    line.delete(slLine)
+    line.delete(tpLine)
+    label.delete(entryLab)
+    label.delete(slLab)
+    label.delete(tpLab)
+    ePx = (enteredShort or (side == -1)) ? shortEntryPx : longEntryPx
+    sPx = (enteredShort or (side == -1)) ? shortStopPx : longStopPx
+    tPx = (enteredShort or (side == -1)) ? shortTpPx : longTpPx
+    if ordersArmed and side == 0
+        ePx := longEntryPx
+        sPx := longStopPx
+        tPx := longTpPx
+    if enteredLong or (side == 1)
+        ePx := fillPx
+        sPx := longStopPx
+        tPx := longTpPx
+    entryLine := line.new(bar_index, ePx, bar_index + 1, ePx,
+         color=color.new(#00BCD4, 0), width=2, style=line.style_dashed, extend=extend.right)
+    slLine := line.new(bar_index, sPx, bar_index + 1, sPx,
+         color=color.new(#FF5252, 0), width=2, style=line.style_solid, extend=extend.right)
+    tpLine := line.new(bar_index, tPx, bar_index + 1, tPx,
+         color=color.new(#00E676, 0), width=2, style=line.style_solid, extend=extend.right)
+    if showLabels
+        entryLab := label.new(bar_index, ePx, "ENTRY  " + str.tostring(ePx, format.mintick),
+             style=label.style_label_left, color=color.new(#00BCD4, 10),
+             textcolor=color.white, size=size.small)
+        slLab := label.new(bar_index, sPx, "SL  " + str.tostring(sPx, format.mintick),
+             style=label.style_label_left, color=color.new(#FF5252, 10),
+             textcolor=color.white, size=size.small)
+        tpLab := label.new(bar_index, tPx, "TP  " + str.tostring(tPx, format.mintick),
+             style=label.style_label_left, color=color.new(#00E676, 10),
+             textcolor=color.white, size=size.small)
+
+if showLevels
+    ePx = side == -1 ? shortEntryPx : side == 1 ? fillPx : longEntryPx
+    sPx = side == -1 ? shortStopPx : longStopPx
+    tPx = side == -1 ? shortTpPx : longTpPx
+    if side == 0 and ordersArmed
+        ePx := longEntryPx
+    if not na(entryLine)
+        line.set_x2(entryLine, bar_index)
+        line.set_y1(entryLine, ePx)
+        line.set_y2(entryLine, ePx)
+    if not na(slLine)
+        line.set_x2(slLine, bar_index)
+        line.set_y1(slLine, sPx)
+        line.set_y2(slLine, sPx)
+    if not na(tpLine)
+        line.set_x2(tpLine, bar_index)
+        line.set_y1(tpLine, tPx)
+        line.set_y2(tpLine, tPx)
+    if not na(entryLab)
+        label.set_xy(entryLab, bar_index, ePx)
+        label.set_text(entryLab, (side == 0 ? "ENTRY  " : "FILL  ") + str.tostring(ePx, format.mintick))
+    if not na(slLab)
+        label.set_xy(slLab, bar_index, sPx)
+        label.set_text(slLab, "SL  " + str.tostring(sPx, format.mintick))
+    if not na(tpLab)
+        label.set_xy(tpLab, bar_index, tPx)
+        label.set_text(tpLab, "TP  " + str.tostring(tPx, format.mintick))
+
+doneTrade = hitSl or hitTp or flatFired or (not showLevels and (ordersArmed[1] or side[1] != 0))
+if doneTrade or pendingDead
+    if not na(entryLine)
+        line.set_x2(entryLine, bar_index)
+        line.set_extend(entryLine, extend.none)
+    if not na(slLine)
+        line.set_x2(slLine, bar_index)
+        line.set_extend(slLine, extend.none)
+    if not na(tpLine)
+        line.set_x2(tpLine, bar_index)
+        line.set_extend(tpLine, extend.none)
+
+// ── Plots (data window + backup visuals) ─────────────────────────────────────
+plot(showLevels ? (side == -1 ? shortEntryPx : side == 1 ? fillPx : longEntryPx) : na,
+     "ENTRY", color=color.new(#00BCD4, 0), linewidth=2, style=plot.style_linebr)
+plot(showLevels ? (side == -1 ? shortStopPx : longStopPx) : na,
+     "SL", color=color.new(#FF5252, 0), linewidth=2, style=plot.style_linebr)
+plot(showLevels ? (side == -1 ? shortTpPx : longTpPx) : na,
+     "TP", color=color.new(#00E676, 0), linewidth=2, style=plot.style_linebr)
+
+plot(showShortPend ? shortEntryPx : na, "Short ENTRY",
+     color=color.new(#FF9800, 40), linewidth=1, style=plot.style_linebr)
+
+orHi = showOR and rangeLocked and side == 0 ? orHigh : na
+orLo = showOR and rangeLocked and side == 0 ? orLow  : na
+pHi  = plot(orHi, "OR High", color=color.new(color.blue, 55), linewidth=1, style=plot.style_linebr)
+pLo  = plot(orLo, "OR Low",  color=color.new(color.blue, 55), linewidth=1, style=plot.style_linebr)
+fill(pHi, pLo, color=showOR and rangeLocked and side == 0 ? color.new(color.blue, 92) : na)
+
+// ── Markers ──────────────────────────────────────────────────────────────────
+plotshape(enteredLong, title="Long fill", style=shape.triangleup,
+     location=location.belowbar, color=color.new(#00E676, 0), size=size.small, text="LONG")
+plotshape(enteredShort, title="Short fill", style=shape.triangledown,
+     location=location.abovebar, color=color.new(#FF5252, 0), size=size.small, text="SHORT")
+plotshape(hitTp, title="TP hit", style=shape.circle,
+     location=location.abovebar, color=color.new(#00E676, 0), size=size.tiny, text="TP")
+plotshape(hitSl, title="SL hit", style=shape.circle,
+     location=location.belowbar, color=color.new(#FF5252, 0), size=size.tiny, text="SL")
+plotshape(flatFired, title="Flat 15:55", style=shape.xcross,
+     location=location.abovebar, color=color.orange, size=size.tiny, text="FLAT")
+
+if skipToday and rangeJustDone and rangeLocked and barstate.isconfirmed
+    reason = skipMon and isMonday ? "SKIP MON" :
+         not na(widthRatio) and widthRatio <= minRatio ? "SKIP NARROW" :
+         not na(widthRatio) and widthRatio > maxRatio ? "SKIP WIDE" : "SKIP WARMUP"
+    label.new(bar_index, high, reason,
+         style=label.style_label_down, color=color.new(color.orange, 15),
+         textcolor=color.white, size=size.small)
+
+if armedThisBar and barstate.isconfirmed
+    riskPts = longEntryPx - longStopPx
+    label.new(bar_index, longEntryPx,
+         "ARMED\nBuy stop " + str.tostring(longEntryPx, format.mintick) +
+         "\nSL " + str.tostring(longStopPx, format.mintick) +
+         "\nTP " + str.tostring(longTpPx, format.mintick) +
+         "\nRisk ~$" + str.tostring(riskPts * 2.0, "#"),
+         style=label.style_label_left, color=color.new(#1565C0, 5),
+         textcolor=color.white, size=size.normal)
+
+// ── Status table ─────────────────────────────────────────────────────────────
+var table status = table.new(position.top_right, 2, 8,
+     bgcolor=color.new(#111111, 10), border_width=1, border_color=color.new(color.gray, 60))
+
+if showTable and barstate.islast
+    stat = skipToday ? "SKIP" :
+         side == 1 ? "IN LONG" :
+         side == -1 ? "IN SHORT" :
+         ordersArmed ? "ARMED — wait for break" :
+         rangeLocked ? "Ready / expired" : "Building OR…"
+    eShow = showLevels ? (side == -1 ? shortEntryPx : side == 1 ? fillPx : longEntryPx) : na
+    sShow = showLevels ? (side == -1 ? shortStopPx : longStopPx) : na
+    tShow = showLevels ? (side == -1 ? shortTpPx : longTpPx) : na
+    riskPts = showLevels and not na(eShow) and not na(sShow) ? math.abs(eShow - sShow) : na
+    ratioTxt = rangeLocked and not na(volRef) ? str.tostring((orHigh - orLow) / volRef, "#.##") : "—"
+
+    table.cell(status, 0, 0, "ORB-W Levels", text_color=color.white, text_size=size.small)
+    table.cell(status, 1, 0, stat,
+         text_color=skipToday ? color.orange : ordersArmed or side != 0 ? color.aqua : color.gray,
+         text_size=size.small)
+    table.cell(status, 0, 1, "ENTRY", text_color=color.gray, text_size=size.small)
+    table.cell(status, 1, 1, showLevels ? str.tostring(eShow, format.mintick) : "—",
+         text_color=color.new(#00BCD4, 0), text_size=size.normal)
+    table.cell(status, 0, 2, "SL", text_color=color.gray, text_size=size.small)
+    table.cell(status, 1, 2, showLevels ? str.tostring(sShow, format.mintick) : "—",
+         text_color=color.new(#FF5252, 0), text_size=size.normal)
+    table.cell(status, 0, 3, "TP", text_color=color.gray, text_size=size.small)
+    table.cell(status, 1, 3, showLevels ? str.tostring(tShow, format.mintick) : "—",
+         text_color=color.new(#00E676, 0), text_size=size.normal)
+    table.cell(status, 0, 4, "Risk $", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 4, not na(riskPts) ? str.tostring(riskPts * 2.0, "#.0") : "—",
+         text_color=color.white, text_size=size.small)
+    table.cell(status, 0, 5, "OR / W", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 5,
+         (rangeLocked ? str.tostring(orHigh - orLow, format.mintick) : "—") + " / " + ratioTxt,
+         text_color=widthOK or not rangeLocked ? color.lime : color.orange, text_size=size.tiny)
+    expH = int(math.floor(expireMod / 60))
+    expM = int(expireMod % 60)
+    table.cell(status, 0, 6, "Expire", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 6,
+         str.tostring(expH) + ":" + (expM < 10 ? "0" : "") + str.tostring(expM) + " ET",
+         text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 0, 7, "Flat", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 7, "15:55 ET", text_color=color.orange, text_size=size.tiny)
+
+// ── Alerts (set once; fire on condition) ─────────────────────────────────────
+alertcondition(armedThisBar, "Levels armed",
+     "ORB-W: ENTRY/SL/TP ready — place buy stop at ENTRY")
+alertcondition(enteredLong, "Long filled",
+     "ORB-W: Long filled — manage SL/TP")
+alertcondition(enteredShort, "Short filled",
+     "ORB-W: Short filled — manage SL/TP")
+alertcondition(hitTp, "Take profit", "ORB-W: TP hit")
+alertcondition(hitSl, "Stop loss", "ORB-W: SL hit")
+alertcondition(flatFired, "Force flat", "ORB-W: Flat by 15:55 ET")
+alertcondition(skipToday and rangeJustDone, "Skip day",
+     "ORB-W: no trade today")
