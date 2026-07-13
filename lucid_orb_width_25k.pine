@@ -1,0 +1,339 @@
+//@version=5
+// Lucid Flex 25K — Phase 7 Width-Filtered ORB · Phase 9 rev B (flat fix)
+// Commission: $0.50/side ($1.00 RT) per Lucid published MNQ rate (2026-07-12)
+// ─────────────────────────────────────────────────────────────────────────────
+// CHART SETTINGS (required):
+//   Symbol MNQ1! (CME continuous) · Timeframe 5 minutes ·
+//   Chart timezone America/New_York. Works with BOTH session templates
+//   (ETH default or RTH-only): all session logic is computed from ET
+//   wall-clock internally. Order size 1 contract (1 micro).
+// PHASE 9 rev B FLAT FIX: Phase 8 still left ~30% overnight holds because
+// strategy.exit("XL") was re-armed every bar AFTER 15:55, keeping bracket
+// orders alive through Globex. Now: exit orders ONLY before flatMod; at/after
+// 15:55 we cancel XL/XS/entries and strategy.close with comment "Flat 15:55".
+// Removed the newNyDay overnight fallback (it caused 00:05 "Session end" exits).
+// Verify: trade list must have ZERO exit date ≠ entry date.
+// ─────────────────────────────────────────────────────────────────────────────
+strategy(
+     title                  = "Lucid ORB 25K — Width Filtered (Phase 7)",
+     shorttitle             = "ORB-W 25K B",
+     overlay                = true,
+     pyramiding             = 0,
+     initial_capital        = 25000,
+     default_qty_type       = strategy.fixed,
+     default_qty_value      = 1,
+     commission_type        = strategy.commission.cash_per_contract,
+     commission_value       = 0.50,
+     slippage               = 1,
+     calc_on_every_tick     = false,
+     process_orders_on_close = false,
+     max_labels_count       = 500,
+     max_lines_count        = 500)
+
+// ── Inputs ──────────────────────────────────────────────────────────────────
+grpCore   = "Strategy"
+rangeMin  = input.int(30,   "Opening range (minutes)", minval=5, maxval=120, group=grpCore)
+targetR   = input.float(1.0, "Target (R multiple)", minval=0.5, maxval=5, step=0.05, group=grpCore)
+expireMin = input.int(120,  "Pending expiry (minutes)", minval=15, maxval=300, group=grpCore)
+tickSz    = input.float(0.25, "Tick size", group=grpCore)
+qty       = input.int(1,    "Contracts", minval=1, maxval=20, group=grpCore)
+skipMon   = input.bool(true, "Skip Monday (research: +pass rate)", group=grpCore)
+longOnly  = input.bool(true, "Long only (Phase 9: 64% pass vs 62%)", group=grpCore)
+
+grpWidth  = "Width filter (Phase 7)"
+useWidth  = input.bool(true,  "Use width filter", group=grpWidth)
+minRatio  = input.float(0.25, "Min OR width / vol ref", minval=0.0, maxval=2, step=0.05, group=grpWidth)
+maxRatio  = input.float(0.70, "Max OR width / vol ref", minval=0.1, maxval=5, step=0.05, group=grpWidth)
+volRefLen = input.int(14,     "Vol ref EWM days", minval=2, maxval=60, group=grpWidth)
+
+grpSess   = "Session (ET)"
+rthOpenH  = input.int(9,  "RTH open hour", group=grpSess)
+rthOpenM  = input.int(30, "RTH open minute", group=grpSess)
+rthEndH   = input.int(16, "RTH end hour", group=grpSess)
+rthEndM   = input.int(0,  "RTH end minute", group=grpSess)
+flatH     = input.int(15, "Force flat hour", group=grpSess)
+flatM     = input.int(55, "Force flat minute", group=grpSess)
+noEntryH  = input.int(15, "No entries after hour", group=grpSess)
+noEntryM  = input.int(30, "No entries after minute", group=grpSess)
+
+grpVis    = "Visuals"
+showOR    = input.bool(true,  "Show opening range box", group=grpVis)
+showTable = input.bool(true,  "Show status table", group=grpVis)
+
+TZ = "America/New_York"
+
+// ── Time ─────────────────────────────────────────────────────────────────────
+nyHour   = hour(time, TZ)
+nyMinute = minute(time, TZ)
+nyMod    = nyHour * 60 + nyMinute
+nyModClose = hour(time_close, TZ) * 60 + minute(time_close, TZ)
+nyDate   = year(time, TZ) * 10000 + month(time, TZ) * 100 + dayofmonth(time, TZ)
+
+rthOpenMod  = rthOpenH * 60 + rthOpenM
+rthEndMod   = rthEndH * 60 + rthEndM
+rangeEndMod = rthOpenMod + rangeMin
+expireMod   = rangeEndMod + expireMin
+flatMod     = flatH * 60 + flatM
+noEntryMod  = noEntryH * 60 + noEntryM
+
+inRangeWindow = nyMod >= rthOpenMod and nyMod < rangeEndMod
+rangeJustDone = nyMod >= rangeEndMod and nyMod[1] < rangeEndMod
+newNyDay      = nyDate != nyDate[1]
+isMonday      = dayofweek(time, TZ) == dayofweek.monday
+
+// ── Daily RTH range EWM (vol reference, uses COMPLETED days only) ───────────
+var float rthHigh = na
+var float rthLow  = na
+var float volRef  = na
+
+// fold the completed day's RTH range into the EWM; the newNyDay branch is
+// the fallback for RTH-only charts and holiday early closes (no 16:00 bar)
+rthJustEnded = nyMod >= rthEndMod and nyMod[1] < rthEndMod
+foldNow = rthJustEnded or (newNyDay and not na(rthHigh))
+if foldNow
+    if not na(rthHigh) and not na(rthLow) and rthHigh > rthLow
+        dayRange = rthHigh - rthLow
+        volRef := na(volRef) ? dayRange : volRef + (dayRange - volRef) / volRefLen
+    rthHigh := na
+    rthLow  := na
+
+inRth = nyMod >= rthOpenMod and nyMod < rthEndMod
+if inRth
+    rthHigh := na(rthHigh) ? high : math.max(rthHigh, high)
+    rthLow  := na(rthLow)  ? low  : math.min(rthLow, low)
+
+// ── Daily state ──────────────────────────────────────────────────────────────
+var float orHigh       = na
+var float orLow        = na
+var bool  rangeLocked  = false
+var bool  ordersPlaced = false
+var bool  tradedToday  = false
+var bool  widthOK      = false
+
+var float longEntryPx  = na
+var float shortEntryPx = na
+var float longStopPx   = na
+var float shortStopPx  = na
+var float longTpPx     = na
+var float shortTpPx    = na
+
+var line slLine = na
+var line tpLine = na
+
+if newNyDay
+    orHigh       := na
+    orLow        := na
+    rangeLocked  := false
+    ordersPlaced := false
+    tradedToday  := false
+    widthOK      := false
+    longEntryPx  := na
+    shortEntryPx := na
+    longStopPx   := na
+    shortStopPx  := na
+    longTpPx     := na
+    shortTpPx    := na
+
+if inRangeWindow
+    orHigh := na(orHigh) ? high : math.max(orHigh, high)
+    orLow  := na(orLow)  ? low  : math.min(orLow, low)
+
+float widthRatio = na
+if rangeJustDone and not na(orHigh) and not na(orLow) and orHigh > orLow
+    rangeLocked  := true
+    risk         = orHigh - orLow
+    widthRatio   := na(volRef) ? na : risk / volRef
+    widthOK      := not useWidth or (not na(widthRatio) and widthRatio > minRatio and widthRatio <= maxRatio)
+    longEntryPx  := orHigh + tickSz
+    shortEntryPx := orLow - tickSz
+    longStopPx   := orLow - tickSz
+    shortStopPx  := orHigh + tickSz
+    longTpPx     := longEntryPx + targetR * risk
+    shortTpPx    := shortEntryPx - targetR * risk
+
+skipToday = (skipMon and isMonday) or (rangeLocked and not widthOK)
+
+canPlaceOrders = rangeLocked and not ordersPlaced and not tradedToday and not skipToday
+     and nyMod >= rangeEndMod and nyMod < noEntryMod and nyMod < expireMod
+     and strategy.position_size == 0
+
+// ── Orders ───────────────────────────────────────────────────────────────────
+if canPlaceOrders
+    strategy.entry("Long", strategy.long, qty=qty, stop=longEntryPx,
+         oca_name="ORB_OCO", oca_type=strategy.oca.cancel)
+    if not longOnly
+        strategy.entry("Short", strategy.short, qty=qty, stop=shortEntryPx,
+             oca_name="ORB_OCO", oca_type=strategy.oca.cancel)
+    ordersPlaced := true
+
+inPosLong  = strategy.position_size > 0
+inPosShort = strategy.position_size < 0
+beforeFlat = nyMod < flatMod
+inFlatWin  = nyMod >= flatMod
+
+// Bracket exits ONLY before 15:55 — never re-arm after flat window (rev B fix)
+if inPosLong and beforeFlat
+    strategy.exit("XL", "Long", stop=longStopPx, limit=longTpPx)
+if inPosShort and beforeFlat
+    strategy.exit("XS", "Short", stop=shortStopPx, limit=shortTpPx)
+
+enteredLong  = inPosLong and strategy.position_size[1] == 0
+enteredShort = inPosShort and strategy.position_size[1] == 0
+
+// ── Bracket visuals (SL/TP from order arm → exit) ─────────────────────────────
+pendingEntry = ordersPlaced and strategy.position_size == 0 and not tradedToday and not skipToday
+ordersJustPlaced = ordersPlaced and not ordersPlaced[1]
+inLong  = strategy.position_size > 0
+inShort = strategy.position_size < 0
+showLongBrackets  = inLong or pendingEntry
+showShortBrackets = inShort or (pendingEntry and not longOnly)
+
+if enteredLong or enteredShort
+    tradedToday := true
+
+// Horizontal SL/TP — visible as soon as stop entry is armed, through the trade
+plot(showLongBrackets ? longStopPx : na, "Long SL",
+     color=color.new(#FF5252, 0), linewidth=2, style=plot.style_linebr)
+plot(showLongBrackets ? longTpPx : na, "Long TP",
+     color=color.new(#00E676, 0), linewidth=2, style=plot.style_linebr)
+plot(showShortBrackets ? shortStopPx : na, "Short SL",
+     color=color.new(#FF5252, 0), linewidth=2, style=plot.style_linebr)
+plot(showShortBrackets ? shortTpPx : na, "Short TP",
+     color=color.new(#00E676, 0), linewidth=2, style=plot.style_linebr)
+
+// Line objects (extend with price; finalized on exit / cancel)
+if ordersJustPlaced or enteredLong or enteredShort
+    line.delete(slLine)
+    line.delete(tpLine)
+    sl = enteredShort ? shortStopPx : longStopPx
+    tp = enteredShort ? shortTpPx : longTpPx
+    slLine := line.new(bar_index, sl, bar_index + 1, sl,
+         color=color.new(#FF5252, 0), width=2, style=line.style_solid, extend=extend.right)
+    tpLine := line.new(bar_index, tp, bar_index + 1, tp,
+         color=color.new(#00E676, 0), width=2, style=line.style_solid, extend=extend.right)
+
+if showLongBrackets or showShortBrackets
+    sl = showShortBrackets and not showLongBrackets ? shortStopPx : longStopPx
+    tp = showShortBrackets and not showLongBrackets ? shortTpPx : longTpPx
+    if not na(slLine)
+        line.set_x2(slLine, bar_index)
+        line.set_y1(slLine, sl)
+        line.set_y2(slLine, sl)
+    if not na(tpLine)
+        line.set_x2(tpLine, bar_index)
+        line.set_y1(tpLine, tp)
+        line.set_y2(tpLine, tp)
+
+exited = strategy.position_size == 0 and strategy.position_size[1] != 0
+bracketsDone = not showLongBrackets and not showShortBrackets and (ordersPlaced[1] or strategy.position_size[1] != 0)
+
+if exited or bracketsDone
+    if not na(slLine)
+        line.set_x2(slLine, bar_index)
+        line.set_extend(slLine, extend.none)
+    if not na(tpLine)
+        line.set_x2(tpLine, bar_index)
+        line.set_extend(tpLine, extend.none)
+
+if newNyDay
+    line.delete(slLine)
+    line.delete(tpLine)
+    slLine := na
+    tpLine := na
+
+// cancel on the bar whose CLOSE reaches the deadline so the pending cannot
+// fill during the expire bar itself (matches the Python engine boundary)
+if ordersPlaced and strategy.position_size == 0 and (nyModClose >= expireMod or nyModClose >= noEntryMod)
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+
+// ── Force flat 15:55 ET — rev B ─────────────────────────────────────────────
+flatFired = inFlatWin and strategy.position_size != 0
+if inFlatWin
+    strategy.cancel("XL")
+    strategy.cancel("XS")
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+    if inPosLong
+        strategy.close("Long", comment="Flat 15:55")
+    if inPosShort
+        strategy.close("Short", comment="Flat 15:55")
+
+if rthJustEnded and strategy.position_size != 0
+    strategy.cancel("XL")
+    strategy.cancel("XS")
+    strategy.cancel("Long")
+    strategy.cancel("Short")
+    if strategy.position_size > 0
+        strategy.close("Long", comment="Flat RTH end")
+    if strategy.position_size < 0
+        strategy.close("Short", comment="Flat RTH end")
+
+if flatFired and barstate.isconfirmed
+    label.new(bar_index, high, "FLAT 15:55",
+         style=label.style_label_down, color=color.new(color.red, 25),
+         textcolor=color.white, size=size.tiny)
+
+// ── Opening range box (subtle, pre-entry only) ────────────────────────────────
+orHi = showOR and rangeLocked and strategy.position_size == 0 ? orHigh : na
+orLo = showOR and rangeLocked and strategy.position_size == 0 ? orLow  : na
+pHi  = plot(orHi, "OR High", color=color.new(color.blue, 50), linewidth=1, style=plot.style_linebr)
+pLo  = plot(orLo, "OR Low",  color=color.new(color.blue, 50), linewidth=1, style=plot.style_linebr)
+fill(pHi, pLo, color=showOR and rangeLocked and strategy.position_size == 0 ? color.new(color.blue, 93) : na)
+
+// ── Entry arrows (fill only) ─────────────────────────────────────────────────
+plotshape(enteredLong,
+     title="Long entry", style=shape.arrowup, location=location.belowbar,
+     color=color.new(#00E676, 0), size=size.small, text="")
+plotshape(enteredShort,
+     title="Short entry", style=shape.arrowdown, location=location.abovebar,
+     color=color.new(#FF5252, 0), size=size.small, text="")
+
+// ── Skip badges ──────────────────────────────────────────────────────────────
+if skipToday and rangeJustDone and rangeLocked and barstate.isconfirmed
+    reason = skipMon and isMonday ? "SKIP MON" :
+         not na(widthRatio) and widthRatio <= minRatio ? "SKIP NARROW" :
+         not na(widthRatio) and widthRatio > maxRatio ? "SKIP WIDE" : "SKIP WARMUP"
+    label.new(bar_index, high, reason,
+         style=label.style_label_down, color=color.new(color.orange, 20),
+         textcolor=color.white, size=size.tiny)
+
+// ── Status table ─────────────────────────────────────────────────────────────
+var table status = table.new(position.top_right, 2, 6,
+     bgcolor=color.new(#1E1E1E, 15), border_width=1, border_color=color.new(color.gray, 70))
+
+if showTable and barstate.islast
+    inPos = strategy.position_size != 0
+    showLvls = showLongBrackets or showShortBrackets
+    slPx  = showLongBrackets ? longStopPx : showShortBrackets ? shortStopPx : na
+    tpPx  = showLongBrackets ? longTpPx : showShortBrackets ? shortTpPx : na
+    stat  = skipToday ? "Skip" : inPos ? (strategy.position_size > 0 ? "Long" : "Short") :
+         pendingEntry ? "Pending" : rangeLocked ? "Ready" : "Range…"
+    ratioTxt = rangeLocked and not na(volRef) ? str.tostring((orHigh - orLow) / volRef, "#.##") : "—"
+
+    table.cell(status, 0, 0, "ORB-W 25K", text_color=color.white, text_size=size.small)
+    table.cell(status, 1, 0, stat, text_color=skipToday ? color.orange : color.aqua, text_size=size.small)
+    table.cell(status, 0, 1, "SL", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 1, showLvls ? str.tostring(slPx, format.mintick) : "—",
+         text_color=color.new(#FF5252, 0), text_size=size.small)
+    table.cell(status, 0, 2, "TP", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 2, showLvls ? str.tostring(tpPx, format.mintick) : "—",
+         text_color=color.new(#00E676, 0), text_size=size.small)
+    table.cell(status, 0, 3, "1R", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 3, rangeLocked ? str.tostring(orHigh - orLow, format.mintick) : "—",
+         text_color=color.white, text_size=size.tiny)
+    table.cell(status, 0, 4, "W ratio", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 4, ratioTxt,
+         text_color=widthOK or not rangeLocked ? color.lime : color.orange, text_size=size.tiny)
+    table.cell(status, 0, 5, "Skip Mon", text_color=color.gray, text_size=size.tiny)
+    table.cell(status, 1, 5, skipMon ? "ON" : "OFF", text_color=skipMon ? color.lime : color.gray, text_size=size.tiny)
+
+// ── Alerts ───────────────────────────────────────────────────────────────────
+alertcondition(rangeJustDone and rangeLocked and not skipToday, "ORB ready",
+     "ORB-W: Range locked — orders armed")
+alertcondition(enteredLong,  "Long entry",  "ORB-W: Long filled")
+alertcondition(enteredShort, "Short entry", "ORB-W: Short filled")
+alertcondition(skipToday and rangeJustDone, "Skip day",
+     "ORB-W: no trade today (Monday / width filter)")
+alertcondition(flatFired, "Flat 15:55",
+     "ORB-W: force-flat order submitted — position closes 15:55 ET")
