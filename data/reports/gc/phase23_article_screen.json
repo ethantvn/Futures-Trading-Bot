@@ -1,0 +1,2268 @@
+{
+ "gc/ema_stoch": {
+  "best_params": {
+   "touch_bars": 6,
+   "stop_atr": 1.5,
+   "target_r": 1.0,
+   "entry_start_minute": 480,
+   "daily_gate": true,
+   "entry_end_minute": 720
+  },
+  "best": {
+   "trades": 1028,
+   "net": -17650.370263315563,
+   "exp": -17.169620878711637,
+   "wr": 0.48346303501945526,
+   "pf": 0.9099543805562609,
+   "tpm": 18.907746223564956
+  },
+  "all": [
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1028,
+    "net": -17650.370263315563,
+    "exp": -17.169620878711637,
+    "wr": 0.48346303501945526,
+    "pf": 0.9099543805562609,
+    "tpm": 18.907746223564956
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1027,
+    "net": -17860.632980342318,
+    "exp": -17.391073982806542,
+    "wr": 0.48296007789678674,
+    "pf": 0.908881698435821,
+    "tpm": 18.88935347432024
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1029,
+    "net": -17921.32434330938,
+    "exp": -17.416253006131566,
+    "wr": 0.3323615160349854,
+    "pf": 0.9044131316749727,
+    "tpm": 18.926138972809667
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1028,
+    "net": -18207.674632678383,
+    "exp": -17.71174575163267,
+    "wr": 0.3317120622568093,
+    "pf": 0.9028858267235971,
+    "tpm": 18.907746223564956
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1013,
+    "net": -19809.505252302282,
+    "exp": -19.555286527445492,
+    "wr": 0.3899308983218164,
+    "pf": 0.9131146497138369,
+    "tpm": 18.63185498489426
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1012,
+    "net": -20133.899327842435,
+    "exp": -19.89515743857948,
+    "wr": 0.3893280632411067,
+    "pf": 0.9116918432113482,
+    "tpm": 18.613462235649546
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1036,
+    "net": -20913.416683821615,
+    "exp": -20.186695640754454,
+    "wr": 0.39285714285714285,
+    "pf": 0.8787424836026175,
+    "tpm": 19.05488821752266
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1035,
+    "net": -21123.67940084837,
+    "exp": -20.409352078114367,
+    "wr": 0.3922705314009662,
+    "pf": 0.877523365022278,
+    "tpm": 19.036495468277945
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1038,
+    "net": -23225.637731369243,
+    "exp": -22.375373536964588,
+    "wr": 0.47880539499036606,
+    "pf": 0.8414373218284382,
+    "tpm": 19.091673716012085
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1037,
+    "net": -23359.812876053747,
+    "exp": -22.526338356850285,
+    "wr": 0.4783027965284474,
+    "pf": 0.8405213008979775,
+    "tpm": 19.07328096676737
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 998,
+    "net": -23964.88571711985,
+    "exp": -24.01291154020025,
+    "wr": 0.33867735470941884,
+    "pf": 0.9013610586106988,
+    "tpm": 18.355963746223566
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 997,
+    "net": -24406.885717119872,
+    "exp": -24.480326697211506,
+    "wr": 0.33801404212637914,
+    "pf": 0.8995417963530479,
+    "tpm": 18.33757099697885
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1948,
+    "net": -36528.60056850243,
+    "exp": -18.751848341120343,
+    "wr": 0.4830595482546201,
+    "pf": 0.87432871444992,
+    "tpm": 35.72115662650602
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1948,
+    "net": -36528.60056850243,
+    "exp": -18.751848341120343,
+    "wr": 0.4830595482546201,
+    "pf": 0.87432871444992,
+    "tpm": 35.72115662650602
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1948,
+    "net": -37629.73383519656,
+    "exp": -19.31711182504957,
+    "wr": 0.3413757700205339,
+    "pf": 0.8642364090266854,
+    "tpm": 35.72115662650602
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1948,
+    "net": -37629.73383519656,
+    "exp": -19.31711182504957,
+    "wr": 0.3413757700205339,
+    "pf": 0.8642364090266854,
+    "tpm": 35.72115662650602
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1958,
+    "net": -39754.93924101838,
+    "exp": -20.303850480601827,
+    "wr": 0.39734422880490294,
+    "pf": 0.8443741248046261,
+    "tpm": 35.90453012048193
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1958,
+    "net": -39754.93924101838,
+    "exp": -20.303850480601827,
+    "wr": 0.39734422880490294,
+    "pf": 0.8443741248046261,
+    "tpm": 35.90453012048193
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1918,
+    "net": -41088.26830256168,
+    "exp": -21.42245479799879,
+    "wr": 0.3931178310740355,
+    "pf": 0.8771031088365417,
+    "tpm": 35.17103614457831
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1918,
+    "net": -41088.26830256168,
+    "exp": -21.42245479799879,
+    "wr": 0.3931178310740355,
+    "pf": 0.8771031088365417,
+    "tpm": 35.17103614457831
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1961,
+    "net": -43830.20417381596,
+    "exp": -22.35094552463843,
+    "wr": 0.4824069352371239,
+    "pf": 0.7987643749549079,
+    "tpm": 35.9595421686747
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1961,
+    "net": -43830.20417381596,
+    "exp": -22.35094552463843,
+    "wr": 0.4824069352371239,
+    "pf": 0.7987643749549079,
+    "tpm": 35.9595421686747
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2348,
+    "net": -50180.657087445215,
+    "exp": -21.371659747634247,
+    "wr": 0.38287904599659284,
+    "pf": 0.8716012044969338,
+    "tpm": 42.95259615384616
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2348,
+    "net": -50696.85060540156,
+    "exp": -21.591503664992146,
+    "wr": 0.38245315161839866,
+    "pf": 0.870289697241628,
+    "tpm": 42.95259615384616
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1753,
+    "net": -51844.39550789311,
+    "exp": -29.574669428347466,
+    "wr": 0.3291500285225328,
+    "pf": 0.8801609960645349,
+    "tpm": 32.06810096153846
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1753,
+    "net": -51844.39550789311,
+    "exp": -29.574669428347466,
+    "wr": 0.3291500285225328,
+    "pf": 0.8801609960645349,
+    "tpm": 32.06810096153846
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2346,
+    "net": -52798.5116698507,
+    "exp": -22.505759450064236,
+    "wr": 0.3175618073316283,
+    "pf": 0.8783563844606221,
+    "tpm": 42.91600961538462
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1903,
+    "net": -52912.1883710272,
+    "exp": -27.80461816659338,
+    "wr": 0.33158171308460327,
+    "pf": 0.8555753377282862,
+    "tpm": 34.895975903614456
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1903,
+    "net": -52912.1883710272,
+    "exp": -27.80461816659338,
+    "wr": 0.33158171308460327,
+    "pf": 0.8555753377282862,
+    "tpm": 34.895975903614456
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2346,
+    "net": -53460.10302712586,
+    "exp": -22.78776770124717,
+    "wr": 0.3171355498721228,
+    "pf": 0.8768400750636923,
+    "tpm": 42.91600961538462
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2349,
+    "net": -53466.96784538106,
+    "exp": -22.76158699249939,
+    "wr": 0.4733929331630481,
+    "pf": 0.8395681715888563,
+    "tpm": 42.970889423076926
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2350,
+    "net": -53681.813533921646,
+    "exp": -22.843324908051763,
+    "wr": 0.3225531914893617,
+    "pf": 0.828851956707396,
+    "tpm": 42.98918269230769
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2349,
+    "net": -53866.96784538106,
+    "exp": -22.93187222025588,
+    "wr": 0.4729672200936569,
+    "pf": 0.8383815188018213,
+    "tpm": 42.970889423076926
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2350,
+    "net": -54151.813533921675,
+    "exp": -23.043324908051776,
+    "wr": 0.3221276595744681,
+    "pf": 0.8273689161414279,
+    "tpm": 42.98918269230769
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2350,
+    "net": -55758.03765110718,
+    "exp": -23.726824532386033,
+    "wr": 0.38468085106382977,
+    "pf": 0.8064106867247431,
+    "tpm": 42.98918269230769
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2350,
+    "net": -56158.03765110718,
+    "exp": -23.89703729834348,
+    "wr": 0.3842553191489362,
+    "pf": 0.8050408582237909,
+    "tpm": 42.98918269230769
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1795,
+    "net": -58061.28498961964,
+    "exp": -32.34611977137585,
+    "wr": 0.464066852367688,
+    "pf": 0.8383004677046614,
+    "tpm": 32.83641826923077
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1795,
+    "net": -58061.28498961964,
+    "exp": -32.34611977137585,
+    "wr": 0.464066852367688,
+    "pf": 0.8383004677046614,
+    "tpm": 32.83641826923077
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1776,
+    "net": -58186.29932303893,
+    "exp": -32.762555925134535,
+    "wr": 0.37274774774774777,
+    "pf": 0.857998517346855,
+    "tpm": 32.488846153846154
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1776,
+    "net": -58186.29932303893,
+    "exp": -32.762555925134535,
+    "wr": 0.37274774774774777,
+    "pf": 0.857998517346855,
+    "tpm": 32.488846153846154
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1808,
+    "net": -58404.267417918585,
+    "exp": -32.30324525327355,
+    "wr": 0.4629424778761062,
+    "pf": 0.7803374081590325,
+    "tpm": 33.07423076923077
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1808,
+    "net": -58404.267417918585,
+    "exp": -32.30324525327355,
+    "wr": 0.4629424778761062,
+    "pf": 0.7803374081590325,
+    "tpm": 33.07423076923077
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1797,
+    "net": -59867.79382067736,
+    "exp": -33.31541114116715,
+    "wr": 0.3121869782971619,
+    "pf": 0.8221968850956116,
+    "tpm": 32.87300480769231
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1797,
+    "net": -59867.79382067736,
+    "exp": -33.31541114116715,
+    "wr": 0.3121869782971619,
+    "pf": 0.8221968850956116,
+    "tpm": 32.87300480769231
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1806,
+    "net": -61761.877164011,
+    "exp": -34.1981601129629,
+    "wr": 0.37264673311184937,
+    "pf": 0.8014531593116374,
+    "tpm": 33.03764423076923
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1806,
+    "net": -61761.877164011,
+    "exp": -34.1981601129629,
+    "wr": 0.37264673311184937,
+    "pf": 0.8014531593116374,
+    "tpm": 33.03764423076923
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2350,
+    "net": -65396.7746264001,
+    "exp": -27.828414734638343,
+    "wr": 0.46297872340425533,
+    "pf": 0.7371826050023085,
+    "tpm": 42.98918269230769
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2350,
+    "net": -65796.7746264001,
+    "exp": -27.998627500595788,
+    "wr": 0.4625531914893617,
+    "pf": 0.7356048314132637,
+    "tpm": 42.98918269230769
+   }
+  ]
+ },
+ "gc/mom_rev_50": {
+  "best_params": {
+   "body_atr_frac": 0.5,
+   "entry_start_minute": 480,
+   "entry_end_minute": 720
+  },
+  "best": {
+   "trades": 80,
+   "net": -3608.2852728573835,
+   "exp": -45.10356591071729,
+   "wr": 0.65,
+   "pf": 0.8218331796020456,
+   "tpm": 1.4776699029126215
+  },
+  "all": [
+   {
+    "params": {
+     "body_atr_frac": 0.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 80,
+    "net": -3608.2852728573835,
+    "exp": -45.10356591071729,
+    "wr": 0.65,
+    "pf": 0.8218331796020456,
+    "tpm": 1.4776699029126215
+   },
+   {
+    "params": {
+     "body_atr_frac": 0.8,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 22,
+    "net": -6112.2077190952505,
+    "exp": -277.82762359523866,
+    "wr": 0.5,
+    "pf": 0.37337732647115013,
+    "tpm": 0.4583709787816564
+   },
+   {
+    "params": {
+     "body_atr_frac": 0.5,
+     "entry_start_minute": 180,
+     "entry_end_minute": 1020
+    },
+    "trades": 153,
+    "net": -7641.950431893473,
+    "exp": -49.94738844374819,
+    "wr": 0.6209150326797386,
+    "pf": 0.7838322825605976,
+    "tpm": 2.8260436893203886
+   },
+   {
+    "params": {
+     "body_atr_frac": 0.8,
+     "entry_start_minute": 180,
+     "entry_end_minute": 1020
+    },
+    "trades": 36,
+    "net": -13038.196152419197,
+    "exp": -362.1721153449777,
+    "wr": 0.4444444444444444,
+    "pf": 0.24809407933946065,
+    "tpm": 0.712046783625731
+   }
+  ]
+ },
+ "gc/round_magnet": {
+  "best_params": {
+   "mode": "fade",
+   "round_step": 25.0,
+   "stop_atr": 1.0,
+   "target_r": 1.0,
+   "entry_start_minute": 480,
+   "entry_end_minute": 720
+  },
+  "best": {
+   "trades": 960,
+   "net": -30847.748160748626,
+   "exp": -32.13307100077982,
+   "wr": 0.4875,
+   "pf": 0.7999603553795132,
+   "tpm": 17.603855421686745
+  },
+  "all": [
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 960,
+    "net": -30847.748160748626,
+    "exp": -32.13307100077982,
+    "wr": 0.4875,
+    "pf": 0.7999603553795132,
+    "tpm": 17.603855421686745
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 955,
+    "net": -32502.86249101149,
+    "exp": -34.034410985352345,
+    "wr": 0.40523560209424087,
+    "pf": 0.82031488231373,
+    "tpm": 17.512168674698795
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 945,
+    "net": -33775.60398710886,
+    "exp": -35.741379880538474,
+    "wr": 0.48253968253968255,
+    "pf": 0.8394988860519741,
+    "tpm": 17.328795180722892
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1647,
+    "net": -41013.891120448214,
+    "exp": -24.902180401000738,
+    "wr": 0.4851244687310261,
+    "pf": 0.882240219376227,
+    "tpm": 30.183431667670078
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 924,
+    "net": -41457.38356988812,
+    "exp": -44.867298235809656,
+    "wr": 0.4004329004329004,
+    "pf": 0.8329558379823858,
+    "tpm": 16.943710843373495
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1654,
+    "net": -46910.16025940624,
+    "exp": -28.361644655021912,
+    "wr": 0.3857315598548972,
+    "pf": 0.8449286389619637,
+    "tpm": 30.31171583383504
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1852,
+    "net": -52567.59438992444,
+    "exp": -28.384230232140624,
+    "wr": 0.4740820734341253,
+    "pf": 0.808226927199836,
+    "tpm": 33.879134615384615
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1659,
+    "net": -54498.69524915818,
+    "exp": -32.85032866133706,
+    "wr": 0.46835443037974683,
+    "pf": 0.7915889131083393,
+    "tpm": 30.403347381095728
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1810,
+    "net": -55542.268395639396,
+    "exp": -30.686336130187513,
+    "wr": 0.3889502762430939,
+    "pf": 0.8719937548945328,
+    "tpm": 33.11081730769231
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1849,
+    "net": -66521.71135208673,
+    "exp": -35.97712890864615,
+    "wr": 0.3812871822606814,
+    "pf": 0.798817510768394,
+    "tpm": 33.82425480769231
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1834,
+    "net": -68173.77127008769,
+    "exp": -37.17217626504236,
+    "wr": 0.46510359869138496,
+    "pf": 0.8208285431523049,
+    "tpm": 33.549855769230774
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1627,
+    "net": -74379.95168360577,
+    "exp": -45.716012098098204,
+    "wr": 0.379840196681008,
+    "pf": 0.824136284622569,
+    "tpm": 29.816905478627334
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2283,
+    "net": -75516.38855371151,
+    "exp": -33.07769976071464,
+    "wr": 0.3867717915024091,
+    "pf": 0.8414017276536988,
+    "tpm": 41.76353365384615
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2287,
+    "net": -82296.25649946369,
+    "exp": -35.98437100982234,
+    "wr": 0.45824223874070835,
+    "pf": 0.7275811557258153,
+    "tpm": 41.83670673076923
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2285,
+    "net": -91651.97843597874,
+    "exp": -40.11027502668654,
+    "wr": 0.46914660831509847,
+    "pf": 0.7791373516298216,
+    "tpm": 41.800120192307695
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2287,
+    "net": -92887.99566884951,
+    "exp": -40.615651800983606,
+    "wr": 0.3686051595977263,
+    "pf": 0.7368443633303681,
+    "tpm": 41.83670673076923
+   }
+  ]
+ },
+ "mgc/ema_stoch": {
+  "best_params": {
+   "touch_bars": 6,
+   "stop_atr": 1.5,
+   "target_r": 1.5,
+   "entry_start_minute": 480,
+   "daily_gate": true,
+   "entry_end_minute": 720
+  },
+  "best": {
+   "trades": 1011,
+   "net": -3875.9981153874314,
+   "exp": -3.8338260290676867,
+   "wr": 0.3926805143422354,
+   "pf": 0.8387356293791844,
+   "tpm": 18.595069486404835
+  },
+  "all": [
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1011,
+    "net": -3875.9981153874314,
+    "exp": -3.8338260290676867,
+    "wr": 0.3926805143422354,
+    "pf": 0.8387356293791844,
+    "tpm": 18.595069486404835
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1010,
+    "net": -3905.89182831038,
+    "exp": -3.867219631990475,
+    "wr": 0.3920792079207921,
+    "pf": 0.837491874698061,
+    "tpm": 18.57667673716012
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1022,
+    "net": -4112.618782279855,
+    "exp": -4.02408882806248,
+    "wr": 0.4765166340508806,
+    "pf": 0.8033311303665464,
+    "tpm": 18.797389728096675
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1021,
+    "net": -4131.547924228487,
+    "exp": -4.046569955169919,
+    "wr": 0.47600391772771794,
+    "pf": 0.8024259229677451,
+    "tpm": 18.778996978851964
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1025,
+    "net": -4280.202252236748,
+    "exp": -4.175807075352925,
+    "wr": 0.3326829268292683,
+    "pf": 0.7897833128334188,
+    "tpm": 18.852567975830816
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1024,
+    "net": -4306.441108168257,
+    "exp": -4.205508894695564,
+    "wr": 0.33203125,
+    "pf": 0.7884946248126412,
+    "tpm": 18.8341752265861
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1029,
+    "net": -4364.459719140456,
+    "exp": -4.241457453003359,
+    "wr": 0.38969873663751214,
+    "pf": 0.7655783840380086,
+    "tpm": 18.926138972809667
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1028,
+    "net": -4383.38886108909,
+    "exp": -4.263996946584718,
+    "wr": 0.38910505836575876,
+    "pf": 0.7645616717001876,
+    "tpm": 18.907746223564956
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1033,
+    "net": -4618.3132870505515,
+    "exp": -4.470777625411957,
+    "wr": 0.47725072604065827,
+    "pf": 0.7081623945902562,
+    "tpm": 18.99970996978852
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 1032,
+    "net": -4629.932715016308,
+    "exp": -4.486368909899523,
+    "wr": 0.47674418604651164,
+    "pf": 0.70742814686322,
+    "tpm": 18.981317220543808
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 993,
+    "net": -5096.226173728118,
+    "exp": -5.1321512323546,
+    "wr": 0.3333333333333333,
+    "pf": 0.8030363558812383,
+    "tpm": 18.264
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": true,
+     "entry_end_minute": 720
+    },
+    "trades": 992,
+    "net": -5137.226173728119,
+    "exp": -5.178655417064636,
+    "wr": 0.3326612903225806,
+    "pf": 0.8014517501095203,
+    "tpm": 18.245607250755288
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1912,
+    "net": -7369.088742579541,
+    "exp": -3.854125911390973,
+    "wr": 0.39748953974895396,
+    "pf": 0.7932583645902227,
+    "tpm": 35.06101204819277
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1912,
+    "net": -7369.088742579541,
+    "exp": -3.854125911390973,
+    "wr": 0.39748953974895396,
+    "pf": 0.7932583645902227,
+    "tpm": 35.06101204819277
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1932,
+    "net": -7671.768036989522,
+    "exp": -3.9708944290836037,
+    "wr": 0.4767080745341615,
+    "pf": 0.7511691684642203,
+    "tpm": 35.42775903614458
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1932,
+    "net": -7671.768036989522,
+    "exp": -3.9708944290836037,
+    "wr": 0.4767080745341615,
+    "pf": 0.7511691684642203,
+    "tpm": 35.42775903614458
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1937,
+    "net": -7680.5577499722485,
+    "exp": -3.9651821114983212,
+    "wr": 0.3443469282395457,
+    "pf": 0.7450720712683159,
+    "tpm": 35.51944578313253
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1937,
+    "net": -7680.5577499722485,
+    "exp": -3.9651821114983212,
+    "wr": 0.3443469282395457,
+    "pf": 0.7450720712683159,
+    "tpm": 35.51944578313253
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1943,
+    "net": -7871.742500285233,
+    "exp": -4.0513342770382055,
+    "wr": 0.40092640247040656,
+    "pf": 0.7154954629048615,
+    "tpm": 35.62946987951807
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1943,
+    "net": -7871.742500285233,
+    "exp": -4.0513342770382055,
+    "wr": 0.40092640247040656,
+    "pf": 0.7154954629048615,
+    "tpm": 35.62946987951807
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1948,
+    "net": -8028.209291880009,
+    "exp": -4.1212573366940495,
+    "wr": 0.4851129363449692,
+    "pf": 0.6556328168506163,
+    "tpm": 35.72115662650602
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1948,
+    "net": -8028.209291880009,
+    "exp": -4.1212573366940495,
+    "wr": 0.4851129363449692,
+    "pf": 0.6556328168506163,
+    "tpm": 35.72115662650602
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2335,
+    "net": -8224.491978939348,
+    "exp": -3.5222663721367655,
+    "wr": 0.3404710920770878,
+    "pf": 0.7526784299699373,
+    "tpm": 42.714783653846155
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2335,
+    "net": -8224.491978939348,
+    "exp": -3.5222663721367655,
+    "wr": 0.3404710920770878,
+    "pf": 0.7526784299699373,
+    "tpm": 42.714783653846155
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2335,
+    "net": -8958.564717896817,
+    "exp": -3.8366444187994935,
+    "wr": 0.39357601713062096,
+    "pf": 0.7053565579084218,
+    "tpm": 42.714783653846155
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2335,
+    "net": -8958.564717896817,
+    "exp": -3.8366444187994935,
+    "wr": 0.39357601713062096,
+    "pf": 0.7053565579084218,
+    "tpm": 42.714783653846155
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2332,
+    "net": -9034.91869768859,
+    "exp": -3.8743219115302705,
+    "wr": 0.32289879931389365,
+    "pf": 0.8028955972734376,
+    "tpm": 42.659903846153846
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2332,
+    "net": -9034.91869768859,
+    "exp": -3.8743219115302705,
+    "wr": 0.32289879931389365,
+    "pf": 0.8028955972734376,
+    "tpm": 42.659903846153846
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1891,
+    "net": -9108.414113370194,
+    "exp": -4.81671819850354,
+    "wr": 0.3347435219460603,
+    "pf": 0.7664687857948324,
+    "tpm": 34.675927710843375
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 180,
+     "daily_gate": true,
+     "entry_end_minute": 1020
+    },
+    "trades": 1891,
+    "net": -9108.414113370194,
+    "exp": -4.81671819850354,
+    "wr": 0.3347435219460603,
+    "pf": 0.7664687857948324,
+    "tpm": 34.675927710843375
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2333,
+    "net": -9480.244104897494,
+    "exp": -4.06354226527968,
+    "wr": 0.38276896699528506,
+    "pf": 0.7710058208073245,
+    "tpm": 42.67819711538462
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2333,
+    "net": -9480.244104897494,
+    "exp": -4.06354226527968,
+    "wr": 0.38276896699528506,
+    "pf": 0.7710058208073245,
+    "tpm": 42.67819711538462
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1808,
+    "net": -9664.138081681549,
+    "exp": -5.345209115974308,
+    "wr": 0.46238938053097345,
+    "pf": 0.6587778409127195,
+    "tpm": 33.07423076923077
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1807,
+    "net": -9675.757509647305,
+    "exp": -5.354597404342726,
+    "wr": 0.46209186496956284,
+    "pf": 0.6583675812222719,
+    "tpm": 33.0559375
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1776,
+    "net": -9683.180338186055,
+    "exp": -5.452241181411067,
+    "wr": 0.3688063063063063,
+    "pf": 0.7770185372729416,
+    "tpm": 32.488846153846154
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1775,
+    "net": -9713.074051109004,
+    "exp": -5.472154394990988,
+    "wr": 0.3684507042253521,
+    "pf": 0.7763301535393851,
+    "tpm": 32.47055288461539
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2335,
+    "net": -9770.133473457154,
+    "exp": -4.184211337669017,
+    "wr": 0.47623126338329763,
+    "pf": 0.622199185098593,
+    "tpm": 42.714783653846155
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2335,
+    "net": -9770.133473457154,
+    "exp": -4.184211337669017,
+    "wr": 0.47623126338329763,
+    "pf": 0.622199185098593,
+    "tpm": 42.714783653846155
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1751,
+    "net": -9807.376147625546,
+    "exp": -5.60101436186496,
+    "wr": 0.32210165619645914,
+    "pf": 0.7880196793984342,
+    "tpm": 32.03151442307693
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1798,
+    "net": -9847.184319692366,
+    "exp": -5.476743225635354,
+    "wr": 0.314238042269188,
+    "pf": 0.7286400717460246,
+    "tpm": 32.89129807692308
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1750,
+    "net": -9848.376147625546,
+    "exp": -5.627643512928883,
+    "wr": 0.32171428571428573,
+    "pf": 0.7871334899616428,
+    "tpm": 32.01322115384615
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 2.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1797,
+    "net": -9873.423175623875,
+    "exp": -5.494392418265929,
+    "wr": 0.31385642737896496,
+    "pf": 0.7279170047421093,
+    "tpm": 32.87300480769231
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2334,
+    "net": -10343.09103761617,
+    "exp": -4.431487162646174,
+    "wr": 0.4652956298200514,
+    "pf": 0.7079418530445081,
+    "tpm": 42.69649038461539
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 180,
+     "daily_gate": false,
+     "entry_end_minute": 1020
+    },
+    "trades": 2334,
+    "net": -10343.09103761617,
+    "exp": -4.431487162646174,
+    "wr": 0.4652956298200514,
+    "pf": 0.7079418530445081,
+    "tpm": 42.69649038461539
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1804,
+    "net": -10463.515808793225,
+    "exp": -5.800175060306666,
+    "wr": 0.3647450110864745,
+    "pf": 0.6885882033693513,
+    "tpm": 33.0010576923077
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1803,
+    "net": -10482.44495074186,
+    "exp": -5.813890710339356,
+    "wr": 0.3643926788685524,
+    "pf": 0.6880248403266974,
+    "tpm": 32.98276442307692
+   },
+   {
+    "params": {
+     "touch_bars": 6,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1794,
+    "net": -11251.310934717976,
+    "exp": -6.271633742875126,
+    "wr": 0.44871794871794873,
+    "pf": 0.7105263964510199,
+    "tpm": 32.818125
+   },
+   {
+    "params": {
+     "touch_bars": 3,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "daily_gate": false,
+     "entry_end_minute": 720
+    },
+    "trades": 1793,
+    "net": -11270.24007666661,
+    "exp": -6.2856888324967155,
+    "wr": 0.4484104852203012,
+    "pf": 0.7100393876958843,
+    "tpm": 32.799831730769235
+   }
+  ]
+ },
+ "mgc/mom_rev_50": {
+  "best_params": {
+   "body_atr_frac": 0.8,
+   "entry_start_minute": 480,
+   "entry_end_minute": 720
+  },
+  "best": {
+   "trades": 23,
+   "net": -715.0750241854453,
+   "exp": -31.090218442845448,
+   "wr": 0.4782608695652174,
+   "pf": 0.30647624332638,
+   "tpm": 0.4835082872928177
+  },
+  "all": [
+   {
+    "params": {
+     "body_atr_frac": 0.8,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 23,
+    "net": -715.0750241854453,
+    "exp": -31.090218442845448,
+    "wr": 0.4782608695652174,
+    "pf": 0.30647624332638,
+    "tpm": 0.4835082872928177
+   },
+   {
+    "params": {
+     "body_atr_frac": 0.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 83,
+    "net": -719.9121841660635,
+    "exp": -8.673640773085102,
+    "wr": 0.6024096385542169,
+    "pf": 0.6674635629881905,
+    "tpm": 1.5330825242718447
+   },
+   {
+    "params": {
+     "body_atr_frac": 0.5,
+     "entry_start_minute": 180,
+     "entry_end_minute": 1020
+    },
+    "trades": 146,
+    "net": -922.7620738734076,
+    "exp": -6.3202881772151205,
+    "wr": 0.5958904109589042,
+    "pf": 0.7242821409155596,
+    "tpm": 2.696747572815534
+   },
+   {
+    "params": {
+     "body_atr_frac": 0.8,
+     "entry_start_minute": 180,
+     "entry_end_minute": 1020
+    },
+    "trades": 38,
+    "net": -1382.728397990801,
+    "exp": -36.387589420810556,
+    "wr": 0.4473684210526316,
+    "pf": 0.2224123742748048,
+    "tpm": 0.7448293625241469
+   }
+  ]
+ },
+ "mgc/round_magnet": {
+  "best_params": {
+   "mode": "fade",
+   "round_step": 25.0,
+   "stop_atr": 1.5,
+   "target_r": 1.0,
+   "entry_start_minute": 480,
+   "entry_end_minute": 720
+  },
+  "best": {
+   "trades": 937,
+   "net": -3760.2361461763176,
+   "exp": -4.01305885397686,
+   "wr": 0.47705442902881534,
+   "pf": 0.8210708487252483,
+   "tpm": 17.182096385542167
+  },
+  "all": [
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 937,
+    "net": -3760.2361461763176,
+    "exp": -4.01305885397686,
+    "wr": 0.47705442902881534,
+    "pf": 0.8210708487252483,
+    "tpm": 17.182096385542167
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 953,
+    "net": -5251.136718555887,
+    "exp": -5.510111981695578,
+    "wr": 0.4774396642182581,
+    "pf": 0.6829578501170576,
+    "tpm": 17.475493975903614
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 921,
+    "net": -5513.065642999276,
+    "exp": -5.985956181323861,
+    "wr": 0.3995656894679696,
+    "pf": 0.7839233067579443,
+    "tpm": 16.888698795180723
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 948,
+    "net": -5641.0086837015,
+    "exp": -5.950431100950949,
+    "wr": 0.3924050632911392,
+    "pf": 0.7080115905671619,
+    "tpm": 17.38380722891566
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1617,
+    "net": -7699.8583740097465,
+    "exp": -4.761817176258346,
+    "wr": 0.4780457637600495,
+    "pf": 0.7864359964177114,
+    "tpm": 29.63364238410596
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1817,
+    "net": -8587.003152915695,
+    "exp": -4.725923584433514,
+    "wr": 0.3935057787561915,
+    "pf": 0.8093073166555458,
+    "tpm": 33.238870192307694
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1631,
+    "net": -9154.693967793624,
+    "exp": -5.612933150088059,
+    "wr": 0.37584304107909255,
+    "pf": 0.7181677735302088,
+    "tpm": 29.890210716435885
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1637,
+    "net": -9881.248683226695,
+    "exp": -6.036193453406655,
+    "wr": 0.4563225412339646,
+    "pf": 0.6486927953060718,
+    "tpm": 30.000168573148706
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 25.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1595,
+    "net": -10130.507194822138,
+    "exp": -6.351415169167485,
+    "wr": 0.3774294670846395,
+    "pf": 0.7678507915482269,
+    "tpm": 29.23046357615894
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1856,
+    "net": -10474.691385161233,
+    "exp": -5.64369147907394,
+    "wr": 0.4579741379310345,
+    "pf": 0.6505363942693851,
+    "tpm": 33.95230769230769
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1854,
+    "net": -10504.31023440119,
+    "exp": -5.665755250486079,
+    "wr": 0.38295577130528585,
+    "pf": 0.702248331502968,
+    "tpm": 33.91572115384616
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2268,
+    "net": -11475.8615166911,
+    "exp": -5.059903666971385,
+    "wr": 0.390652557319224,
+    "pf": 0.7698049980928373,
+    "tpm": 41.489134615384614
+   },
+   {
+    "params": {
+     "mode": "fade",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 1843,
+    "net": -11717.861498152077,
+    "exp": -6.358036624065153,
+    "wr": 0.4568638090070537,
+    "pf": 0.7102904148491076,
+    "tpm": 33.714495192307695
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2273,
+    "net": -13042.931317913366,
+    "exp": -5.738201195738393,
+    "wr": 0.45622525296964367,
+    "pf": 0.5983776853927907,
+    "tpm": 41.580600961538465
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.5,
+     "target_r": 1.0,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2271,
+    "net": -13415.990566429771,
+    "exp": -5.907525568661282,
+    "wr": 0.4667547335975341,
+    "pf": 0.6913511070045917,
+    "tpm": 41.54401442307692
+   },
+   {
+    "params": {
+     "mode": "break",
+     "round_step": 10.0,
+     "stop_atr": 1.0,
+     "target_r": 1.5,
+     "entry_start_minute": 480,
+     "entry_end_minute": 720
+    },
+    "trades": 2273,
+    "net": -13759.627267579239,
+    "exp": -6.053509576585675,
+    "wr": 0.3673559172899252,
+    "pf": 0.6362524664532159,
+    "tpm": 41.580600961538465
+   }
+  ]
+ }
+}

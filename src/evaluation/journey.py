@@ -8,7 +8,7 @@ import numpy as np
 import polars as pl
 import yaml
 
-from src.evaluation.funded import FundedRules, replay_funded_to_payout
+from src.evaluation.funded import FundedRules, FundedSizingPolicy, replay_funded_to_payout
 from src.evaluation.lucid_rules import LucidRules
 from src.evaluation.monte_carlo import _sample_days, ledger_to_days
 from src.evaluation.sizing import FixedSizing, SizingPolicy, run_evaluation_sized
@@ -31,6 +31,7 @@ def journey_mc(
     funded_contracts: int = 1,
     eval_seq_len: int = 365,
     funded_rules: FundedRules | None = None,
+    funded_policy: FundedSizingPolicy | None = None,
 ) -> dict[str, float]:
     """End-to-end: pass eval then reach first payout-eligible funded state.
 
@@ -58,7 +59,8 @@ def journey_mc(
             pass_n += 1
             rest = seq[outcome.days_used :]
             if replay_funded_to_payout(
-                rules, funded_rules, rest, contracts=funded_contracts
+                rules, funded_rules, rest,
+                contracts=funded_contracts, policy=funded_policy,
             ):
                 payout_n += 1
 

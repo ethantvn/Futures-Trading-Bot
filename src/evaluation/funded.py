@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Callable
 
 from src.evaluation.lucid_rules import EvalAccount, LucidRules
+
+# (qualifying_days_so_far, profit, cushion) -> micros for the coming session
+FundedSizingPolicy = Callable[[int, float, float], int]
 
 
 @dataclass
@@ -44,14 +47,27 @@ def replay_funded_to_payout(
     day_pnls_per_micro: list[list[float]],
     contracts: int = 1,
     max_sessions: int = 120,
+    policy: FundedSizingPolicy | None = None,
 ) -> bool:
-    """Return True if first payout-eligible state reached without breach."""
+    """Return True if first payout-eligible state reached without breach.
+
+    `policy(qual_days, profit, cushion) -> micros` overrides `contracts`
+    per session, decided on prior-EOD state (causal). Either way the count
+    is capped by the account max and the profit-tier scaling limit.
+    """
     acct = EvalAccount(rules)
     qual = 0
     cycle_start = acct.balance
 
     for day in day_pnls_per_micro[:max_sessions]:
-        k = min(contracts, rules.max_contracts_micro)
+        profit_sod = acct.balance - rules.starting_balance
+        cushion_sod = acct.balance - acct.mll
+        want = policy(qual, profit_sod, cushion_sod) if policy else contracts
+        k = min(
+            want,
+            rules.max_contracts_micro,
+            funded.max_micros_for_profit(profit_sod),
+        )
         dp = sum(p * k for p in day)
         if dp == 0:
             continue

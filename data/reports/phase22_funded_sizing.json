@@ -1,0 +1,89 @@
+{
+ "screen": {
+  "fixed_1": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.5162
+  },
+  "fixed_2": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.4121
+  },
+  "fixed_3": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.335
+  },
+  "qual_rush_2": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.4344
+  },
+  "qual_rush_3": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.3461
+  },
+  "cushion600_2": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.3993
+  },
+  "qualcush600_2": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.4422
+  },
+  "qualcush800_3": {
+   "pass_rate": 0.7026,
+   "pass_and_payout": 0.3867
+  }
+ },
+ "battery": {
+  "fixed_1": {
+   "wf/block/s42": {
+    "pass_rate": 0.7026,
+    "pass_and_payout": 0.5162
+   },
+   "wf/block/s43": {
+    "pass_rate": 0.7037,
+    "pass_and_payout": 0.5222
+   },
+   "wf/block/s44": {
+    "pass_rate": 0.6883,
+    "pass_and_payout": 0.5003
+   },
+   "wf/day/s42": {
+    "pass_rate": 0.6556,
+    "pass_and_payout": 0.4592
+   },
+   "wf/day/s43": {
+    "pass_rate": 0.6624,
+    "pass_and_payout": 0.4644
+   },
+   "wf/day/s44": {
+    "pass_rate": 0.649,
+    "pass_and_payout": 0.4587
+   },
+   "holdout/block/s42": {
+    "pass_rate": 0.6798,
+    "pass_and_payout": 0.4773
+   },
+   "holdout/block/s43": {
+    "pass_rate": 0.6659,
+    "pass_and_payout": 0.4637
+   },
+   "holdout/block/s44": {
+    "pass_rate": 0.6666,
+    "pass_and_payout": 0.4591
+   },
+   "holdout/day/s42": {
+    "pass_rate": 0.6606,
+    "pass_and_payout": 0.4581
+   },
+   "holdout/day/s43": {
+    "pass_rate": 0.6665,
+    "pass_and_payout": 0.4661
+   },
+   "holdout/day/s44": {
+    "pass_rate": 0.6653,
+    "pass_and_payout": 0.4592
+   }
+  }
+ },
+ "verdicts": {}
+}
